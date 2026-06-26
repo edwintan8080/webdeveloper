@@ -22,7 +22,7 @@
     WHATSAPP_NUMBER: '6281234567890',
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
-    COMPANY_EMAIL: 'hello@tourduachina.id',
+    COMPANY_EMAIL: 'tourduachina@gmail.com',
   };
 
   // ============================================
