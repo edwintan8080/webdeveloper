@@ -177,13 +177,13 @@
       cards.forEach(card => tourGrid.appendChild(card));
     });
   }
+  /**
+   * Booking Form Submission — WhatsApp + Email
+   */
+  function initBookingForm() {
+    const bookingForm = document.getElementById('booking-form');
+    if (!bookingForm) return;
 
-  // ============================================
-  // BOOKING FORM SUBMISSION
-  // ============================================
-  const bookingForm = document.getElementById('booking-form');
-
-  if (bookingForm) {
     bookingForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -197,14 +197,14 @@
       const duration = formData.get('duration') || '-';
       const message = formData.get('message') || '-';
 
-      // Validate required fields
+      // Validate
       if (!name || !whatsapp || !destination || !pax) {
         showNotification('Mohon lengkapi field yang wajib diisi (*)', 'error');
         return;
       }
 
-      // Build WhatsApp message
-      const waMessage = encodeURIComponent(
+      // Build message content
+      const messageLines = 
         `Halo Tourduachina.id! 👋\n\n` +
         `Saya ingin booking tour:\n` +
         `━━━━━━━━━━━━━━━━━━\n` +
@@ -217,10 +217,9 @@
         `⏱️ Durasi: ${duration}\n` +
         `💬 Pesan: ${message}\n` +
         `━━━━━━━━━━━━━━━━━━\n\n` +
-        `Mohon info harga dan detailnya ya! Terima kasih 🙏`
-      );
+        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
 
-      // Track form submission
+      // Track
       if (typeof trackEvent === 'function') {
         trackEvent('form_submit', {
           form_name: 'booking',
@@ -229,13 +228,16 @@
         });
       }
 
-      // Open WhatsApp
-      window.open(`https://wa.me/6281234567890?text=${waMessage}`, '_blank');
+      // 1. Open WhatsApp
+      const waMessage = encodeURIComponent(messageLines);
+      window.open(`https://wa.me/6281998296760?text=${waMessage}`, '_blank');
 
-      // Show success message
-      showNotification('Redirecting ke WhatsApp...', 'success');
+      // 2. Send Email via mailto
+      const emailSubject = encodeURIComponent(`Booking Tour: ${destination} - ${name}`);
+      const emailBody = encodeURIComponent(messageLines);
+      window.open(`mailto:tourduachina@gmail.com?subject=${emailSubject}&body=${emailBody}`, '_blank');
 
-      // Reset form
+      showNotification('Mengirim ke WhatsApp & Email...', 'success');
       this.reset();
     });
   }

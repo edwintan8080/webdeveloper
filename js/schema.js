@@ -23,7 +23,7 @@
     "logo": `${DOMAIN}/images/logo.png`,
     "image": `${DOMAIN}/images/og-image.jpg`,
     "telephone": "+62-812-3456-7890",
-    "email": "hello@tourduachina.id",
+    "email": "tourduachina@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Bali",

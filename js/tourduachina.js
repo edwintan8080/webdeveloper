@@ -19,7 +19,7 @@
   // ============================================
   const CONFIG = {
     DOMAIN: 'https://tourduachina.id',
-    WHATSAPP_NUMBER: '6281234567890',
+    WHATSAPP_NUMBER: '6281998296760',
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
     COMPANY_EMAIL: 'tourduachina@gmail.com',
@@ -211,7 +211,7 @@
   }
 
   /**
-   * Booking Form Submission
+   * Booking Form Submission — WhatsApp + Email
    */
   function initBookingForm() {
     const bookingForm = document.getElementById('booking-form');
@@ -236,8 +236,8 @@
         return;
       }
 
-      // Build WhatsApp message
-      const waMessage = encodeURIComponent(
+      // Build message content
+      const messageLines = 
         `Halo Tourduachina.id! 👋\n\n` +
         `Saya ingin booking tour:\n` +
         `━━━━━━━━━━━━━━━━━━\n` +
@@ -250,8 +250,7 @@
         `⏱️ Durasi: ${duration}\n` +
         `💬 Pesan: ${message}\n` +
         `━━━━━━━━━━━━━━━━━━\n\n` +
-        `Mohon info harga dan detailnya ya! Terima kasih 🙏`
-      );
+        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
 
       // Track
       trackEvent('form_submit', {
@@ -260,10 +259,16 @@
         pax: pax
       });
 
-      // Open WhatsApp
+      // 1. Open WhatsApp
+      const waMessage = encodeURIComponent(messageLines);
       window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMessage}`, '_blank');
 
-      showNotification('Redirecting ke WhatsApp...', 'success');
+      // 2. Send Email via mailto
+      const emailSubject = encodeURIComponent(`Booking Tour: ${destination} - ${name}`);
+      const emailBody = encodeURIComponent(messageLines);
+      window.open(`mailto:${CONFIG.COMPANY_EMAIL}?subject=${emailSubject}&body=${emailBody}`, '_blank');
+
+      showNotification('Mengirim ke WhatsApp & Email...', 'success');
       this.reset();
     });
   }
