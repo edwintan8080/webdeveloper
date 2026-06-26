@@ -23,6 +23,7 @@
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
     COMPANY_EMAIL: 'tourduachina@gmail.com',
+    INSTAGRAM: 'https://instagram.com/tourduachina.id',
   };
 
   // ============================================
@@ -540,8 +541,7 @@
           "provider": { "@type": "TravelAgency", "name": COMPANY_NAME },
           "offers": {
             "@type": "Offer",
-            "price": tour.price,
-            "priceCurrency": "IDR",
+
             "availability": "https://schema.org/InStock"
           }
         }

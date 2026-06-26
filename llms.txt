@@ -1,54 +1,48 @@
-# Tourduachina.id — Private Tour ke China
-
-> Tourduachina.id adalah spesialis private tour ke China untuk wisatawan Indonesia. Kami menyediakan pemandu berbahasa Indonesia, bantuan visa China, transportasi pribadi, dan itinerary yang bisa dicustom sesuai keinginan Anda. Dari Tembok Besar Beijing hingga pegunungan Zhangjiajie, kami bantu Anda menjelajahi China dengan nyaman dan tanpa ribet.
-
-## Layanan
-- Private Tour ke China (1-20 orang)
-- Custom Itinerary sesuai keinginan
-- Pemandu berbahasa Indonesia & Mandarin
-- Visa Assistance (bantuan proses visa China)
-- Private Car & Transport di China
-- Portable WiFi (tanpa perlu VPN)
-- Photography Service di destinasi
-- Airport Transfer
-
-## Paket Tour Populer
-- Beijing Heritage 5D4N — IDR 8,500,000 (Tembok Besar, Forbidden City, Temple of Heaven)
-- Shanghai Modern 4D3N — IDR 7,200,000 (The Bund, Yu Garden, Nanjing Road)
-- Xi'an Ancient 4D3N — IDR 6,800,000 (Terracotta Warriors, Muslim Quarter)
-- Chengdu Panda 4D3N — IDR 7,500,000 (Panda Base, Jinli Street)
-- Guilin Nature 5D4N — IDR 9,000,000 (Li River, Yangshuo)
-- Zhangjiajie Adventure 5D4N — IDR 10,500,000 (Avatar Mountains, Glass Bridge)
-- China Golden Route 8D7N — IDR 15,000,000 (Beijing-Xi'an-Shanghai)
-- Custom Trip — Hubungi Kami
-
-## Destinasi
-Beijing, Shanghai, Xi'an, Chengdu, Guilin, Zhangjiajie, Hangzhou, Guangzhou, dan kota-kota lainnya di China.
-
-## Kontak
-- WhatsApp: +86 158-1125-2101
-- Email: tourduachina@gmail.com
-- Instagram: @tourduachina.id
-- Lokasi: Beijing, Mainland China
-- Jam Operasional: Senin-Sabtu 09:00-18:00 (GMT+8)
-
-## Fakta Penting
-- 500+ wisatawan puas sejak 2020
-- 15+ destinasi di seluruh China
-- Rating 4.9 dari 5
-- Pemandu bersertifikat fasih Indonesia & Mandarin
-- Harga transparan tanpa hidden cost
-- Support 24/7 selama perjalanan
-
-## FAQ Singkat
-- Q: Apakah termasuk tiket pesawat? A: Tidak, paket fokus pada layanan di China.
-- Q: Minimal peserta? A: 1 orang (private tour).
-- Q: Ada pemandu Indonesia? A: Ya, semua pemandu fasih bahasa Indonesia.
-- Q: Bisa custom itinerary? A: Ya, 100% bisa disesuaikan.
-
-## Link
-- [Paket Tour](/#packages)
-- [Layanan](/#services)
-- [Tentang Kami](/#about)
-- [FAQ](/#faq)
-- [Kontak & Booking](/#contact)
+1|# Tourduachina.id — Private Tour ke China
+2|
+3|> Tourduachina.id adalah spesialis private tour ke China untuk wisatawan Indonesia. Kami menyediakan pemandu berbahasa Indonesia, bantuan visa China, transportasi pribadi, dan itinerary yang bisa dicustom sesuai keinginan Anda. Dari Tembok Besar Beijing hingga pegunungan Zhangjiajie, kami bantu Anda menjelajahi China dengan nyaman dan tanpa ribet.
+4|
+5|## Layanan
+6|- Private Tour ke China (1-20 orang)
+7|- Custom Itinerary sesuai keinginan
+8|- Pemandu berbahasa Indonesia & Mandarin
+9|- Visa Assistance (bantuan proses visa China)
+10|- Private Car & Transport di China
+11|- Portable WiFi (tanpa perlu VPN)
+12|- Photography Service di destinasi
+13|- Airport Transfer
+14|
+15|## Paket Tour Populer
+23|- Custom Trip — Hubungi Kami
+24|
+25|## Destinasi
+26|Beijing, Shanghai, Xi'an, Chengdu, Guilin, Zhangjiajie, Hangzhou, Guangzhou, dan kota-kota lainnya di China.
+27|
+28|## Kontak
+29|- WhatsApp: +86 158-1125-2101
+30|- Email: tourduachina@gmail.com
+31|- Instagram: @tourduachina.id
+32|- Lokasi: Beijing, Mainland China
+33|- Jam Operasional: Senin-Sabtu 09:00-18:00 (GMT+8)
+34|
+35|## Fakta Penting
+36|- 500+ wisatawan puas sejak 2020
+37|- 15+ destinasi di seluruh China
+38|- Rating 4.9 dari 5
+39|- Pemandu bersertifikat fasih Indonesia & Mandarin
+40|- Harga transparan tanpa hidden cost
+41|- Support 24/7 selama perjalanan
+42|
+43|## FAQ Singkat
+44|- Q: Apakah termasuk tiket pesawat? A: Tidak, paket fokus pada layanan di China.
+45|- Q: Minimal peserta? A: 1 orang (private tour).
+46|- Q: Ada pemandu Indonesia? A: Ya, semua pemandu fasih bahasa Indonesia.
+47|- Q: Bisa custom itinerary? A: Ya, 100% bisa disesuaikan.
+48|
+49|## Link
+50|- [Paket Tour](/#packages)
+51|- [Layanan](/#services)
+52|- [Tentang Kami](/#about)
+53|- [FAQ](/#faq)
+54|- [Kontak & Booking](/#contact)
+55|
