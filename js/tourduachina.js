@@ -380,7 +380,7 @@
   /**
    * Counter Animation
    */
-  function animateCounter(element, target, duration = 2000) {
+  function animateCounter(element, target, isDecimal, suffix, duration = 2000) {
     const increment = target / (duration / 16);
     let current = 0;
 
@@ -389,8 +389,12 @@
       if (current >= target) {
         current = target;
         clearInterval(timer);
+        element.textContent = (isDecimal ? target.toFixed(1) : Math.floor(target)) + suffix;
+        return;
       }
-      element.textContent = Math.floor(current).toLocaleString();
+      element.textContent = isDecimal
+        ? current.toFixed(1) + suffix
+        : Math.floor(current).toLocaleString() + suffix;
     }, 16);
   }
 
@@ -403,15 +407,13 @@
         if (entry.isIntersecting) {
           const statValues = entry.target.querySelectorAll('.hero__stat-value');
           statValues.forEach(el => {
-            const text = el.textContent;
-            const number = parseInt(text.replace(/[^0-9]/g, ''));
+            const raw = el.textContent.trim();
+            const isDecimal = raw.includes('.');
+            const number = isDecimal ? parseFloat(raw) : parseInt(raw.replace(/[^0-9]/g, ''), 10);
+            const suffix = raw.replace(/[0-9.]/g, '');
             if (number && !el.dataset.animated) {
               el.dataset.animated = 'true';
-              const suffix = text.replace(/[0-9]/g, '');
-              animateCounter(el, number);
-              setTimeout(() => {
-                el.textContent = number + suffix;
-              }, 2100);
+              animateCounter(el, number, isDecimal, suffix);
             }
           });
           statsObserver.unobserve(entry.target);
