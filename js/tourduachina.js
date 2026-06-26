@@ -19,7 +19,7 @@
   // ============================================
   const CONFIG = {
     DOMAIN: 'https://tourduachina.id',
-    WHATSAPP_NUMBER: '6281998296760',
+    WHATSAPP_NUMBER: '8615811252101',
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
     COMPANY_EMAIL: 'tourduachina@gmail.com',
@@ -457,8 +457,8 @@
       "email": COMPANY_EMAIL,
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Bali",
-        "addressRegion": "Bali",
+        "addressLocality": "Beijing",
+        "addressRegion": "Beijing",
         "addressCountry": "ID"
       },
       "geo": {

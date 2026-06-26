@@ -230,7 +230,7 @@
 
       // 1. Open WhatsApp
       const waMessage = encodeURIComponent(messageLines);
-      window.open(`https://wa.me/6281998296760?text=${waMessage}`, '_blank');
+      window.open(`https://wa.me/8615811252101?text=${waMessage}`, '_blank');
 
       // 2. Send Email via mailto
       const emailSubject = encodeURIComponent(`Booking Tour: ${destination} - ${name}`);

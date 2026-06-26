@@ -26,8 +26,8 @@
     "email": "tourduachina@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Bali",
-      "addressRegion": "Bali",
+      "addressLocality": "Beijing",
+      "addressRegion": "Beijing",
       "addressCountry": "ID"
     },
     "geo": {
