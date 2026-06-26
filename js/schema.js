@@ -22,7 +22,7 @@
     "url": DOMAIN,
     "logo": `${DOMAIN}/images/logo.png`,
     "image": `${DOMAIN}/images/og-image.jpg`,
-    "telephone": "+62-812-3456-7890",
+    "telephone": "+86-158-1125-2101",
     "email": "tourduachina@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -69,7 +69,7 @@
     "logo": `${DOMAIN}/images/logo.png`,
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+62-812-3456-7890",
+      "telephone": "+86-158-1125-2101",
       "contactType": "customer service",
       "availableLanguage": ["Indonesian", "Mandarin"]
     }
