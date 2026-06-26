@@ -80,34 +80,44 @@
        ============================================ */
     :root {
       /* === BRAND COLORS === */
-      --primary: #C22423;          /* Primary Red — CTA, badge, highlight */
-      --primary-dark: #A51E1E;     /* Dark Red — hover, active state */
-      --primary-light: #D93B3B;    /* Light Red — subtle accents */
-      --accent: #AE8659;           /* Antique Gold — icons, borders, premium accent */
-      --accent-dark: #987246;      /* Dark Gold/Bronze — footer, ornament, divider */
-      --accent-light: #D4C3B2;     /* Soft Gold/Beige — hover card, subtle bg */
-      --success: #10B981;
-      --success-dark: #059669;
-      --dark: #41484D;             /* Charcoal Navy — heading, navbar */
-      --dark-deep: #2C343A;        /* Deep Charcoal — body text, footer */
-      --cream: #EEE2CB;            /* Warm Cream — alt bg, premium card */
-      --ivory: #F3EFE9;            /* Ivory Background — main bg */
-      --gray-100: #F3EFE9;
-      --gray-200: #D4C3B2;
+      --color-primary-red: #C4282B;
+      --color-primary-red-dark: #8F1D1D;
+      --color-gold: #B8874D;
+      --color-gold-soft: #EFE2CC;
+      --color-ivory: #FAF6EF;
+      --color-white: #FFFFFF;
+      --color-charcoal: #25313A;
+      --color-gray: #6F6A63;
+      --color-jade: #2F6F62;
+
+      /* Aliases for existing classes */
+      --primary: #C4282B;
+      --primary-dark: #8F1D1D;
+      --accent: #B8874D;
+      --accent-dark: #987246;
+      --accent-light: #EFE2CC;
+      --success: #2F6F62;
+      --dark: #25313A;
+      --dark-deep: #25313A;
+      --cream: #EFE2CC;
+      --ivory: #FAF6EF;
+      --gray-50: #FAF6EF;
+      --gray-100: #FAF6EF;
+      --gray-200: #EFE2CC;
       --gray-300: #B8A99A;
-      --gray-400: #8A7D72;
-      --gray-500: #6B6057;
-      --gray-600: #4A423B;
-      --gray-700: #2C343A;
-      --gray-800: #41484D;
+      --gray-400: #6F6A63;
+      --gray-500: #6F6A63;
+      --gray-600: #25313A;
+      --gray-700: #25313A;
+      --gray-800: #25313A;
       --white: #FFFFFF;
-      --shadow-sm: 0 1px 3px rgba(65,72,77,0.08);
-      --shadow-md: 0 4px 12px rgba(65,72,77,0.1);
-      --shadow-lg: 0 10px 30px rgba(65,72,77,0.12);
-      --shadow-xl: 0 20px 50px rgba(65,72,77,0.15);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
+      --shadow-sm: 0 1px 4px rgba(37,49,58,0.06);
+      --shadow-md: 0 4px 16px rgba(37,49,58,0.08);
+      --shadow-lg: 0 12px 32px rgba(37,49,58,0.1);
+      --shadow-xl: 0 24px 48px rgba(37,49,58,0.12);
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
       --radius-xl: 24px;
       --radius-full: 9999px;
       --font-heading: 'Plus Jakarta Sans', sans-serif;
@@ -227,10 +237,10 @@
     .btn--primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
     .btn--outline {
       background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
+      color: var(--color-charcoal);
+      border: 2px solid var(--color-gold);
     }
-    .btn--outline:hover { background: var(--primary); color: var(--white); }
+    .btn--outline:hover { background: var(--color-gold); color: var(--white); }
     .btn--gold {
       background: var(--accent);
       color: var(--dark);
@@ -252,14 +262,15 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(44, 52, 58, 0.92);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--color-gold-soft);
       transition: var(--transition);
     }
     .header--scrolled {
-      background: rgba(44, 52, 58, 0.98);
-      box-shadow: 0 2px 20px rgba(44,52,58,0.3);
+      background: rgba(255,255,255,0.99);
+      box-shadow: 0 2px 20px rgba(37,49,58,0.08);
     }
     .header__inner {
       display: flex;
@@ -271,11 +282,11 @@
       font-family: var(--font-heading);
       font-size: 22px;
       font-weight: 800;
-      color: var(--white);
+      color: var(--color-charcoal);
       display: flex;
       align-items: center;
     }
-    .header__logo span { color: var(--accent); }
+    .header__logo span { color: var(--color-gold); }
     .header__logo-img {
       height: 48px;
       width: auto;
@@ -285,13 +296,13 @@
     .header__link {
       font-size: 14px;
       font-weight: 500;
-      color: rgba(255,255,255,0.8);
+      color: var(--color-gray);
       transition: var(--transition);
     }
-    .header__link:hover { color: var(--white); }
+    .header__link:hover { color: var(--color-charcoal); }
     .header__actions { display: flex; align-items: center; gap: 12px; }
     .header__cta {
-      background: var(--primary);
+      background: var(--color-primary-red);
       color: var(--white);
       padding: 10px 24px;
       border-radius: var(--radius-full);
@@ -299,17 +310,17 @@
       font-weight: 600;
       transition: var(--transition);
     }
-    .header__cta:hover { background: var(--primary-dark); }
+    .header__cta:hover { background: var(--color-primary-red-dark); }
     .header__lang {
-      color: rgba(255,255,255,0.7);
+      color: var(--color-gray);
       font-size: 13px;
       font-weight: 500;
       padding: 6px 12px;
-      border: 1px solid rgba(255,255,255,0.2);
+      border: 1px solid var(--color-gold-soft);
       border-radius: var(--radius-sm);
       transition: var(--transition);
     }
-    .header__lang:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
+    .header__lang:hover { border-color: var(--color-gold); color: var(--color-charcoal); }
     .header__hamburger {
       display: none;
       flex-direction: column;
@@ -324,7 +335,7 @@
     .header__hamburger span {
       width: 24px;
       height: 2px;
-      background: var(--white);
+      background: var(--color-charcoal);
       transition: var(--transition);
     }
 
@@ -336,7 +347,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: var(--dark-deep);
+      background: var(--color-charcoal);
       z-index: 999;
       padding: 32px 24px;
       flex-direction: column;
@@ -360,7 +371,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, #2C343A 0%, #41484D 30%, #5A6369 60%, #C22423 100%);
+      background: linear-gradient(135deg, #FAF6EF 0%, #EFE2CC 100%);
       overflow: hidden;
       padding-top: 72px;
     }
@@ -368,10 +379,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(194,36,35,0.25) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(174,134,89,0.15) 0%, transparent 50%),
-        linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
+      background: none;
     }
     .hero__decoration {
       position: absolute;
@@ -385,13 +393,13 @@
       bottom: 0;
       width: 100%;
       height: 40%;
-      background: linear-gradient(180deg, transparent 0%, rgba(44,52,58,0.8) 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(37,49,58,0.6) 100%);
     }
     .hero__pillar {
       position: absolute;
       bottom: 15%;
       width: 60px;
-      background: linear-gradient(180deg, rgba(194,36,35,0.35) 0%, rgba(194,36,35,0.08) 100%);
+      background: linear-gradient(180deg, rgba(184,135,77,0.15) 0%, rgba(184,135,77,0.05) 100%);
       border-radius: 8px 8px 0 0;
     }
     .hero__pillar:nth-child(1) { left: 10%; height: 200px; }
@@ -411,9 +419,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(174,134,89,0.12);
-      border: 1px solid rgba(174,134,89,0.3);
-      color: var(--accent);
+      background: rgba(184,135,77,0.1);
+      border: 1px solid rgba(184,135,77,0.3);
+      color: var(--color-gold);
       padding: 8px 20px;
       border-radius: var(--radius-full);
       font-size: 13px;
@@ -423,14 +431,14 @@
     .hero__title {
       font-size: 52px;
       font-weight: 800;
-      color: var(--white);
+      color: var(--color-charcoal);
       margin-bottom: 20px;
       line-height: 1.15;
     }
-    .hero__title span { color: var(--accent); }
+    .hero__title span { color: var(--color-primary-red); }
     .hero__subtitle {
       font-size: 18px;
-      color: rgba(255,255,255,0.75);
+      color: var(--color-gray);
       max-width: 600px;
       margin: 0 auto 40px;
       line-height: 1.7;
@@ -448,17 +456,17 @@
       gap: 48px;
       margin-top: 64px;
       padding-top: 40px;
-      border-top: 1px solid rgba(174,134,89,0.2);
+      border-top: 1px solid rgba(184,135,77,0.2);
     }
     .hero__stat-value {
       font-family: var(--font-heading);
       font-size: 36px;
       font-weight: 800;
-      color: var(--accent);
+      color: var(--color-gold);
     }
     .hero__stat-label {
       font-size: 13px;
-      color: rgba(255,255,255,0.6);
+      color: var(--color-gray);
       margin-top: 4px;
     }
 
@@ -492,8 +500,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(174,134,89,0.1);
-      color: var(--accent);
+      background: rgba(184,135,77,0.1);
+      color: var(--color-gold);
       padding: 6px 14px;
       border-radius: var(--radius-full);
       font-size: 13px;
@@ -526,14 +534,14 @@
     .about__feature-icon {
       width: 24px;
       height: 24px;
-      background: rgba(16,185,129,0.1);
+      background: rgba(47,111,98,0.1);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       margin-top: 2px;
-      color: var(--success);
+      color: var(--color-jade);
       font-size: 14px;
     }
     .about__feature-text { font-size: 15px; color: var(--gray-600); }
@@ -541,7 +549,7 @@
     /* ============================================
        PACKAGES
        ============================================ */
-    .packages { background: var(--cream); }
+    .packages { background: var(--color-ivory); }
     .packages__grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -600,7 +608,7 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--primary);
+      color: var(--color-gold);
       margin-bottom: 8px;
     }
     .package-card__name {
@@ -656,15 +664,15 @@
       padding: 40px 24px;
       background: var(--white);
       border-radius: var(--radius-lg);
-      border: 1px solid var(--accent-light);
+      border: 1px solid var(--color-gold-soft);
       transition: var(--transition);
     }
-    .why-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .why-card:hover { border-color: var(--color-gold); box-shadow: var(--shadow-md); transform: translateY(-4px); }
     .why-card__icon {
       width: 64px;
       height: 64px;
       margin: 0 auto 20px;
-      background: rgba(174,134,89,0.1);
+      background: var(--color-gold-soft);
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
@@ -686,9 +694,9 @@
     /* ============================================
        SERVICES
        ============================================ */
-    .services { background: var(--dark-deep); }
+    .services { background: var(--color-charcoal); }
     .services .section__title { color: var(--white); }
-    .services .section__title span { color: var(--accent); }
+    .services .section__title span { color: var(--color-gold); }
     .services .section__desc { color: rgba(255,255,255,0.6); }
     .services__grid {
       display: grid;
@@ -702,12 +710,12 @@
       padding: 32px;
       transition: var(--transition);
     }
-    .service-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(174,134,89,0.4); transform: translateY(-4px); }
+    .service-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(184,135,77,0.4); transform: translateY(-4px); }
     .service-card__icon {
       width: 56px;
       height: 56px;
       margin-bottom: 20px;
-      background: rgba(255,215,0,0.1);
+      background: rgba(184,135,77,0.15);
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
@@ -754,7 +762,7 @@
     .dest-card__overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
     }
     .dest-card__content {
       position: absolute;
@@ -776,7 +784,7 @@
     /* ============================================
        TESTIMONIALS
        ============================================ */
-    .testimonials { background: var(--ivory); }
+    .testimonials { background: var(--color-ivory); }
     .testimonials__grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -789,7 +797,7 @@
       box-shadow: var(--shadow-sm);
     }
     .testimonial-card__stars {
-      color: var(--accent);
+      color: var(--color-gold);
       font-size: 18px;
       margin-bottom: 16px;
     }
@@ -809,7 +817,7 @@
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      background: linear-gradient(135deg, var(--color-gold), var(--accent-dark));
       display: flex;
       align-items: center;
       justify-content: center;
@@ -835,7 +843,7 @@
       margin: 0 auto;
     }
     .faq-item {
-      border: 1px solid var(--gray-200);
+      border: 1px solid var(--color-gold-soft);
       border-radius: var(--radius-md);
       margin-bottom: 12px;
       overflow: hidden;
@@ -856,7 +864,7 @@
     .faq-item__question:hover { background: var(--cream); }
     .faq-item__icon {
       font-size: 20px;
-      color: var(--accent);
+      color: var(--color-gold);
       transition: transform 0.3s ease;
       flex-shrink: 0;
     }
@@ -878,7 +886,7 @@
        BOOKING CTA
        ============================================ */
     .booking {
-      background: linear-gradient(135deg, var(--dark-deep) 0%, var(--dark) 100%);
+      background: var(--color-charcoal);
     }
     .booking__grid {
       display: grid;
@@ -892,7 +900,7 @@
       color: var(--white);
       margin-bottom: 16px;
     }
-    .booking__title span { color: var(--accent); }
+    .booking__title span { color: var(--color-gold); }
     .booking__desc {
       color: rgba(255,255,255,0.6);
       margin-bottom: 32px;
@@ -907,7 +915,7 @@
     .booking__contact-icon {
       width: 48px;
       height: 48px;
-      background: rgba(174,134,89,0.12);
+      background: rgba(184,135,77,0.12);
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
@@ -960,8 +968,8 @@
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(174,134,89,0.12);
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 3px rgba(184,135,77,0.12);
     }
     .form-group textarea { resize: vertical; min-height: 80px; }
     .form-row {
@@ -988,9 +996,9 @@
        FOOTER
        ============================================ */
     .footer {
-      background: var(--dark-deep);
+      background: var(--color-charcoal);
       padding: 64px 0 32px;
-      border-top: 1px solid rgba(174,134,89,0.1);
+      border-top: 1px solid rgba(184,135,77,0.1);
     }
     .footer__grid {
       display: grid;
@@ -1000,7 +1008,7 @@
     }
     .footer__brand-desc {
       font-size: 14px;
-      color: rgba(255,255,255,0.5);
+      color: rgba(184,135,77,0.6);
       margin-top: 16px;
       line-height: 1.7;
     }
@@ -1021,7 +1029,7 @@
       transition: var(--transition);
       font-size: 18px;
     }
-    .footer__social a:hover { background: var(--accent); color: var(--white); }
+    .footer__social a:hover { background: var(--color-gold); color: var(--white); }
     .footer__title {
       font-size: 15px;
       font-weight: 700;
@@ -1031,14 +1039,14 @@
     .footer__link {
       display: block;
       font-size: 14px;
-      color: rgba(255,255,255,0.5);
+      color: var(--color-gold-soft);
       margin-bottom: 12px;
       transition: var(--transition);
     }
-    .footer__link:hover { color: var(--accent); }
+    .footer__link:hover { color: var(--color-gold); }
     .footer__bottom {
       padding-top: 32px;
-      border-top: 1px solid rgba(174,134,89,0.08);
+      border-top: 1px solid rgba(184,135,77,0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1185,7 +1193,7 @@
         </p>
         <div class="hero__cta-group">
           <a href="#contact" class="btn btn--primary btn--lg">Mulai Petualangan →</a>
-          <a href="#packages" class="btn btn--outline btn--lg" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Lihat Paket Tour</a>
+          <a href="#packages" class="btn btn--outline btn--lg" style="border-color: var(--color-gold); color: var(--color-charcoal);">Lihat Paket Tour</a>
         </div>
         <div class="hero__stats">
           <div>
@@ -1215,10 +1223,10 @@
       <div class="container">
         <div class="about__grid">
           <div class="about__image-grid fade-in">
-            <div class="about__image" style="background: linear-gradient(135deg, #D4C3B2, #EEE2CB);">🏯</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #EEE2CB, #F3EFE9);">🐼</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #B8A99A, #D4C3B2);">🏔️</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #AE8659, #D4C3B2);">🏯</div>
+            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);">🏯</div>
+            <div class="about__image" style="background: linear-gradient(135deg, #FAF6EF, #EFE2CC);">🐼</div>
+            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #B8874D);">🏔️</div>
+            <div class="about__image" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);">🏯</div>
           </div>
           <div class="fade-in">
             <div class="about__text-tag">✨ Tentang Kami</div>
@@ -1264,7 +1272,7 @@
           <!-- Beijing -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #C22423 0%, #E85D5D 100%);">🏯</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #C4282B 0%, #8F1D1D 100%);">🏯</div>
               <div class="package-card__badge">Populer</div>
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
@@ -1281,7 +1289,7 @@
           <!-- Shanghai -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🌃</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #25313A 0%, #6F6A63 100%);">🌃</div>
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
@@ -1297,7 +1305,7 @@
           <!-- Xi'an -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🗿</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #8F1D1D 0%, #C4282B 100%);">🗿</div>
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
@@ -1313,7 +1321,7 @@
           <!-- Chengdu -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🐼</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #2F6F62 0%, #B8874D 100%);">🐼</div>
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
@@ -1329,7 +1337,7 @@
           <!-- Guilin -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🏞️</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #2F6F62 0%, #EFE2CC 100%);">🏞️</div>
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
@@ -1345,7 +1353,7 @@
           <!-- Zhangjiajie -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">⛰️</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #B8874D 0%, #C4282B 100%);">⛰️</div>
               <div class="package-card__badge">Best Seller</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
@@ -1362,7 +1370,7 @@
           <!-- Golden Route -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #AE8659 0%, #D4B896 100%);">🏆</div>
+              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #B8874D 0%, #EFE2CC 100%);">🏆</div>
               <div class="package-card__badge">Recommended</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
@@ -1377,7 +1385,7 @@
             </div>
           </div>
           <!-- Custom -->
-          <div class="package-card fade-in" style="border: 2px dashed var(--accent); background: rgba(174,134,89,0.03);">
+          <div class="package-card fade-in" style="border: 2px dashed var(--color-gold); background: rgba(184,135,77,0.03);">
             <div class="package-card__image">
               <div class="package-card__image-bg" style="background: linear-gradient(135deg, var(--gray-100), var(--gray-200));">✨</div>
             </div>
@@ -1503,7 +1511,7 @@
         </div>
         <div class="destinations__grid">
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #C22423, #E85D5D);">🏯</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #C4282B, #8F1D1D);">🏯</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Beijing</div>
@@ -1511,7 +1519,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #667eea, #764ba2);">🌃</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #25313A, #6F6A63);">🌃</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Shanghai</div>
@@ -1519,7 +1527,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #f093fb, #f5576c);">🗿</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #8F1D1D, #C4282B);">🗿</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Xi'an</div>
@@ -1527,7 +1535,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🐼</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #2F6F62, #B8874D);">🐼</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Chengdu</div>
@@ -1535,7 +1543,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">🏞️</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #2F6F62, #EFE2CC);">🏞️</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guilin</div>
@@ -1543,7 +1551,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">⛰️</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #B8874D, #C4282B);">⛰️</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Zhangjiajie</div>
@@ -1551,7 +1559,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #D4C3B2, #EEE2CB);">🌸</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);">🌸</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Hangzhou</div>
@@ -1559,7 +1567,7 @@
             </div>
           </div>
           <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #AE8659, #D4C3B2);">🏙️</div>
+            <div class="dest-card__bg" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);">🏙️</div>
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guangzhou</div>
