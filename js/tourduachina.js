@@ -831,9 +831,12 @@
   // ============================================
   // INITIALIZATION
   // ============================================
-  function init() {
-    console.log('🚀 Tourduachina.id — Initializing...');
+  function initFooterYear() {
+    const el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  }
 
+  function init() {
     // Main functionality
     addNotificationStyles();
     initMobileMenu();
@@ -847,6 +850,7 @@
     initBackToTop();
     initLazyLoading();
     initCounterAnimation();
+    initFooterYear();
 
     // Schema markup
     initSchemaMarkup();
@@ -856,8 +860,6 @@
     setupAutoTracking();
     trackPerformance();
     trackWebVitals();
-
-    console.log('✅ Tourduachina.id — All loaded');
   }
 
   // Run when DOM is ready

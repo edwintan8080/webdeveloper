@@ -272,8 +272,15 @@
       font-size: 22px;
       font-weight: 800;
       color: var(--white);
+      display: flex;
+      align-items: center;
     }
     .header__logo span { color: var(--accent); }
+    .header__logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
     .header__nav { display: flex; align-items: center; gap: 32px; }
     .header__link {
       font-size: 14px;
@@ -1118,7 +1125,7 @@
   <header class="header" role="banner">
     <div class="container header__inner">
       <a href="/" class="header__logo" aria-label="Tourduachina.id Home">
-        Tourdua<span>china.id</span>
+        <img src="/images/logo.png" alt="Tourduachina.id" class="header__logo-img" onerror="this.src='/images/logo-placeholder.svg'">
       </a>
       <nav class="header__nav" role="navigation" aria-label="Main navigation">
         <a href="#home" class="header__link">Home</a>
@@ -1784,7 +1791,9 @@
     <div class="container">
       <div class="footer__grid">
         <div>
-          <div class="header__logo" style="font-size: 24px;">Tourdua<span>china.id</span></div>
+          <div class="header__logo" style="font-size: 24px;">
+            <img src="/images/logo.png" alt="Tourduachina.id" style="height:56px;width:auto;" onerror="this.src='/images/logo-placeholder.svg'">
+          </div>
           <p class="footer__brand-desc">Spesialis private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.</p>
           <div class="footer__social">
             <a href="https://instagram.com/tourduachina.id" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
@@ -1817,7 +1826,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copyright">© 2025 Tourduachina.id. All rights reserved.</p>
+        <p class="footer__copyright">© <span id="footer-year">2025</span> Tourduachina.id. All rights reserved.</p>
         <p class="footer__copyright">Made with ❤️ for Indonesian travelers</p>
       </div>
     </div>
