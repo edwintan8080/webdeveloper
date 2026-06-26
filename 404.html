@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Tidak Ditemukan — Tourduachina.id</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #C22423;
+      --accent: #AE8659;
+      --dark: #2C343A;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--dark) 0%, #41484D 100%);
+      color: white;
+      text-align: center;
+      padding: 24px;
+    }
+    .error { max-width: 500px; }
+    .error__code {
+      font-family: var(--font-heading);
+      font-size: 120px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .error__title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      margin: 16px 0;
+    }
+    .error__desc {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: var(--primary);
+      color: white;
+      border-radius: 9999px;
+      font-family: var(--font-heading);
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn:hover { background: #A51E1E; transform: translateY(-2px); }
+    .links {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="error">
+    <div class="error__code">404</div>
+    <h1 class="error__title">Halaman Tidak Ditemukan</h1>
+    <p class="error__desc">Sepertinya halaman yang Anda cari sudah dipindahkan atau tidak tersedia. Mari kita kembali menjelajahi China!</p>
+    <a href="/" class="btn">← Kembali ke Home</a>
+    <div class="links">
+      <a href="/#packages">Paket Tour</a>
+      <a href="/#about">Tentang Kami</a>
+      <a href="/#faq">FAQ</a>
+      <a href="https://wa.me/6281234567890">WhatsApp Kami</a>
+    </div>
+  </div>
+</body>
+</html>
