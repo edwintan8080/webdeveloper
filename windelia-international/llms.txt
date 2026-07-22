@@ -1,0 +1,35 @@
+# llms.txt — AI Crawler Instructions
+# PT Windelia International Solutions
+
+> PT Windelia International Solutions adalah perusahaan Indonesia yang menyediakan solusi terintegrasi bagi bisnis dan perorangan Indonesia yang membutuhkan layanan di China. Kami menaungi empat lini layanan: sourcing produk, tour & travel (di bawah brand Tour Dua China), medical tour, dan agen pendidikan.
+
+## Layanan
+- Sourcing Produk: pencarian & verifikasi supplier, quality control, konsolidasi & pengiriman dari China ke Indonesia
+- Tour & Travel (Tour Dua China): private tour ke China, custom itinerary, bantuan visa, pemandu berbahasa Indonesia — lihat https://tourduachina.id/
+- Medical Tour: pendampingan perjalanan berobat ke rumah sakit China, penerjemah medis, akomodasi & transportasi pasien
+- Agen Pendidikan: bantuan pendaftaran sekolah & universitas di China, pengurusan visa pelajar, pendampingan pra-keberangkatan
+
+## Struktur Perusahaan
+- PT Windelia International Solutions adalah perusahaan induk (holding) yang menaungi keempat divisi di atas.
+- Tour Dua China adalah brand/divisi tour & travel dengan situs terpisah di tourduachina.id.
+
+## Kontak
+- WhatsApp: [NOMOR WHATSAPP]
+- Email: info@windeliainternational.com
+- Alamat: [ALAMAT KANTOR], [KOTA], [PROVINSI] [KODE POS], Indonesia
+- Jam Operasional: Senin–Sabtu 09:00–18:00 WIB
+
+## Fakta Penting
+- Perusahaan berbadan hukum resmi di Indonesia (NIB: [NOMOR NIB])
+- Melayani klien Indonesia dengan kebutuhan lintas Indonesia–China
+- Tim dwibahasa (Indonesia–Mandarin)
+
+## Link
+- [Layanan](/services.html)
+- [Sourcing Produk](/services/sourcing-product.html)
+- [Tour & Travel](/services/tour-travel.html)
+- [Medical Tour](/services/medical-tour.html)
+- [Agen Pendidikan](/services/education-agency.html)
+- [Tentang Kami](/about.html)
+- [FAQ](/faq.html)
+- [Kontak](/contact.html)
