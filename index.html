@@ -24,36 +24,188 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://tourduachina.id/">
-  
+
+  <!-- Hreflang -->
+  <link rel="alternate" href="https://tourduachina.id/" hreflang="id">
+  <link rel="alternate" href="https://tourduachina.id/" hreflang="x-default">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- JSON-LD Schema -->
+  <!-- JSON-LD Schema (static — visible to non-JS AI/SEO crawlers) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "Tourduachina.id",
+    "alternateName": "Tourdua China",
     "description": "Private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.",
     "url": "https://tourduachina.id",
     "logo": "https://tourduachina.id/images/logo.png",
+    "image": "https://tourduachina.id/images/og-image.jpg",
     "telephone": "+86-158-1125-2101",
     "email": "tourduachina@gmail.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Beijing",
       "addressRegion": "Beijing",
-      "addressCountry": "ID"
+      "addressCountry": "CN"
     },
+    "areaServed": { "@type": "Country", "name": "China" },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "500"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rina Wijaya" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Pertama kali ke China, tapi semuanya berjalan lancar berkat Tourduachina.id! Pemandu sangat helpful, sabar, dan tahu banget tempat-tempat bagus.",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Beijing Heritage" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Budi & Keluarga" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Anak-anak senang banget lihat panda di Chengdu! Private tour bikin kami fleksibel atur jadwal. Worth every rupiah!",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Chengdu Panda" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Maya Sari" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Zhangjiajie luar biasa indah! Tim Tourduachina.id sangat profesional dari awal planning sampai akhir trip. Visa juga dibantu, jadi ga ribet sama sekali.",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Zhangjiajie Adventure" }
+      }
+    ],
     "sameAs": [
       "https://instagram.com/tourduachina.id"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tourduachina.id",
+    "url": "https://tourduachina.id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Paket Private Tour China",
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Beijing Heritage",
+          "description": "5 hari 4 malam menjelajahi Tembok Besar dan Forbidden City bersama pemandu berbahasa Indonesia.",
+          "touristType": ["Cultural", "Heritage"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/beijing.html",
+          "image": "https://tourduachina.id/images/destinations/beijing.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Shanghai Modern",
+          "description": "4 hari 3 malam menikmati The Bund dan Yu Garden di kota metropolitan Shanghai.",
+          "touristType": ["City", "Modern"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/shanghai.html",
+          "image": "https://tourduachina.id/images/destinations/shanghai.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 3,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Xi'an Ancient",
+          "description": "4 hari 3 malam mengunjungi Terracotta Warriors dan tembok kota kuno Xi'an.",
+          "touristType": ["Historical", "Cultural"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/xian.html",
+          "image": "https://tourduachina.id/images/destinations/xian.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 4,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Chengdu Panda",
+          "description": "4 hari 3 malam bertemu panda raksasa di Panda Base dan menyusuri Jinli Street.",
+          "touristType": ["Wildlife", "Family"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/chengdu.html",
+          "image": "https://tourduachina.id/images/destinations/chengdu.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 5,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Guilin Nature",
+          "description": "5 hari 4 malam menyusuri Sungai Li dan pegunungan karst Yangshuo.",
+          "touristType": ["Nature", "Adventure"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/guilin.html",
+          "image": "https://tourduachina.id/images/destinations/guilin.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 6,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Zhangjiajie Adventure",
+          "description": "5 hari 4 malam menjelajahi pilar batu Zhangjiajie, inspirasi pegunungan Avatar.",
+          "touristType": ["Adventure", "Nature"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/zhangjiajie.html",
+          "image": "https://tourduachina.id/images/destinations/zhangjiajie.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 7,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "China Golden Route",
+          "description": "8 hari 7 malam rute lengkap Beijing-Xi'an-Shanghai untuk pengalaman China yang komprehensif.",
+          "touristType": ["Multi-City", "Comprehensive"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "itinerary": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Hari 1-3: Beijing — Tembok Besar & Forbidden City"},
+              {"@type": "ListItem", "position": 2, "name": "Hari 4-5: Xi'an — Terracotta Warriors"},
+              {"@type": "ListItem", "position": 3, "name": "Hari 6-8: Shanghai — The Bund & Yu Garden"}
+            ]
+          },
+          "url": "https://tourduachina.id/#contact",
+          "image": "https://tourduachina.id/images/destinations/golden-route.svg"
+        }
+      }
     ]
   }
   </script>
@@ -73,1060 +225,8 @@
     ]
   }
   </script>
-  
-  <style>
-    /* ============================================
-       CSS CUSTOM PROPERTIES
-       ============================================ */
-    :root {
-      /* === BRAND COLORS === */
-      --color-primary-red: #C4282B;
-      --color-primary-red-dark: #8F1D1D;
-      --color-gold: #B8874D;
-      --color-gold-soft: #EFE2CC;
-      --color-ivory: #FAF6EF;
-      --color-white: #FFFFFF;
-      --color-charcoal: #25313A;
-      --color-gray: #6F6A63;
-      --color-jade: #2F6F62;
 
-      /* Aliases for existing classes */
-      --primary: #C4282B;
-      --primary-dark: #8F1D1D;
-      --accent: #B8874D;
-      --accent-dark: #987246;
-      --accent-light: #EFE2CC;
-      --success: #2F6F62;
-      --dark: #25313A;
-      --dark-deep: #25313A;
-      --cream: #EFE2CC;
-      --ivory: #FAF6EF;
-      --gray-50: #FAF6EF;
-      --gray-100: #FAF6EF;
-      --gray-200: #EFE2CC;
-      --gray-300: #B8A99A;
-      --gray-400: #6F6A63;
-      --gray-500: #6F6A63;
-      --gray-600: #25313A;
-      --gray-700: #25313A;
-      --gray-800: #25313A;
-      --white: #FFFFFF;
-      --shadow-sm: 0 1px 4px rgba(37,49,58,0.06);
-      --shadow-md: 0 4px 16px rgba(37,49,58,0.08);
-      --shadow-lg: 0 12px 32px rgba(37,49,58,0.1);
-      --shadow-xl: 0 24px 48px rgba(37,49,58,0.12);
-      --radius-sm: 12px;
-      --radius-md: 16px;
-      --radius-lg: 20px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ============================================
-       RESET & BASE
-       ============================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--dark-deep);
-      background: var(--ivory);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    ul { list-style: none; }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
-
-    /* Skip to content */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 16px;
-      z-index: 9999;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* ============================================
-       LAYOUT
-       ============================================ */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .section {
-      padding: 80px 0;
-    }
-    .section__header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 48px;
-    }
-    .section__subtitle {
-      font-family: var(--font-heading);
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .section__title {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 16px;
-    }
-    .section__title span { color: var(--primary); }
-    .section__desc {
-      font-size: 16px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-
-    /* ============================================
-       ANIMATIONS
-       ============================================ */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in { opacity: 1; transform: none; transition: none; }
-      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-
-    /* ============================================
-       BUTTONS
-       ============================================ */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 28px;
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .btn--primary {
-      background: var(--primary);
-      color: var(--white);
-    }
-    .btn--primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .btn--outline {
-      background: transparent;
-      color: var(--color-charcoal);
-      border: 2px solid var(--color-gold);
-    }
-    .btn--outline:hover { background: var(--color-gold); color: var(--white); }
-    .btn--gold {
-      background: var(--accent);
-      color: var(--dark);
-    }
-    .btn--gold:hover { background: var(--accent-dark); transform: translateY(-2px); }
-    .btn--white {
-      background: var(--white);
-      color: var(--primary);
-    }
-    .btn--white:hover { background: var(--gray-50); transform: translateY(-2px); }
-    .btn--lg { padding: 16px 36px; font-size: 16px; }
-
-    /* ============================================
-       HEADER
-       ============================================ */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--color-gold-soft);
-      transition: var(--transition);
-    }
-    .header--scrolled {
-      background: rgba(255,255,255,0.99);
-      box-shadow: 0 2px 20px rgba(37,49,58,0.08);
-    }
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .header__logo {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--color-charcoal);
-      display: flex;
-      align-items: center;
-    }
-    .header__logo span { color: var(--color-gold); }
-    .header__logo-img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-    }
-    .header__nav { display: flex; align-items: center; gap: 32px; }
-    .header__link {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--color-gray);
-      transition: var(--transition);
-    }
-    .header__link:hover { color: var(--color-charcoal); }
-    .header__actions { display: flex; align-items: center; gap: 12px; }
-    .header__cta {
-      background: var(--color-primary-red);
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .header__cta:hover { background: var(--color-primary-red-dark); }
-    .header__lang {
-      color: var(--color-gray);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 6px 12px;
-      border: 1px solid var(--color-gold-soft);
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-    }
-    .header__lang:hover { border-color: var(--color-gold); color: var(--color-charcoal); }
-    .header__hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 8px;
-      flex-shrink: 0;
-    }
-    @media (max-width: 768px) {
-      .header__cta { display: none; }
-      .header__lang { display: none; }
-    }
-    .header__hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--color-charcoal);
-      transition: var(--transition);
-    }
-
-    /* Mobile Nav */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--color-charcoal);
-      z-index: 999;
-      padding: 32px 24px;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .mobile-nav.active { display: flex; }
-    .mobile-nav a {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--white);
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* ============================================
-       HERO
-       ============================================ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #FAF6EF 0%, #EFE2CC 100%);
-      overflow: hidden;
-      padding-top: 72px;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: none;
-    }
-    .hero__decoration {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .hero__mountain {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40%;
-      background: linear-gradient(180deg, transparent 0%, rgba(37,49,58,0.6) 100%);
-    }
-    .hero__pillar {
-      position: absolute;
-      bottom: 15%;
-      width: 60px;
-      background: linear-gradient(180deg, rgba(184,135,77,0.15) 0%, rgba(184,135,77,0.05) 100%);
-      border-radius: 8px 8px 0 0;
-    }
-    .hero__pillar:nth-child(1) { left: 10%; height: 200px; }
-    .hero__pillar:nth-child(2) { left: 18%; height: 280px; width: 50px; }
-    .hero__pillar:nth-child(3) { left: 25%; height: 160px; width: 70px; }
-    .hero__pillar:nth-child(4) { right: 15%; height: 240px; }
-    .hero__pillar:nth-child(5) { right: 22%; height: 180px; width: 55px; }
-    .hero__pillar:nth-child(6) { right: 30%; height: 300px; width: 45px; }
-    .hero__content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      max-width: 800px;
-      padding: 0 24px;
-    }
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(184,135,77,0.1);
-      border: 1px solid rgba(184,135,77,0.3);
-      color: var(--color-gold);
-      padding: 8px 20px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-    .hero__title {
-      font-size: 52px;
-      font-weight: 800;
-      color: var(--color-charcoal);
-      margin-bottom: 20px;
-      line-height: 1.15;
-    }
-    .hero__title span { color: var(--color-primary-red); }
-    .hero__subtitle {
-      font-size: 18px;
-      color: var(--color-gray);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-    .hero__cta-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .hero__stats {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 64px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(184,135,77,0.2);
-    }
-    .hero__stat-value {
-      font-family: var(--font-heading);
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--color-gold);
-    }
-    .hero__stat-label {
-      font-size: 13px;
-      color: var(--color-gray);
-      margin-top: 4px;
-    }
-
-    /* ============================================
-       ABOUT
-       ============================================ */
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about__image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .about__image {
-      aspect-ratio: 4/3;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-    }
-    .about__image:nth-child(2) { margin-top: 32px; }
-    .about__image:nth-child(3) { margin-top: -32px; }
-    .about__text-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(184,135,77,0.1);
-      color: var(--color-gold);
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .about__title {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-    .about__title span { color: var(--primary); }
-    .about__desc {
-      color: var(--gray-500);
-      margin-bottom: 24px;
-      line-height: 1.8;
-    }
-    .about__features {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .about__feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .about__feature-icon {
-      width: 24px;
-      height: 24px;
-      background: rgba(47,111,98,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: var(--color-jade);
-      font-size: 14px;
-    }
-    .about__feature-text { font-size: 15px; color: var(--gray-600); }
-
-    /* ============================================
-       PACKAGES
-       ============================================ */
-    .packages { background: var(--color-ivory); }
-    .packages__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .package-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .package-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .package-card__image {
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    .package-card__image-bg {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-    }
-    .package-card__badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .package-card__rating {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(8px);
-      color: var(--white);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .package-card__body { padding: 20px; }
-    .package-card__city {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--color-gold);
-      margin-bottom: 8px;
-    }
-    .package-card__name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-    .package-card__duration {
-      font-size: 13px;
-      color: var(--gray-400);
-      margin-bottom: 16px;
-    }
-    .package-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      border-top: 1px solid var(--gray-100);
-    }
-    .package-card__price {
-      font-family: var(--font-heading);
-      font-size: 11px;
-      color: var(--gray-400);
-    }
-    .package-card__price strong {
-      display: block;
-      font-size: 20px;
-      color: var(--primary);
-      font-weight: 800;
-    }
-    .package-card__cta {
-      background: var(--primary);
-      color: var(--white);
-      padding: 10px 20px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .package-card__cta:hover { background: var(--primary-dark); }
-
-    /* ============================================
-       WHY US
-       ============================================ */
-    .why-us__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .why-card {
-      text-align: center;
-      padding: 40px 24px;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--color-gold-soft);
-      transition: var(--transition);
-    }
-    .why-card:hover { border-color: var(--color-gold); box-shadow: var(--shadow-md); transform: translateY(-4px); }
-    .why-card__icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      background: var(--color-gold-soft);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-    .why-card__title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-    .why-card__desc {
-      font-size: 14px;
-      color: var(--gray-500);
-      line-height: 1.6;
-    }
-
-    /* ============================================
-       SERVICES
-       ============================================ */
-    .services { background: var(--color-charcoal); }
-    .services .section__title { color: var(--white); }
-    .services .section__title span { color: var(--color-gold); }
-    .services .section__desc { color: rgba(255,255,255,0.6); }
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      transition: var(--transition);
-    }
-    .service-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(184,135,77,0.4); transform: translateY(-4px); }
-    .service-card__icon {
-      width: 56px;
-      height: 56px;
-      margin-bottom: 20px;
-      background: rgba(184,135,77,0.15);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-    }
-    .service-card__title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .service-card__desc {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-    }
-
-    /* ============================================
-       DESTINATIONS
-       ============================================ */
-    .destinations__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .dest-card {
-      position: relative;
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .dest-card__bg {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 72px;
-      transition: transform 0.6s ease;
-    }
-    .dest-card:hover .dest-card__bg { transform: scale(1.1); }
-    .dest-card__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.55) 100%);
-    }
-    .dest-card__content {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-    }
-    .dest-card__name {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-    }
-    .dest-card__country {
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* ============================================
-       TESTIMONIALS
-       ============================================ */
-    .testimonials { background: var(--color-ivory); }
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
-    }
-    .testimonial-card__stars {
-      color: var(--color-gold);
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-    .testimonial-card__text {
-      font-size: 15px;
-      color: var(--gray-600);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .testimonial-card__author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .testimonial-card__avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--color-gold), var(--accent-dark));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .testimonial-card__name {
-      font-weight: 600;
-      color: var(--dark);
-      font-size: 15px;
-    }
-    .testimonial-card__location {
-      font-size: 13px;
-      color: var(--gray-400);
-    }
-
-    /* ============================================
-       FAQ
-       ============================================ */
-    .faq__grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border: 1px solid var(--color-gold-soft);
-      border-radius: var(--radius-md);
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-    .faq-item__question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--dark);
-      text-align: left;
-      background: var(--white);
-      transition: var(--transition);
-    }
-    .faq-item__question:hover { background: var(--cream); }
-    .faq-item__icon {
-      font-size: 20px;
-      color: var(--color-gold);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-    .faq-item.active .faq-item__icon { transform: rotate(45deg); }
-    .faq-item__answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    .faq-item__answer-inner {
-      padding: 0 24px 20px;
-      font-size: 15px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-    .faq-item.active .faq-item__answer { max-height: 300px; }
-
-    /* ============================================
-       BOOKING CTA
-       ============================================ */
-    .booking {
-      background: var(--color-charcoal);
-    }
-    .booking__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .booking__title {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .booking__title span { color: var(--color-gold); }
-    .booking__desc {
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-    .booking__contact-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .booking__contact-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(184,135,77,0.12);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-    .booking__contact-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-    }
-    .booking__contact-value {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .booking__form {
-      background: var(--white);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-    }
-    .booking__form-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 24px;
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gray-600);
-      margin-bottom: 6px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-body);
-      font-size: 14px;
-      color: var(--dark);
-      transition: var(--transition);
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--color-gold);
-      box-shadow: 0 0 0 3px rgba(184,135,77,0.12);
-    }
-    .form-group textarea { resize: vertical; min-height: 80px; }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .form-submit {
-      width: 100%;
-      padding: 16px;
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .form-submit:hover { background: var(--primary-dark); }
-
-    /* ============================================
-       FOOTER
-       ============================================ */
-    .footer {
-      background: var(--color-charcoal);
-      padding: 64px 0 32px;
-      border-top: 1px solid rgba(184,135,77,0.1);
-    }
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer__brand-desc {
-      font-size: 14px;
-      color: rgba(184,135,77,0.6);
-      margin-top: 16px;
-      line-height: 1.7;
-    }
-    .footer__social {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .footer__social a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.05);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      transition: var(--transition);
-      font-size: 18px;
-    }
-    .footer__social a:hover { background: var(--color-gold); color: var(--white); }
-    .footer__title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-    .footer__link {
-      display: block;
-      font-size: 14px;
-      color: var(--color-gold-soft);
-      margin-bottom: 12px;
-      transition: var(--transition);
-    }
-    .footer__link:hover { color: var(--color-gold); }
-    .footer__bottom {
-      padding-top: 32px;
-      border-top: 1px solid rgba(184,135,77,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer__copyright {
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    /* ============================================
-       WHATSAPP BUTTON
-       ============================================ */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: var(--transition);
-      font-size: 28px;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
-    .whatsapp-float::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #25D366;
-      animation: whatsapp-pulse 2s infinite;
-    }
-    @keyframes whatsapp-pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.5); opacity: 0; }
-    }
-
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
-    @media (max-width: 1024px) {
-      .packages__grid { grid-template-columns: repeat(2, 1fr); }
-      .why-us__grid { grid-template-columns: repeat(2, 1fr); }
-      .destinations__grid { grid-template-columns: repeat(2, 1fr); }
-      .footer__grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .section { padding: 60px 0; }
-      .section__title { font-size: 28px; }
-      .header__nav { display: none; }
-      .header__hamburger { display: flex; }
-      .hero__title { font-size: 36px; }
-      .hero__subtitle { font-size: 16px; }
-      .hero__stats { flex-direction: column; gap: 24px; }
-      .about__grid { grid-template-columns: 1fr; gap: 40px; }
-      .about__image-grid { order: -1; }
-      .packages__grid { grid-template-columns: 1fr; }
-      .services__grid { grid-template-columns: 1fr; }
-      .testimonials__grid { grid-template-columns: 1fr; }
-      .destinations__grid { grid-template-columns: repeat(2, 1fr); }
-      .booking__grid { grid-template-columns: 1fr; gap: 40px; }
-      .booking__form { padding: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
-    }
-    @media (max-width: 480px) {
-      .hero__title { font-size: 28px; }
-      .hero__cta-group { flex-direction: column; width: 100%; }
-      .hero__cta-group .btn { width: 100%; }
-      .why-us__grid { grid-template-columns: 1fr; }
-      .destinations__grid { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Skip to Content -->
@@ -1144,6 +244,7 @@
         <a href="#home" class="header__link">Home</a>
         <a href="#packages" class="header__link">Paket Tour</a>
         <a href="#services" class="header__link">Layanan</a>
+        <a href="/blog.html" class="header__link">Blog</a>
         <a href="#about" class="header__link">Tentang</a>
         <a href="#faq" class="header__link">FAQ</a>
         <a href="#contact" class="header__link">Kontak</a>
@@ -1163,6 +264,7 @@
     <a href="#home">Home</a>
     <a href="#packages">Paket Tour</a>
     <a href="#services">Layanan</a>
+    <a href="/blog.html">Blog</a>
     <a href="#about">Tentang</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Kontak</a>
@@ -1223,10 +325,10 @@
       <div class="container">
         <div class="about__grid">
           <div class="about__image-grid fade-in">
-            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);">🏯</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #FAF6EF, #EFE2CC);">🐼</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #B8874D);">🏔️</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);">🏯</div>
+            <div class="about__image"><img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang di Beijing" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/chengdu.svg" alt="Panda raksasa di Chengdu Panda Base" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pegunungan Zhangjiajie" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/xian.svg" alt="Prajurit Terakota di Xi'an" loading="lazy" width="400" height="300"></div>
           </div>
           <div class="fade-in">
             <div class="about__text-tag">✨ Tentang Kami</div>
@@ -1272,13 +374,13 @@
           <!-- Beijing -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #C4282B 0%, #8F1D1D 100%);">🏯</div>
+              <img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang, ikon paket tour Beijing Heritage" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Populer</div>
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Beijing</div>
-              <h3 class="package-card__name">Beijing Heritage</h3>
+              <h3 class="package-card__name"><a href="beijing.html" style="color:inherit;">Beijing Heritage</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Tembok Besar, Forbidden City</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1289,12 +391,12 @@
           <!-- Shanghai -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #25313A 0%, #6F6A63 100%);">🌃</div>
+              <img src="images/destinations/shanghai.svg" alt="Skyline modern kota Shanghai, ikon paket tour Shanghai Modern" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Shanghai</div>
-              <h3 class="package-card__name">Shanghai Modern</h3>
+              <h3 class="package-card__name"><a href="shanghai.html" style="color:inherit;">Shanghai Modern</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • The Bund, Yu Garden</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1305,12 +407,12 @@
           <!-- Xi'an -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #8F1D1D 0%, #C4282B 100%);">🗿</div>
+              <img src="images/destinations/xian.svg" alt="Prajurit Terakota, ikon paket tour Xi'an Ancient" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Xi'an</div>
-              <h3 class="package-card__name">Xi'an Ancient</h3>
+              <h3 class="package-card__name"><a href="xian.html" style="color:inherit;">Xi'an Ancient</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • Terracotta Warriors</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1321,12 +423,12 @@
           <!-- Chengdu -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #2F6F62 0%, #B8874D 100%);">🐼</div>
+              <img src="images/destinations/chengdu.svg" alt="Panda raksasa, ikon paket tour Chengdu Panda" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Chengdu</div>
-              <h3 class="package-card__name">Chengdu Panda</h3>
+              <h3 class="package-card__name"><a href="chengdu.html" style="color:inherit;">Chengdu Panda</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • Panda Base, Jinli Street</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1337,12 +439,12 @@
           <!-- Guilin -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #2F6F62 0%, #EFE2CC 100%);">🏞️</div>
+              <img src="images/destinations/guilin.svg" alt="Pegunungan karst dan Sungai Li, ikon paket tour Guilin Nature" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Guilin</div>
-              <h3 class="package-card__name">Guilin Nature</h3>
+              <h3 class="package-card__name"><a href="guilin.html" style="color:inherit;">Guilin Nature</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Li River, Yangshuo</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1353,13 +455,13 @@
           <!-- Zhangjiajie -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #B8874D 0%, #C4282B 100%);">⛰️</div>
+              <img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pasir menjulang, ikon paket tour Zhangjiajie Adventure" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Best Seller</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Zhangjiajie</div>
-              <h3 class="package-card__name">Zhangjiajie Adventure</h3>
+              <h3 class="package-card__name"><a href="zhangjiajie.html" style="color:inherit;">Zhangjiajie Adventure</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Avatar Mountains</div>
               <div class="package-card__footer">
                 <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
@@ -1370,7 +472,7 @@
           <!-- Golden Route -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #B8874D 0%, #EFE2CC 100%);">🏆</div>
+              <img src="images/destinations/golden-route.svg" alt="Peta rute multi-kota, ikon paket tour China Golden Route" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Recommended</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
@@ -1387,7 +489,7 @@
           <!-- Custom -->
           <div class="package-card fade-in" style="border: 2px dashed var(--color-gold); background: rgba(184,135,77,0.03);">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, var(--gray-100), var(--gray-200));">✨</div>
+              <img src="images/destinations/custom-trip.svg" alt="Kompas perjalanan, ikon paket Custom Trip" class="package-card__image-bg" loading="lazy" width="400" height="200">
             </div>
             <div class="package-card__body" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
               <h3 class="package-card__name">Custom Trip</h3>
@@ -1510,70 +612,70 @@
           <p class="section__desc">Dari tembok kuno hingga pegunungan megah, China punya semuanya.</p>
         </div>
         <div class="destinations__grid">
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #C4282B, #8F1D1D);">🏯</div>
+          <a href="beijing.html" class="dest-card fade-in">
+            <img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang di Beijing" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Beijing</div>
               <div class="dest-card__country">Ibu Kota China</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #25313A, #6F6A63);">🌃</div>
+          </a>
+          <a href="shanghai.html" class="dest-card fade-in">
+            <img src="images/destinations/shanghai.svg" alt="Skyline modern kota Shanghai" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Shanghai</div>
               <div class="dest-card__country">Kota Modern</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #8F1D1D, #C4282B);">🗿</div>
+          </a>
+          <a href="xian.html" class="dest-card fade-in">
+            <img src="images/destinations/xian.svg" alt="Prajurit Terakota di Xi'an" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Xi'an</div>
               <div class="dest-card__country">Kota Kuno</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #2F6F62, #B8874D);">🐼</div>
+          </a>
+          <a href="chengdu.html" class="dest-card fade-in">
+            <img src="images/destinations/chengdu.svg" alt="Panda raksasa di Chengdu Panda Base" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Chengdu</div>
               <div class="dest-card__country">Kota Panda</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #2F6F62, #EFE2CC);">🏞️</div>
+          </a>
+          <a href="guilin.html" class="dest-card fade-in">
+            <img src="images/destinations/guilin.svg" alt="Pegunungan karst dan Sungai Li di Guilin" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guilin</div>
               <div class="dest-card__country">Sungai &amp; Pegunungan</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #B8874D, #C4282B);">⛰️</div>
+          </a>
+          <a href="zhangjiajie.html" class="dest-card fade-in">
+            <img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pegunungan Zhangjiajie" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Zhangjiajie</div>
               <div class="dest-card__country">Avatar Mountains</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);">🌸</div>
+          </a>
+          <a href="#contact" class="dest-card fade-in">
+            <img src="images/destinations/hangzhou.svg" alt="Danau Barat (West Lake) di Hangzhou" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Hangzhou</div>
               <div class="dest-card__country">West Lake</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);">🏙️</div>
+          </a>
+          <a href="#contact" class="dest-card fade-in">
+            <img src="images/destinations/guangzhou.svg" alt="Menara Canton dan skyline Guangzhou" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guangzhou</div>
               <div class="dest-card__country">Dim Sum Capital</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1845,17 +947,18 @@
           <a href="#home" class="footer__link">Home</a>
           <a href="#packages" class="footer__link">Paket Tour</a>
           <a href="#services" class="footer__link">Layanan</a>
+          <a href="/blog.html" class="footer__link">Blog</a>
           <a href="#about" class="footer__link">Tentang</a>
           <a href="#faq" class="footer__link">FAQ</a>
         </div>
         <div>
           <div class="footer__title">Destinasi</div>
-          <a href="#" class="footer__link">Beijing</a>
-          <a href="#" class="footer__link">Shanghai</a>
-          <a href="#" class="footer__link">Xi'an</a>
-          <a href="#" class="footer__link">Chengdu</a>
-          <a href="#" class="footer__link">Guilin</a>
-          <a href="#" class="footer__link">Zhangjiajie</a>
+          <a href="beijing.html" class="footer__link">Beijing</a>
+          <a href="shanghai.html" class="footer__link">Shanghai</a>
+          <a href="xian.html" class="footer__link">Xi'an</a>
+          <a href="chengdu.html" class="footer__link">Chengdu</a>
+          <a href="guilin.html" class="footer__link">Guilin</a>
+          <a href="zhangjiajie.html" class="footer__link">Zhangjiajie</a>
         </div>
         <div>
           <div class="footer__title">Kontak</div>

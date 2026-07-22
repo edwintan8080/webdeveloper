@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+<title id="title">Ilustrasi Danau Barat Hangzhou</title>
+<desc id="desc">Ilustrasi danau dengan paviliun tepi air melambangkan Hangzhou dan West Lake yang terkenal indah.</desc>
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#EFE2CC"/>
+<stop offset="100%" stop-color="#FAF6EF"/>
+</linearGradient>
+</defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<g transform="translate(400 440) scale(1.0)" fill="rgba(255,255,255,0.92)">
+<path d="M-260,60 q65,-40 130,0 t130,0 t130,0 v20 q-65,40 -130,0 t-130,0 t-130,0 z"/>
+<path d="M-260,110 q65,-30 130,0 t130,0 t130,0 v14 q-65,30 -130,0 t-130,0 t-130,0 z" opacity="0.6"/>
+<g transform="translate(90 -80) scale(0.55)">
+<rect x="-14" y="120" width="28" height="80"/>
+<rect x="-90" y="90" width="180" height="18" rx="4"/>
+<polygon points="-100,90 0,20 100,90"/>
+<rect x="-65" y="10" width="130" height="14" rx="4"/>
+<polygon points="-72,10 0,-45 72,10"/>
+</g>
+</g>
+</svg>

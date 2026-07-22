@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+<title id="title">Ilustrasi Trip Custom</title>
+<desc id="desc">Ilustrasi kompas melambangkan paket Custom Trip yang bisa disesuaikan dengan keinginan wisatawan.</desc>
+<defs>
+<linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+<stop offset="0%" stop-color="#EFE2CC"/>
+<stop offset="100%" stop-color="#B8A99A"/>
+</linearGradient>
+</defs>
+<rect width="800" height="800" fill="url(#g)"/>
+<g transform="translate(400 400) scale(1.0)" fill="none" stroke="rgba(255,255,255,0.92)" stroke-width="14">
+<circle cx="0" cy="0" r="170"/>
+<polygon points="0,-90 30,0 0,90 -30,0" fill="rgba(255,255,255,0.92)" stroke="none"/>
+<circle cx="0" cy="0" r="14" fill="rgba(255,255,255,0.92)" stroke="none"/>
+</g>
+</svg>

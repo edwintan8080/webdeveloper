@@ -1,13 +1,16 @@
 /**
  * Tourduachina.id — Complete JavaScript
- * Version: 1.0.0
- * Last Updated: 2025-06-26
- * 
+ * Version: 1.1.0
+ * Last Updated: 2026-07-22
+ *
  * Includes:
  * - Main functionality (menu, scroll, accordion, filter, form, animations)
- * - Schema markup (JSON-LD) for AI SEO
  * - Analytics & event tracking (GA4)
- * 
+ *
+ * JSON-LD schema is NOT injected here — it is hard-coded as static
+ * <script type="application/ld+json"> blocks in each page's <head> so it is
+ * visible to AI/SEO crawlers that don't execute JavaScript.
+ *
  * Usage: <script src="js/tourduachina.js" defer></script>
  */
 
@@ -431,151 +434,10 @@
   }
 
   // ============================================
-  // PART 2: SCHEMA MARKUP (JSON-LD)
-  // ============================================
-
-  function injectSchema(schema) {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }
-
-  function initSchemaMarkup() {
-    const { DOMAIN, COMPANY_NAME, COMPANY_EMAIL, WHATSAPP_NUMBER } = CONFIG;
-
-    // TravelAgency Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": COMPANY_NAME,
-      "alternateName": "Tourdua China",
-      "description": "Spesialis private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.",
-      "url": DOMAIN,
-      "logo": `${DOMAIN}/images/logo.png`,
-      "image": `${DOMAIN}/images/og-image.jpg`,
-      "telephone": `+${WHATSAPP_NUMBER}`,
-      "email": COMPANY_EMAIL,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Beijing",
-        "addressRegion": "Beijing",
-        "addressCountry": "ID"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-8.6500",
-        "longitude": "115.2167"
-      },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }],
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5"
-      },
-      "areaServed": { "@type": "Country", "name": "China" },
-      "serviceType": ["Private Tour", "Custom Itinerary", "Visa Assistance", "Airport Transfer"],
-      "sameAs": ["https://instagram.com/tourduachina.id"]
-    });
-
-    // Organization Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": COMPANY_NAME,
-      "url": DOMAIN,
-      "logo": `${DOMAIN}/images/logo.png`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": `+${WHATSAPP_NUMBER}`,
-        "contactType": "customer service",
-        "availableLanguage": ["Indonesian", "Mandarin"]
-      }
-    });
-
-    // Website Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": COMPANY_NAME,
-      "url": DOMAIN,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${DOMAIN}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    });
-
-    // Tour Packages
-    const tourPackages = [
-      { name: "Beijing Heritage Tour", price: "8500000", duration: "5D4N", type: "Cultural", desc: "Tembok Besar, Forbidden City, Temple of Heaven" },
-      { name: "Shanghai Modern Tour", price: "7200000", duration: "4D3N", type: "Leisure", desc: "The Bund, Yu Garden, Nanjing Road" },
-      { name: "Xi'an Ancient Tour", price: "6800000", duration: "4D3N", type: "Cultural", desc: "Terracotta Warriors, Muslim Quarter" },
-      { name: "Chengdu Panda Tour", price: "7500000", duration: "4D3N", type: "Nature", desc: "Panda Base, Jinli Street" },
-      { name: "Guilin Nature Tour", price: "9000000", duration: "5D4N", type: "Nature", desc: "Li River, Yangshuo" },
-      { name: "Zhangjiajie Adventure", price: "10500000", duration: "5D4N", type: "Adventure", desc: "Avatar Mountains, Glass Bridge" },
-      { name: "China Golden Route", price: "15000000", duration: "8D7N", type: "Multi-City", desc: "Beijing-Xi'an-Shanghai" }
-    ];
-
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Paket Tour China",
-      "description": "Daftar paket private tour ke China dari Tourduachina.id",
-      "numberOfItems": tourPackages.length,
-      "itemListElement": tourPackages.map((tour, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "TouristTrip",
-          "name": tour.name,
-          "description": tour.desc,
-          "touristType": tour.type,
-          "provider": { "@type": "TravelAgency", "name": COMPANY_NAME },
-          "offers": {
-            "@type": "Offer",
-
-            "availability": "https://schema.org/InStock"
-          }
-        }
-      }))
-    });
-
-    // FAQ Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Apakah paket tour termasuk tiket pesawat?", "acceptedAnswer": { "@type": "Answer", "text": "Tidak, paket tour kami tidak termasuk tiket pesawat. Kami fokus pada layanan di China: akomodasi, transportasi lokal, pemandu, dan tiket masuk destinasi." }},
-        { "@type": "Question", "name": "Bagaimana proses pembuatan visa China?", "acceptedAnswer": { "@type": "Answer", "text": "Kami menyediakan layanan visa assistance. Anda cukup menyiapkan dokumen, dan tim kami akan membantu proses pengajuan visa China dari awal hingga selesai." }},
-        { "@type": "Question", "name": "Berapa minimal peserta untuk private tour?", "acceptedAnswer": { "@type": "Answer", "text": "Minimal 1 orang. Private tour berarti hanya grup Anda, bukan rombongan besar." }},
-        { "@type": "Question", "name": "Apakah ada pemandu berbahasa Indonesia?", "acceptedAnswer": { "@type": "Answer", "text": "Ya, semua pemandu kami fasih berbahasa Indonesia dan Mandarin. Komunikasi lancar tanpa barrier bahasa." }},
-        { "@type": "Question", "name": "Kapan waktu terbaik mengunjungi China?", "acceptedAnswer": { "@type": "Answer", "text": "China bisa dikunjungi sepanjang tahun. Musim semi (Maret-Mei) dan gugur (September-November) adalah waktu paling nyaman." }},
-        { "@type": "Question", "name": "Apakah aman berwisata ke China?", "acceptedAnswer": { "@type": "Answer", "text": "Sangat aman. China memiliki tingkat kriminalitas sangat rendah, terutama di kota-kota besar." }},
-        { "@type": "Question", "name": "Bagaimana sistem pembayaran di China?", "acceptedAnswer": { "@type": "Answer", "text": "China mayoritas cashless menggunakan Alipay atau WeChat Pay. Tim kami akan membantu Anda setup sebelum berangkat." }},
-        { "@type": "Question", "name": "Apakah bisa custom itinerary?", "acceptedAnswer": { "@type": "Answer", "text": "Tentu! Itinerary bisa disesuaikan 100% dengan keinginan Anda." }}
-      ]
-    });
-
-    // Breadcrumb Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "url": DOMAIN }]
-    });
-
-    console.log('✅ Schema markup injected');
-  }
-
-  // ============================================
-  // PART 3: ANALYTICS & TRACKING
+  // PART 2: ANALYTICS & TRACKING
+  // (JSON-LD schema now lives as static <script type="application/ld+json">
+  // blocks in each page's <head> — AI crawlers and most SEO auditors do not
+  // execute JavaScript, so schema injected at runtime was invisible to them.)
   // ============================================
 
   /**
@@ -859,8 +721,10 @@
     initCounterAnimation();
     initFooterYear();
 
-    // Schema markup
-    initSchemaMarkup();
+    // Note: JSON-LD schema is now hard-coded as static <script type="application/ld+json">
+    // blocks in each page's <head> instead of being injected here. AI crawlers (GPTBot,
+    // ClaudeBot, PerplexityBot, etc.) and most SEO auditors do not execute JavaScript, so
+    // schema injected at runtime was invisible to them. Static markup is the source of truth.
 
     // Analytics
     initGA4();
