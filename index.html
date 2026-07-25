@@ -1118,6 +1118,97 @@
       .why-us__grid { grid-template-columns: 1fr; }
       .destinations__grid { grid-template-columns: 1fr; }
     }
+
+    /* ============================================
+       NEW BOOKING FORM STYLES
+       ============================================ */
+    .booking__form .sec { margin-top: 22px; }
+    .booking__form .eyebrow {
+      font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--accent); font-weight: 600;
+      padding-bottom: 8px; margin-bottom: 14px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .booking__form .lab { font-size: 13px; color: var(--gray-500); margin-bottom: 5px; display: block; }
+    .booking__form .hint { font-size: 12px; color: var(--gray-500); line-height: 1.6; margin-top: 6px; }
+    .booking__form .row { display: grid; gap: 12px; margin-bottom: 12px; }
+    @media(min-width: 560px) {
+      .booking__form .two { grid-template-columns: 1fr 1fr; }
+      .booking__form .three { grid-template-columns: 1fr 1fr 1fr; }
+    }
+    .booking__form .sub { font-size: 12px; color: var(--gray-400); margin-top: 4px; display: block; }
+    .booking__form input[type=text],
+    .booking__form input[type=tel],
+    .booking__form input[type=email],
+    .booking__form input[type=date],
+    .booking__form input[type=number],
+    .booking__form select,
+    .booking__form textarea {
+      width: 100%; font-family: var(--font-body); font-size: 14px; color: var(--dark-deep);
+      background: var(--ivory); border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
+      padding: 10px 12px; transition: border-color .15s, box-shadow .15s;
+    }
+    .booking__form textarea { resize: vertical; min-height: 72px; }
+    .booking__form select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236B6057' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px;
+    }
+    .booking__form input:focus,
+    .booking__form select:focus,
+    .booking__form textarea:focus {
+      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(174,134,89,0.12);
+    }
+    .booking__form .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px 10px; }
+    .booking__form .chk { display: flex; gap: 8px; align-items: center; font-size: 13.5px; cursor: pointer; }
+    .booking__form .chk input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
+    .booking__form .tiers { display: grid; gap: 10px; }
+    @media(min-width: 520px) { .booking__form .tiers { grid-template-columns: 1fr 1fr 1fr; } }
+    .booking__form .tier {
+      background: var(--ivory); border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
+      padding: 13px 14px; cursor: pointer; position: relative;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .booking__form .tier:hover { border-color: var(--accent); }
+    .booking__form .tier input { position: absolute; opacity: 0; pointer-events: none; }
+    .booking__form .tier:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(174,134,89,0.15); background: rgba(174,134,89,0.04); }
+    .booking__form .tname { font-size: 14px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 7px; color: var(--dark); }
+    .booking__form .dot { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--gray-200); flex-shrink: 0; }
+    .booking__form .tier:has(input:checked) .dot { border-color: var(--accent); background: radial-gradient(var(--accent) 0 43%, #fff 47%); }
+    .booking__form .tdesc { font-size: 12.5px; color: var(--gray-500); line-height: 1.5; }
+    .booking__form .tprice { font-size: 13px; margin-top: 8px; font-weight: 700; color: var(--primary); }
+    .booking__form .tunit { font-size: 11px; color: var(--gray-400); }
+    .booking__form .pop {
+      display: inline-block; background: rgba(174,134,89,0.1); color: var(--accent);
+      font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-bottom: 7px;
+    }
+    #ref { background: rgba(174,134,89,0.07); border-radius: var(--radius-sm); padding: 12px 14px; margin-top: 10px; display: none; }
+    .booking__form .consent {
+      display: flex; gap: 10px; align-items: flex-start;
+      font-size: 13px; color: var(--gray-500); line-height: 1.6;
+      margin: 18px 0 14px; cursor: pointer;
+    }
+    .booking__form .consent input { width: 15px; height: 15px; accent-color: var(--accent); margin-top: 2px; flex-shrink: 0; cursor: pointer; }
+    .booking__form .hp { position: absolute; left: -9999px; }
+    .booking__form .err { color: var(--primary); font-size: 13px; margin-top: 10px; text-align: center; display: none; }
+    .booking__form .alt { text-align: center; font-size: 13px; color: var(--gray-400); margin-top: 12px; }
+    .booking__form .alt a { color: var(--accent); }
+    #done { display: none; text-align: center; padding: 40px 20px; background: var(--white); border-radius: var(--radius-xl); }
+    #done .done-seal {
+      width: 36px; height: 36px; border-radius: 6px;
+      background: var(--accent); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 600; font-size: 13px; letter-spacing: .06em;
+      margin: 0 auto 18px;
+    }
+    #done h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    #done p { color: var(--gray-500); font-size: 14px; max-width: 36ch; margin: 0 auto 22px; line-height: 1.6; }
+    .wa-btn {
+      display: inline-block; background: #25D366; color: #fff; text-decoration: none;
+      font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-full);
+      transition: opacity .15s;
+    }
+    .wa-btn:hover { opacity: .9; }
   </style>
 </head>
 <body>
@@ -1744,65 +1835,148 @@
             </div>
           </div>
           <div class="fade-in">
-            <form class="booking__form" id="booking-form">
-              <h3 class="booking__form-title">Form Booking</h3>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="name">Nama Lengkap *</label>
-                  <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
-                </div>
-                <div class="form-group">
-                  <label for="whatsapp">WhatsApp *</label>
-                  <input type="tel" id="whatsapp" name="whatsapp" required placeholder="08xxxxxxxxxx">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="email@example.com">
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="destination">Destinasi Minat *</label>
-                  <select id="destination" name="destination" required>
-                    <option value="">Pilih destinasi</option>
-                    <option value="beijing">Beijing</option>
-                    <option value="shanghai">Shanghai</option>
-                    <option value="xian">Xi'an</option>
-                    <option value="chengdu">Chengdu</option>
-                    <option value="guilin">Guilin</option>
-                    <option value="zhangjiajie">Zhangjiajie</option>
-                    <option value="golden-route">China Golden Route</option>
-                    <option value="custom">Custom Trip</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="pax">Jumlah Orang *</label>
-                  <input type="number" id="pax" name="pax" min="1" required placeholder="2">
+            <!-- Ganti GANTI_DENGAN_ACCESS_KEY dengan access key dari web3forms.com -->
+            <form class="booking__form" id="f" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="GANTI_DENGAN_ACCESS_KEY">
+              <input type="hidden" name="subject" value="Lead baru dari tourduachina.id">
+              <input type="hidden" name="from_name" value="Form Tour Dua China">
+              <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+
+              <h3 class="booking__form-title">Rencanakan Perjalanan Anda</h3>
+              <p style="font-size:13.5px;color:var(--gray-500);margin-bottom:18px;line-height:1.6;">Isi sebentar, kami hubungi lewat WhatsApp dalam satu jam pada jam kerja.</p>
+
+              <div class="sec">
+                <p class="eyebrow">Kontak</p>
+                <div class="row two">
+                  <label><span class="lab">Nama</span><input type="text" name="Nama" placeholder="Rina Wijaya" required></label>
+                  <label><span class="lab">WhatsApp</span><input type="tel" name="WhatsApp" placeholder="+62 812 3456 7890" required></label>
                 </div>
               </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="date">Tanggal Rencana</label>
-                  <input type="date" id="date" name="date">
-                </div>
-                <div class="form-group">
-                  <label for="duration">Durasi</label>
-                  <select id="duration" name="duration">
-                    <option value="">Pilih durasi</option>
-                    <option value="3d2n">3 Hari 2 Malam</option>
-                    <option value="4d3n">4 Hari 3 Malam</option>
-                    <option value="5d4n">5 Hari 4 Malam</option>
-                    <option value="7d6n">7 Hari 6 Malam</option>
-                    <option value="custom">Custom</option>
-                  </select>
+
+              <div class="sec">
+                <p class="eyebrow">Peserta</p>
+                <div class="row three">
+                  <label><span class="lab">Dewasa</span><input type="number" name="Dewasa" inputmode="numeric" min="1" value="4" required><span class="sub">12–60 tahun</span></label>
+                  <label><span class="lab">Anak</span><input type="number" name="Anak" inputmode="numeric" min="0" value="0"><span class="sub">di bawah 12</span></label>
+                  <label><span class="lab">Lansia</span><input type="number" name="Lansia" inputmode="numeric" min="0" value="0"><span class="sub">di atas 60</span></label>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="message">Pesan / Request Khusus</label>
-                <textarea id="message" name="message" placeholder="Ceritakan rencana trip Anda..."></textarea>
+
+              <div class="sec">
+                <p class="eyebrow">Tujuan</p>
+                <span class="lab">Boleh pilih lebih dari satu</span>
+                <div class="cities">
+                  <label class="chk"><input type="checkbox" name="Kota" value="Beijing" checked>Beijing</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Shanghai">Shanghai</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Xi'an">Xi'an</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Chongqing">Chongqing</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Chengdu">Chengdu</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Hangzhou">Hangzhou</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Tianjin">Tianjin</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Kota lain">Kota lain</label>
+                  <label class="chk"><input type="checkbox" name="Kota" value="Belum tahu">Belum tahu</label>
+                </div>
               </div>
-              <button type="submit" class="form-submit">Kirim & Dapatkan Penawaran →</button>
+
+              <div class="sec">
+                <p class="eyebrow">Waktu</p>
+                <div class="row two">
+                  <label><span class="lab">Perkiraan tanggal berangkat</span><input type="date" name="Tanggal" required></label>
+                  <label><span class="lab">Seberapa pasti tanggalnya</span>
+                    <select name="Kepastian tanggal">
+                      <option>Sudah pasti</option>
+                      <option>Bisa geser beberapa hari</option>
+                      <option>Baru perkiraan bulan</option>
+                    </select></label>
+                </div>
+                <label><span class="lab">Lama perjalanan</span>
+                  <select name="Durasi">
+                    <option>Sehari</option>
+                    <option>3 hari 2 malam</option>
+                    <option selected>4 hari 3 malam</option>
+                    <option>5 hari 4 malam</option>
+                    <option>Lebih lama</option>
+                  </select></label>
+              </div>
+
+              <div class="sec">
+                <p class="eyebrow">Tingkat Layanan</p>
+                <div class="tiers">
+                  <label class="tier">
+                    <input type="radio" name="Tingkat layanan" value="Essential">
+                    <span class="tname"><span class="dot"></span>Essential</span>
+                    <span class="tdesc">Guide berbahasa Indonesia, transportasi umum</span>
+                    <span class="tprice">mulai Rp 550 rb</span>
+                    <span class="tunit">per orang per hari</span>
+                  </label>
+                  <label class="tier">
+                    <input type="radio" name="Tingkat layanan" value="Premium" checked>
+                    <span class="pop">Paling banyak dipilih</span>
+                    <span class="tname"><span class="dot"></span>Premium</span>
+                    <span class="tdesc">Kendaraan pribadi, driver, reservasi restoran</span>
+                    <span class="tprice">mulai Rp 1,7 jt</span>
+                    <span class="tunit">per orang per hari</span>
+                  </label>
+                  <label class="tier">
+                    <input type="radio" name="Tingkat layanan" value="Signature">
+                    <span class="tname"><span class="dot"></span>Signature</span>
+                    <span class="tdesc">Guide senior, kendaraan luxury, meet-and-greet</span>
+                    <span class="tprice">mulai Rp 2,4 jt</span>
+                    <span class="tunit">per orang per hari</span>
+                  </label>
+                </div>
+                <p class="hint">Harga untuk 5 peserta, belum termasuk hotel dan tiket atraksi. Semakin banyak peserta, semakin ringan biaya per orangnya.</p>
+              </div>
+
+              <div class="sec">
+                <p class="eyebrow">Hotel</p>
+                <select name="Hotel">
+                  <option>Saya pesan sendiri</option>
+                  <option>Tolong aturkan — bintang 4</option>
+                  <option>Tolong aturkan — bintang 5</option>
+                  <option>Belum tahu, mau didiskusikan</option>
+                </select>
+                <p class="hint">Hotel bisa ditambahkan di tingkat layanan mana pun.</p>
+              </div>
+
+              <div class="sec">
+                <p class="eyebrow">Sedikit tentang perjalanan Anda</p>
+                <label><span class="lab">Yang paling Anda harapkan</span>
+                  <textarea name="Harapan" placeholder="Bawa orang tua, ingin santai, tidak mau banyak jalan kaki"></textarea></label>
+                <div style="margin-top:14px">
+                  <label><span class="lab">Tahu kami dari mana</span>
+                    <select name="Sumber" id="src">
+                      <option>Instagram</option>
+                      <option>TikTok</option>
+                      <option>Google</option>
+                      <option>Rekomendasi teman</option>
+                      <option>Pernah pakai sebelumnya</option>
+                      <option>Lainnya</option>
+                    </select></label>
+                  <div id="ref">
+                    <label><span class="lab">Nama teman yang merekomendasikan</span>
+                      <input type="text" name="Perujuk" placeholder="Nama atau nomor WhatsApp"></label>
+                    <p class="hint">Anda berdua mendapatkan benefit spesial setelah perjalanan selesai.</p>
+                  </div>
+                </div>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" required>
+                <span>Saya setuju data ini digunakan untuk menyusun penawaran perjalanan.</span>
+              </label>
+
+              <button type="submit" class="form-submit" id="btn">Kirim</button>
+              <p class="err" id="err">Pengiriman gagal. Coba lagi, atau hubungi kami langsung lewat WhatsApp.</p>
+              <p class="alt">Lebih suka langsung? <a href="https://wa.me/6281234567890">Chat WhatsApp</a></p>
             </form>
+
+            <div id="done">
+              <div class="done-seal">TC</div>
+              <h2>Terima kasih!</h2>
+              <p>Kami sudah menerima rencana Anda dan akan menghubungi lewat WhatsApp dalam satu jam pada jam kerja.</p>
+              <a class="wa-btn" href="https://wa.me/6281234567890">Lanjutkan di WhatsApp &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -1866,5 +2040,49 @@
 
   <!-- JavaScript (All-in-One) -->
   <script src="js/tourduachina.js" defer></script>
+
+  <!-- Booking Form Handler -->
+  <script>
+  (function() {
+    var src = document.getElementById('src');
+    var ref = document.getElementById('ref');
+    if (src && ref) {
+      function toggleRef() { ref.style.display = src.value === 'Rekomendasi teman' ? 'block' : 'none'; }
+      src.addEventListener('change', toggleRef);
+      toggleRef();
+    }
+
+    var f = document.getElementById('f');
+    var btn = document.getElementById('btn');
+    var err = document.getElementById('err');
+    if (!f) return;
+
+    f.addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (err) err.style.display = 'none';
+      if (btn) { btn.disabled = true; btn.textContent = 'Mengirim…'; }
+
+      var fd = new FormData(f);
+      var kota = fd.getAll('Kota');
+      fd.delete('Kota');
+      if (kota.length) fd.append('Kota', kota.join(', '));
+
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
+        .then(function(r) { return r.json(); })
+        .then(function(d) {
+          if (d.success) {
+            f.style.display = 'none';
+            var done = document.getElementById('done');
+            if (done) { done.style.display = 'block'; }
+            window.scrollTo({ top: f.parentElement.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+          } else { throw new Error(); }
+        })
+        .catch(function() {
+          if (err) err.style.display = 'block';
+          if (btn) { btn.disabled = false; btn.textContent = 'Kirim'; }
+        });
+    });
+  })();
+  </script>
 </body>
 </html>
