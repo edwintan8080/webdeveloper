@@ -277,6 +277,12 @@
     const bookingForm = document.getElementById('booking-form');
     if (!bookingForm) return;
 
+    // Wire navigation buttons via JS (works even without inline onclick)
+    const nextBtn = bookingForm.querySelector('.form-next');
+    const prevBtn = bookingForm.querySelector('.form-prev');
+    if (nextBtn) nextBtn.addEventListener('click', function(e) { e.preventDefault(); window.nextStep(2); });
+    if (prevBtn) prevBtn.addEventListener('click', function(e) { e.preventDefault(); window.prevStep(1); });
+
     bookingForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -291,13 +297,18 @@
       const message = formData.get('message') || '-';
 
       // Validate
-      if (!name || !whatsapp || !destination || !pax) {
-        showNotification('Mohon lengkapi field yang wajib diisi (*)', 'error');
+      if (!name || !whatsapp) {
+        showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+        window.prevStep(1);
+        return;
+      }
+      if (!destination || !pax) {
+        showNotification('Mohon lengkapi destinasi dan jumlah orang', 'error');
         return;
       }
 
       // Build message content
-      const messageLines = 
+      const messageLines =
         `Halo Tourduachina.id! 👋\n\n` +
         `Saya ingin booking tour:\n` +
         `━━━━━━━━━━━━━━━━━━\n` +
@@ -313,31 +324,26 @@
         `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
 
       // Track
-      trackEvent('form_submit', {
-        form_name: 'booking',
-        destination: destination,
-        pax: pax
-      });
+      trackEvent('form_submit', { form_name: 'booking', destination, pax });
 
-      // 1. Open WhatsApp
-      const waMessage = encodeURIComponent(messageLines);
-      window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMessage}`, '_blank');
+      // Open WhatsApp via anchor click (avoids popup blocker)
+      const waUrl = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(messageLines)}`;
+      const a = document.createElement('a');
+      a.href = waUrl;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
 
-      // 2. Send Email via mailto
-      const emailSubject = encodeURIComponent(`Booking Tour: ${destination} - ${name}`);
-      const emailBody = encodeURIComponent(messageLines);
-      window.open(`mailto:${CONFIG.COMPANY_EMAIL}?subject=${emailSubject}&body=${emailBody}`, '_blank');
-
-      showNotification('Mengirim ke WhatsApp & Email...', 'success');
+      showNotification('Pesan dikirim ke WhatsApp! Silakan cek tab baru.', 'success');
       this.reset();
 
       // Reset form steps to step 1
       currentStep = 1;
       document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
       document.getElementById('step-1').classList.add('active');
-      document.querySelectorAll('.form-step').forEach(s => {
-        s.classList.remove('active', 'completed');
-      });
+      document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active', 'completed'));
       document.querySelector('.form-step[data-step="1"]').classList.add('active');
       updateStepLines();
     });
@@ -907,6 +913,29 @@
   // ============================================
   // INITIALIZATION
   // ============================================
+  /**
+   * Fix floating labels for <select> elements (CSS :placeholder-shown doesn't apply)
+   */
+  function initSelectFloatLabels() {
+    document.querySelectorAll('.select-group select').forEach(select => {
+      const label = select.nextElementSibling;
+      if (!label || !label.classList.contains('form-label')) return;
+      const update = () => {
+        if (select.value) {
+          label.style.top = '8px';
+          label.style.fontSize = '11px';
+          label.style.color = 'var(--gray-400)';
+        } else {
+          label.style.top = '';
+          label.style.fontSize = '';
+          label.style.color = '';
+        }
+      };
+      select.addEventListener('change', update);
+      update();
+    });
+  }
+
   function initFooterYear() {
     const el = document.getElementById('footer-year');
     if (el) el.textContent = new Date().getFullYear();
@@ -923,6 +952,7 @@
     initTourFilter();
     initTourSort();
     initBookingForm();
+    initSelectFloatLabels();
     initBackToTop();
     initLazyLoading();
     initCounterAnimation();
