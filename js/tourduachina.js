@@ -19,10 +19,11 @@
   // ============================================
   const CONFIG = {
     DOMAIN: 'https://tourduachina.id',
-    WHATSAPP_NUMBER: '6281234567890',
+    WHATSAPP_NUMBER: '8615811252101',
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
-    COMPANY_EMAIL: 'hello@tourduachina.id',
+    COMPANY_EMAIL: 'tourduachina@gmail.com',
+    INSTAGRAM: 'https://instagram.com/tourduachina.id',
   };
 
   // ============================================
@@ -211,7 +212,66 @@
   }
 
   /**
-   * Booking Form Submission
+   * Booking Form Submission — WhatsApp + Email
+   */
+  /**
+   * Multi-step Form Navigation
+   */
+  let currentStep = 1;
+
+  window.nextStep = function(step) {
+    // Validate current step
+    if (currentStep === 1) {
+      const name = document.getElementById('name').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      if (!name || !whatsapp) {
+        showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+        return;
+      }
+    }
+
+    // Hide current step
+    document.getElementById(`step-${currentStep}`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('completed');
+
+    // Show next step
+    currentStep = step;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+    // Update step line
+    updateStepLines();
+  };
+
+  window.prevStep = function(step) {
+    // Hide current step
+    document.getElementById(`step-${currentStep}`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+
+    // Show previous step
+    currentStep = step;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('completed');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+    // Update step line
+    updateStepLines();
+  };
+
+  function updateStepLines() {
+    const lines = document.querySelectorAll('.form-step__line');
+    lines.forEach((line, index) => {
+      if (index < currentStep - 1) {
+        line.style.background = 'var(--color-jade)';
+      } else {
+        line.style.background = 'var(--gray-200)';
+      }
+    });
+  }
+
+  /**
+   * Booking Form Handler
    */
   function initBookingForm() {
     const bookingForm = document.getElementById('booking-form');
@@ -236,8 +296,8 @@
         return;
       }
 
-      // Build WhatsApp message
-      const waMessage = encodeURIComponent(
+      // Build message content
+      const messageLines = 
         `Halo Tourduachina.id! 👋\n\n` +
         `Saya ingin booking tour:\n` +
         `━━━━━━━━━━━━━━━━━━\n` +
@@ -250,8 +310,7 @@
         `⏱️ Durasi: ${duration}\n` +
         `💬 Pesan: ${message}\n` +
         `━━━━━━━━━━━━━━━━━━\n\n` +
-        `Mohon info harga dan detailnya ya! Terima kasih 🙏`
-      );
+        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
 
       // Track
       trackEvent('form_submit', {
@@ -260,11 +319,27 @@
         pax: pax
       });
 
-      // Open WhatsApp
+      // 1. Open WhatsApp
+      const waMessage = encodeURIComponent(messageLines);
       window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${waMessage}`, '_blank');
 
-      showNotification('Redirecting ke WhatsApp...', 'success');
+      // 2. Send Email via mailto
+      const emailSubject = encodeURIComponent(`Booking Tour: ${destination} - ${name}`);
+      const emailBody = encodeURIComponent(messageLines);
+      window.open(`mailto:${CONFIG.COMPANY_EMAIL}?subject=${emailSubject}&body=${emailBody}`, '_blank');
+
+      showNotification('Mengirim ke WhatsApp & Email...', 'success');
       this.reset();
+
+      // Reset form steps to step 1
+      currentStep = 1;
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('step-1').classList.add('active');
+      document.querySelectorAll('.form-step').forEach(s => {
+        s.classList.remove('active', 'completed');
+      });
+      document.querySelector('.form-step[data-step="1"]').classList.add('active');
+      updateStepLines();
     });
   }
 
@@ -452,8 +527,8 @@
       "email": COMPANY_EMAIL,
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Bali",
-        "addressRegion": "Bali",
+        "addressLocality": "Beijing",
+        "addressRegion": "Beijing",
         "addressCountry": "ID"
       },
       "geo": {
@@ -535,8 +610,7 @@
           "provider": { "@type": "TravelAgency", "name": COMPANY_NAME },
           "offers": {
             "@type": "Offer",
-            "price": tour.price,
-            "priceCurrency": "IDR",
+
             "availability": "https://schema.org/InStock"
           }
         }
