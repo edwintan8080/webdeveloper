@@ -222,10 +222,10 @@
   window.nextStep = function(step) {
     // Validate current step
     if (currentStep === 1) {
-      const name = document.getElementById('name').value;
-      const whatsapp = document.getElementById('whatsapp').value;
+      const name = document.getElementById('name').value.trim();
+      const whatsapp = document.getElementById('whatsapp').value.trim();
       if (!name || !whatsapp) {
-        showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+        showNotification('Mohon isi nama dan nomor WhatsApp Anda', 'error');
         return;
       }
     }
@@ -277,18 +277,20 @@
     const bookingForm = document.getElementById('booking-form');
     if (!bookingForm) return;
 
-    // Wire navigation buttons via JS (works even without inline onclick)
+    // Wire navigation buttons via JS (no inline onclick on buttons)
     const nextBtn = bookingForm.querySelector('.form-next');
     const prevBtn = bookingForm.querySelector('.form-prev');
-    if (nextBtn) nextBtn.addEventListener('click', function(e) { e.preventDefault(); window.nextStep(2); });
-    if (prevBtn) prevBtn.addEventListener('click', function(e) { e.preventDefault(); window.prevStep(1); });
+    if (nextBtn) nextBtn.addEventListener('click', function() { window.nextStep(2); });
+    if (prevBtn) prevBtn.addEventListener('click', function() { window.prevStep(1); });
 
     bookingForm.addEventListener('submit', function(e) {
       e.preventDefault();
 
       const formData = new FormData(this);
       const name = formData.get('name') || '';
-      const whatsapp = formData.get('whatsapp') || '';
+      const countryCode = formData.get('country_code') || '+62';
+      const whatsappNum = (formData.get('whatsapp') || '').replace(/^0+/, '');
+      const whatsapp = `${countryCode}${whatsappNum}`;
       const email = formData.get('email') || '-';
       const destination = formData.get('destination') || '-';
       const pax = formData.get('pax') || '-';
@@ -297,7 +299,7 @@
       const message = formData.get('message') || '-';
 
       // Validate
-      if (!name || !whatsapp) {
+      if (!name || !whatsappNum) {
         showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
         window.prevStep(1);
         return;
