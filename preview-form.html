@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview Form Booking - TourDuaChina.id</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #C4282B;
+      --primary-dark: #8F1D1D;
+      --color-gold: #B8874D;
+      --color-gold-soft: #EFE2CC;
+      --color-ivory: #FAF6EF;
+      --color-white: #FFFFFF;
+      --color-charcoal: #25313A;
+      --color-gray: #6F6A63;
+      --color-jade: #2F6F62;
+      --gray-50: #FAF6EF;
+      --gray-100: #FAF6EF;
+      --gray-200: #EFE2CC;
+      --gray-300: #B8A99A;
+      --gray-400: #6F6A63;
+      --gray-500: #6F6A63;
+      --gray-600: #25313A;
+      --dark: #25313A;
+      --white: #FFFFFF;
+      --shadow-sm: 0 1px 4px rgba(37,49,58,0.06);
+      --shadow-md: 0 4px 16px rgba(37,49,58,0.08);
+      --shadow-lg: 0 12px 32px rgba(37,49,58,0.1);
+      --shadow-xl: 0 24px 48px rgba(37,49,58,0.12);
+      --radius-sm: 12px;
+      --radius-md: 16px;
+      --radius-lg: 20px;
+      --radius-xl: 24px;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--color-ivory);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .preview-container {
+      max-width: 520px;
+      width: 100%;
+    }
+
+    .preview-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--color-charcoal);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* Form Styles */
+    .booking__form {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      padding: 0;
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid rgba(184,135,77,0.1);
+    }
+
+    .form-header {
+      background: linear-gradient(135deg, var(--color-charcoal) 0%, #1a2630 100%);
+      padding: 32px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(184,135,77,0.1) 0%, transparent 60%);
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+    @keyframes pulse-glow {
+      0%, 100% { transform: scale(1); opacity: 0.5; }
+      50% { transform: scale(1.1); opacity: 1; }
+    }
+    .form-header__icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: white;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 8px 24px rgba(196,40,43,0.3);
+    }
+    .form-header__title {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
+    }
+    .form-header__subtitle {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-steps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 40px;
+      background: var(--color-ivory);
+      gap: 0;
+    }
+    .form-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.5;
+      transition: var(--transition);
+    }
+    .form-step.active {
+      opacity: 1;
+    }
+    .form-step.completed {
+      opacity: 1;
+    }
+    .form-step__number {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--gray-200);
+      color: var(--gray-400);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      transition: var(--transition);
+    }
+    .form-step.active .form-step__number {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: white;
+      box-shadow: 0 4px 16px rgba(196,40,43,0.3);
+    }
+    .form-step.completed .form-step__number {
+      background: var(--color-jade);
+      color: white;
+    }
+    .form-step__label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-step.active .form-step__label {
+      color: var(--primary);
+    }
+    .form-step__line {
+      width: 60px;
+      height: 2px;
+      background: var(--gray-200);
+      margin: 0 12px;
+      margin-bottom: 28px;
+      transition: var(--transition);
+    }
+    .form-step.completed + .form-step__line {
+      background: var(--color-jade);
+    }
+
+    .form-section {
+      display: none;
+      padding: 32px 40px;
+      animation: fadeInUp 0.4s ease;
+    }
+    .form-section.active {
+      display: block;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .form-group.floating {
+      position: relative;
+    }
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray-400);
+      z-index: 2;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .textarea-icon {
+      top: 20px;
+      transform: none;
+    }
+    .form-input {
+      width: 100%;
+      padding: 20px 16px 8px 48px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--dark);
+      background: var(--white);
+      transition: var(--transition);
+      position: relative;
+      z-index: 1;
+    }
+    .form-input:focus {
+      outline: none;
+      border-color: var(--color-gold);
+      box-shadow: 0 0 0 4px rgba(184,135,77,0.1);
+    }
+    .form-input:focus + .form-label {
+      top: 8px;
+      font-size: 11px;
+      color: var(--color-gold);
+      font-weight: 600;
+    }
+    .form-input:focus ~ .input-icon {
+      color: var(--color-gold);
+    }
+    .form-input:not(:placeholder-shown) + .form-label {
+      top: 8px;
+      font-size: 11px;
+      color: var(--gray-400);
+    }
+    .form-label {
+      position: absolute;
+      left: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 14px;
+      color: var(--gray-400);
+      pointer-events: none;
+      transition: var(--transition);
+      z-index: 3;
+      background: transparent;
+      padding: 0 4px;
+    }
+    .input-highlight {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--color-gold), var(--primary));
+      transition: var(--transition);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .form-input:focus ~ .input-highlight {
+      width: 100%;
+    }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%236F6A63' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      background-size: 18px;
+      padding-right: 48px;
+    }
+    .select-group .form-label {
+      background: var(--white);
+    }
+
+    .form-textarea {
+      min-height: 100px;
+      resize: vertical;
+      padding-top: 24px;
+    }
+
+    .form-nav {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .form-prev {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: transparent;
+      color: var(--gray-500);
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .form-prev:hover {
+      border-color: var(--gray-400);
+      color: var(--dark);
+      background: var(--gray-50);
+    }
+    .form-next, .form-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex: 1;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .form-next::before, .form-submit::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    .form-next:hover::before, .form-submit:hover::before {
+      left: 100%;
+    }
+    .form-next:hover, .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196,40,43,0.3);
+    }
+    .form-next:active, .form-submit:active {
+      transform: translateY(0);
+    }
+    .form-submit {
+      background: linear-gradient(135deg, var(--color-gold), #987246);
+      box-shadow: 0 4px 16px rgba(184,135,77,0.3);
+    }
+    .form-submit:hover {
+      box-shadow: 0 8px 24px rgba(184,135,77,0.4);
+    }
+
+    .form-trust {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 20px 40px;
+      background: var(--color-ivory);
+      border-top: 1px solid rgba(184,135,77,0.1);
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--gray-500);
+      font-weight: 500;
+    }
+    .trust-item svg {
+      color: var(--color-jade);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      .form-header {
+        padding: 24px 20px;
+      }
+      .form-header__title {
+        font-size: 20px;
+      }
+      .form-steps {
+        padding: 20px;
+      }
+      .form-step__line {
+        width: 40px;
+        margin: 0 8px;
+      }
+      .form-section {
+        padding: 24px 20px;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-nav {
+        flex-direction: column;
+      }
+      .form-trust {
+        padding: 16px 20px;
+        gap: 16px;
+      }
+      .trust-item {
+        font-size: 12px;
+      }
+    }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10000;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      animation: slideIn 0.3s ease;
+      background: #10B981;
+      color: white;
+    }
+    .notification--error {
+      background: #C22423;
+    }
+    .notification__close {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0 0 0 12px;
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="preview-container">
+    <h1 class="preview-title">Preview Form Booking</h1>
+    
+    <form class="booking__form" id="booking-form">
+      <!-- Form Header -->
+      <div class="form-header">
+        <div class="form-header__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </div>
+        <h3 class="form-header__title">Rencanakan Trip China Anda</h3>
+        <p class="form-header__subtitle">Isi form di bawah, tim kami akan merespons dalam 1 jam</p>
+      </div>
+
+      <!-- Progress Steps -->
+      <div class="form-steps">
+        <div class="form-step active" data-step="1">
+          <div class="form-step__number">1</div>
+          <div class="form-step__label">Kontak</div>
+        </div>
+        <div class="form-step__line"></div>
+        <div class="form-step" data-step="2">
+          <div class="form-step__number">2</div>
+          <div class="form-step__label">Trip</div>
+        </div>
+        <div class="form-step__line"></div>
+        <div class="form-step" data-step="3">
+          <div class="form-step__number">3</div>
+          <div class="form-step__label">Kirim</div>
+        </div>
+      </div>
+
+      <!-- Form Fields - Step 1: Contact -->
+      <div class="form-section active" id="step-1">
+        <div class="form-group floating">
+          <div class="input-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          </div>
+          <input type="text" id="name" name="name" required placeholder=" " class="form-input">
+          <label for="name" class="form-label">Nama Lengkap *</label>
+          <div class="input-highlight"></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group floating">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </div>
+            <input type="tel" id="whatsapp" name="whatsapp" required placeholder=" " class="form-input">
+            <label for="whatsapp" class="form-label">WhatsApp *</label>
+            <div class="input-highlight"></div>
+          </div>
+          <div class="form-group floating">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <input type="email" id="email" name="email" placeholder=" " class="form-input">
+            <label for="email" class="form-label">Email</label>
+            <div class="input-highlight"></div>
+          </div>
+        </div>
+        <button type="button" class="form-next" onclick="nextStep(2)">
+          Selanjutnya
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </button>
+      </div>
+
+      <!-- Form Fields - Step 2: Trip Details -->
+      <div class="form-section" id="step-2">
+        <div class="form-row">
+          <div class="form-group floating select-group">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <select id="destination" name="destination" required class="form-input form-select">
+              <option value="">Pilih destinasi</option>
+              <option value="beijing">🏛️ Beijing — Tembok Besar & Kota Terlarang</option>
+              <option value="shanghai">🌆 Shanghai — The Bund & Nanjing Road</option>
+              <option value="xian">⚔️ Xi'an — Tentara Terracotta</option>
+              <option value="chengdu">🐼 Chengdu — Panda & Kuliner Sichuan</option>
+              <option value="guilin">🏔️ Guilin — Pemandangan Karst</option>
+              <option value="zhangjiajie">🌄 Zhangjiajie — Gunung Avatar</option>
+              <option value="golden-route">✨ China Golden Route (Multi-Kota)</option>
+              <option value="custom">🎨 Custom Trip Sesuai Keinginan</option>
+            </select>
+            <label for="destination" class="form-label">Destinasi Minat *</label>
+            <div class="input-highlight"></div>
+          </div>
+          <div class="form-group floating">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            </div>
+            <input type="number" id="pax" name="pax" min="1" required placeholder=" " class="form-input">
+            <label for="pax" class="form-label">Jumlah Orang *</label>
+            <div class="input-highlight"></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group floating">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            </div>
+            <input type="date" id="date" name="date" class="form-input">
+            <label for="date" class="form-label">Tanggal Rencana</label>
+            <div class="input-highlight"></div>
+          </div>
+          <div class="form-group floating select-group">
+            <div class="input-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+            <select id="duration" name="duration" class="form-input form-select">
+              <option value="">Pilih durasi</option>
+              <option value="3d2n">3 Hari 2 Malam</option>
+              <option value="4d3n">4 Hari 3 Malam</option>
+              <option value="5d4n">5 Hari 4 Malam</option>
+              <option value="7d6n">7 Hari 6 Malam</option>
+              <option value="custom">Custom Durasi</option>
+            </select>
+            <label for="duration" class="form-label">Durasi Trip</label>
+            <div class="input-highlight"></div>
+          </div>
+        </div>
+        <div class="form-group floating">
+          <div class="input-icon textarea-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <textarea id="message" name="message" placeholder=" " class="form-input form-textarea" rows="3"></textarea>
+          <label for="message" class="form-label">Pesan / Request Khusus</label>
+          <div class="input-highlight"></div>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="form-prev" onclick="prevStep(1)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+            Kembali
+          </button>
+          <button type="submit" class="form-submit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            Kirim & Dapatkan Penawaran
+          </button>
+        </div>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="form-trust">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Data Anda Aman</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span>Respon 1 Jam</span>
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          <span>Konsultasi Gratis</span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let currentStep = 1;
+
+    function nextStep(step) {
+      // Validate current step
+      if (currentStep === 1) {
+        const name = document.getElementById('name').value;
+        const whatsapp = document.getElementById('whatsapp').value;
+        if (!name || !whatsapp) {
+          showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+          return;
+        }
+      }
+
+      // Hide current step
+      document.getElementById(`step-${currentStep}`).classList.remove('active');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('completed');
+
+      // Show next step
+      currentStep = step;
+      document.getElementById(`step-${currentStep}`).classList.add('active');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+      // Update step line
+      updateStepLines();
+    }
+
+    function prevStep(step) {
+      // Hide current step
+      document.getElementById(`step-${currentStep}`).classList.remove('active');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+
+      // Show previous step
+      currentStep = step;
+      document.getElementById(`step-${currentStep}`).classList.add('active');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('completed');
+      document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+      // Update step line
+      updateStepLines();
+    }
+
+    function updateStepLines() {
+      const lines = document.querySelectorAll('.form-step__line');
+      lines.forEach((line, index) => {
+        if (index < currentStep - 1) {
+          line.style.background = 'var(--color-jade)';
+        } else {
+          line.style.background = 'var(--gray-200)';
+        }
+      });
+    }
+
+    function showNotification(message, type = 'info') {
+      // Remove existing notifications
+      document.querySelectorAll('.notification').forEach(n => n.remove());
+
+      const notification = document.createElement('div');
+      notification.className = `notification notification--${type}`;
+      notification.innerHTML = `
+        <span>${message}</span>
+        <button class="notification__close" onclick="this.parentElement.remove()">&times;</button>
+      `;
+
+      document.body.appendChild(notification);
+
+      // Auto remove after 3 seconds
+      setTimeout(() => {
+        if (notification.parentElement) {
+          notification.remove();
+        }
+      }, 3000);
+    }
+
+    // Form submission
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      showNotification('Form berhasil dikirim! (Demo)', 'success');
+      
+      // Reset form
+      this.reset();
+      
+      // Reset steps
+      currentStep = 1;
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('step-1').classList.add('active');
+      document.querySelectorAll('.form-step').forEach(s => {
+        s.classList.remove('active', 'completed');
+      });
+      document.querySelector('.form-step[data-step="1"]').classList.add('active');
+      updateStepLines();
+    });
+  </script>
+</body>
+</html>

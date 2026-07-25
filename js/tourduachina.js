@@ -214,6 +214,65 @@
   /**
    * Booking Form Submission — WhatsApp + Email
    */
+  /**
+   * Multi-step Form Navigation
+   */
+  let currentStep = 1;
+
+  window.nextStep = function(step) {
+    // Validate current step
+    if (currentStep === 1) {
+      const name = document.getElementById('name').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      if (!name || !whatsapp) {
+        showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+        return;
+      }
+    }
+
+    // Hide current step
+    document.getElementById(`step-${currentStep}`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('completed');
+
+    // Show next step
+    currentStep = step;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+    // Update step line
+    updateStepLines();
+  };
+
+  window.prevStep = function(step) {
+    // Hide current step
+    document.getElementById(`step-${currentStep}`).classList.remove('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('active');
+
+    // Show previous step
+    currentStep = step;
+    document.getElementById(`step-${currentStep}`).classList.add('active');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.remove('completed');
+    document.querySelector(`.form-step[data-step="${currentStep}"]`).classList.add('active');
+
+    // Update step line
+    updateStepLines();
+  };
+
+  function updateStepLines() {
+    const lines = document.querySelectorAll('.form-step__line');
+    lines.forEach((line, index) => {
+      if (index < currentStep - 1) {
+        line.style.background = 'var(--color-jade)';
+      } else {
+        line.style.background = 'var(--gray-200)';
+      }
+    });
+  }
+
+  /**
+   * Booking Form Handler
+   */
   function initBookingForm() {
     const bookingForm = document.getElementById('booking-form');
     if (!bookingForm) return;
@@ -271,6 +330,16 @@
 
       showNotification('Mengirim ke WhatsApp & Email...', 'success');
       this.reset();
+
+      // Reset form steps to step 1
+      currentStep = 1;
+      document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
+      document.getElementById('step-1').classList.add('active');
+      document.querySelectorAll('.form-step').forEach(s => {
+        s.classList.remove('active', 'completed');
+      });
+      document.querySelector('.form-step[data-step="1"]').classList.add('active');
+      updateStepLines();
     });
   }
 
