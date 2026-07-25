@@ -875,7 +875,20 @@
                 <p class="eyebrow">Kontak</p>
                 <div class="row two">
                   <label><span class="lab">Nama</span><input type="text" name="Nama" placeholder="Rina Wijaya" required></label>
-                  <label><span class="lab">WhatsApp</span><input type="tel" name="WhatsApp" placeholder="+62 812 3456 7890" required></label>
+                  <div>
+                    <span class="lab">WhatsApp</span>
+                    <div class="phone-group">
+                      <select id="phone-cc" class="phone-cc">
+                        <option value="+62">🇮🇩 +62</option>
+                        <option value="+86">🇨🇳 +86</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+60">🇲🇾 +60</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+1">🇺🇸 +1</option>
+                      </select>
+                      <input type="tel" id="phone-num" placeholder="812 3456 7890" required>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -1091,6 +1104,13 @@
       if (btn) { btn.disabled = true; btn.textContent = 'Mengirim…'; }
 
       var fd = new FormData(f);
+
+      // Combine country code + phone number
+      var cc = document.getElementById('phone-cc');
+      var num = document.getElementById('phone-num');
+      if (cc && num) fd.set('WhatsApp', cc.value + ' ' + num.value.trim());
+
+      // Merge city checkboxes into one field
       var kota = fd.getAll('Kota');
       fd.delete('Kota');
       if (kota.length) fd.append('Kota', kota.join(', '));

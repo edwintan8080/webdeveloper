@@ -1384,6 +1384,42 @@
       border-color: var(--accent); box-shadow: 0 0 0 3px rgba(184,135,77,0.15);
     }
 
+    /* Phone group (country code + number) */
+    .booking__form .phone-group {
+      display: flex;
+      border: 1px solid #DEDCD5;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #fff;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .booking__form .phone-group:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(184,135,77,0.15);
+    }
+    .booking__form .phone-group .phone-cc,
+    .booking__form .phone-group input[type=tel] {
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      background: transparent;
+    }
+    .booking__form .phone-group .phone-cc {
+      flex-shrink: 0;
+      min-width: 96px;
+      border-right: 1px solid #DEDCD5 !important;
+      font-size: 14px;
+      padding: 11px 8px 11px 12px;
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%238A7D72' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      padding-right: 24px;
+    }
+    .booking__form .phone-group input[type=tel] {
+      flex: 1;
+      min-width: 0;
+    }
+
     /* City checkboxes — grid layout */
     .booking__form .cities {
       display: grid;
