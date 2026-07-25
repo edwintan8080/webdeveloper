@@ -935,7 +935,6 @@
       background: var(--white);
       border-radius: var(--radius-xl);
       padding: 0;
-      overflow: hidden;
       box-shadow: var(--shadow-xl);
       border: 1px solid rgba(184,135,77,0.1);
     }
@@ -946,7 +945,7 @@
       padding: 32px 40px;
       text-align: center;
       position: relative;
-      overflow: hidden;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
     }
     .form-header::before {
       content: '';
@@ -1063,6 +1062,8 @@
       display: none;
       padding: 32px 40px;
       animation: fadeInUp 0.4s ease;
+      position: relative;
+      z-index: 5;
     }
     .form-section.active {
       display: block;
@@ -1115,6 +1116,10 @@
       transition: var(--transition);
       position: relative;
       z-index: 1;
+      box-sizing: border-box;
+    }
+    .form-group.floating {
+      overflow: visible;
     }
     .form-input:focus {
       outline: none;
@@ -1233,6 +1238,8 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      z-index: 10;
+      pointer-events: auto;
     }
     .form-next::before, .form-submit::before {
       content: '';
@@ -2311,5 +2318,93 @@
 
   <!-- JavaScript (All-in-One) -->
   <script src="js/tourduachina.js" defer></script>
+
+  <!-- Inline Form Navigation Script (Fallback) -->
+  <script>
+    // Multi-step Form Navigation
+    (function() {
+      'use strict';
+      
+      let currentStep = 1;
+
+      window.nextStep = function(step) {
+        // Validate current step
+        if (currentStep === 1) {
+          const name = document.getElementById('name');
+          const whatsapp = document.getElementById('whatsapp');
+          if (!name || !name.value || !whatsapp || !whatsapp.value) {
+            if (typeof showNotification === 'function') {
+              showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+            } else {
+              alert('Mohon isi nama dan WhatsApp Anda');
+            }
+            return;
+          }
+        }
+
+        // Hide current step
+        const currentStepEl = document.getElementById('step-' + currentStep);
+        if (currentStepEl) currentStepEl.classList.remove('active');
+        
+        const currentStepIndicator = document.querySelector('.form-step[data-step="' + currentStep + '"]');
+        if (currentStepIndicator) {
+          currentStepIndicator.classList.remove('active');
+          currentStepIndicator.classList.add('completed');
+        }
+
+        // Show next step
+        currentStep = step;
+        const nextStepEl = document.getElementById('step-' + currentStep);
+        if (nextStepEl) nextStepEl.classList.add('active');
+        
+        const nextStepIndicator = document.querySelector('.form-step[data-step="' + currentStep + '"]');
+        if (nextStepIndicator) nextStepIndicator.classList.add('active');
+
+        // Update step line
+        updateStepLines();
+      };
+
+      window.prevStep = function(step) {
+        // Hide current step
+        const currentStepEl = document.getElementById('step-' + currentStep);
+        if (currentStepEl) currentStepEl.classList.remove('active');
+        
+        const currentStepIndicator = document.querySelector('.form-step[data-step="' + currentStep + '"]');
+        if (currentStepIndicator) currentStepIndicator.classList.remove('active');
+
+        // Show previous step
+        currentStep = step;
+        const prevStepEl = document.getElementById('step-' + currentStep);
+        if (prevStepEl) prevStepEl.classList.add('active');
+        
+        const prevStepIndicator = document.querySelector('.form-step[data-step="' + currentStep + '"]');
+        if (prevStepIndicator) {
+          prevStepIndicator.classList.remove('completed');
+          prevStepIndicator.classList.add('active');
+        }
+
+        // Update step line
+        updateStepLines();
+      };
+
+      function updateStepLines() {
+        var lines = document.querySelectorAll('.form-step__line');
+        lines.forEach(function(line, index) {
+          if (index < currentStep - 1) {
+            line.style.background = 'var(--color-jade)';
+          } else {
+            line.style.background = 'var(--gray-200)';
+          }
+        });
+      }
+
+      // Initialize form on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        // Ensure step 1 is active
+        var step1 = document.getElementById('step-1');
+        if (step1) step1.classList.add('active');
+      });
+    })();
+  </script>
 </body>
 </html>
