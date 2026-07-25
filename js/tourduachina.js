@@ -282,7 +282,9 @@
 
       const formData = new FormData(this);
       const name = formData.get('name') || '';
-      const whatsapp = formData.get('whatsapp') || '';
+      const countryCode = formData.get('country-code') || '+62';
+      const whatsappNumber = formData.get('whatsapp') || '';
+      const whatsapp = whatsappNumber ? countryCode + whatsappNumber : '';
       const email = formData.get('email') || '-';
       const destination = formData.get('destination') || '-';
       const pax = formData.get('pax') || '-';
