@@ -24,36 +24,188 @@
   
   <!-- Canonical -->
   <link rel="canonical" href="https://tourduachina.id/">
-  
+
+  <!-- Hreflang -->
+  <link rel="alternate" href="https://tourduachina.id/" hreflang="id">
+  <link rel="alternate" href="https://tourduachina.id/" hreflang="x-default">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- JSON-LD Schema -->
+  <!-- JSON-LD Schema (static — visible to non-JS AI/SEO crawlers) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "TravelAgency",
     "name": "Tourduachina.id",
+    "alternateName": "Tourdua China",
     "description": "Private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.",
     "url": "https://tourduachina.id",
     "logo": "https://tourduachina.id/images/logo.png",
-    "telephone": "+62-812-3456-7890",
-    "email": "hello@tourduachina.id",
+    "image": "https://tourduachina.id/images/og-image.jpg",
+    "telephone": "+86-158-1125-2101",
+    "email": "tourduachina@gmail.com",
+    "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "Bali",
-      "addressRegion": "Bali",
-      "addressCountry": "ID"
+      "addressLocality": "Beijing",
+      "addressRegion": "Beijing",
+      "addressCountry": "CN"
     },
+    "areaServed": { "@type": "Country", "name": "China" },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "500"
     },
+    "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Rina Wijaya" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Pertama kali ke China, tapi semuanya berjalan lancar berkat Tourduachina.id! Pemandu sangat helpful, sabar, dan tahu banget tempat-tempat bagus.",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Beijing Heritage" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Budi & Keluarga" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Anak-anak senang banget lihat panda di Chengdu! Private tour bikin kami fleksibel atur jadwal. Worth every rupiah!",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Chengdu Panda" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Maya Sari" },
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+        "reviewBody": "Zhangjiajie luar biasa indah! Tim Tourduachina.id sangat profesional dari awal planning sampai akhir trip. Visa juga dibantu, jadi ga ribet sama sekali.",
+        "itemReviewed": { "@type": "TouristTrip", "name": "Zhangjiajie Adventure" }
+      }
+    ],
     "sameAs": [
       "https://instagram.com/tourduachina.id"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tourduachina.id",
+    "url": "https://tourduachina.id"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Paket Private Tour China",
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Beijing Heritage",
+          "description": "5 hari 4 malam menjelajahi Tembok Besar dan Forbidden City bersama pemandu berbahasa Indonesia.",
+          "touristType": ["Cultural", "Heritage"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/beijing.html",
+          "image": "https://tourduachina.id/images/destinations/beijing.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Shanghai Modern",
+          "description": "4 hari 3 malam menikmati The Bund dan Yu Garden di kota metropolitan Shanghai.",
+          "touristType": ["City", "Modern"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/shanghai.html",
+          "image": "https://tourduachina.id/images/destinations/shanghai.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 3,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Xi'an Ancient",
+          "description": "4 hari 3 malam mengunjungi Terracotta Warriors dan tembok kota kuno Xi'an.",
+          "touristType": ["Historical", "Cultural"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/xian.html",
+          "image": "https://tourduachina.id/images/destinations/xian.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 4,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Chengdu Panda",
+          "description": "4 hari 3 malam bertemu panda raksasa di Panda Base dan menyusuri Jinli Street.",
+          "touristType": ["Wildlife", "Family"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/chengdu.html",
+          "image": "https://tourduachina.id/images/destinations/chengdu.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 5,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Guilin Nature",
+          "description": "5 hari 4 malam menyusuri Sungai Li dan pegunungan karst Yangshuo.",
+          "touristType": ["Nature", "Adventure"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/guilin.html",
+          "image": "https://tourduachina.id/images/destinations/guilin.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 6,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "Zhangjiajie Adventure",
+          "description": "5 hari 4 malam menjelajahi pilar batu Zhangjiajie, inspirasi pegunungan Avatar.",
+          "touristType": ["Adventure", "Nature"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "url": "https://tourduachina.id/zhangjiajie.html",
+          "image": "https://tourduachina.id/images/destinations/zhangjiajie.svg"
+        }
+      },
+      {
+        "@type": "ListItem", "position": 7,
+        "item": {
+          "@type": "TouristTrip",
+          "name": "China Golden Route",
+          "description": "8 hari 7 malam rute lengkap Beijing-Xi'an-Shanghai untuk pengalaman China yang komprehensif.",
+          "touristType": ["Multi-City", "Comprehensive"],
+          "provider": { "@type": "TravelAgency", "name": "Tourduachina.id" },
+          "itinerary": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {"@type": "ListItem", "position": 1, "name": "Hari 1-3: Beijing — Tembok Besar & Forbidden City"},
+              {"@type": "ListItem", "position": 2, "name": "Hari 4-5: Xi'an — Terracotta Warriors"},
+              {"@type": "ListItem", "position": 3, "name": "Hari 6-8: Shanghai — The Bund & Yu Garden"}
+            ]
+          },
+          "url": "https://tourduachina.id/#contact",
+          "image": "https://tourduachina.id/images/destinations/golden-route.svg"
+        }
+      }
     ]
   }
   </script>
@@ -73,1143 +225,8 @@
     ]
   }
   </script>
-  
-  <style>
-    /* ============================================
-       CSS CUSTOM PROPERTIES
-       ============================================ */
-    :root {
-      /* === BRAND COLORS === */
-      --primary: #C22423;          /* Primary Red — CTA, badge, highlight */
-      --primary-dark: #A51E1E;     /* Dark Red — hover, active state */
-      --primary-light: #D93B3B;    /* Light Red — subtle accents */
-      --accent: #AE8659;           /* Antique Gold — icons, borders, premium accent */
-      --accent-dark: #987246;      /* Dark Gold/Bronze — footer, ornament, divider */
-      --accent-light: #D4C3B2;     /* Soft Gold/Beige — hover card, subtle bg */
-      --success: #10B981;
-      --success-dark: #059669;
-      --dark: #41484D;             /* Charcoal Navy — heading, navbar */
-      --dark-deep: #2C343A;        /* Deep Charcoal — body text, footer */
-      --cream: #EEE2CB;            /* Warm Cream — alt bg, premium card */
-      --ivory: #F3EFE9;            /* Ivory Background — main bg */
-      --gray-100: #F3EFE9;
-      --gray-200: #D4C3B2;
-      --gray-300: #B8A99A;
-      --gray-400: #8A7D72;
-      --gray-500: #6B6057;
-      --gray-600: #4A423B;
-      --gray-700: #2C343A;
-      --gray-800: #41484D;
-      --white: #FFFFFF;
-      --shadow-sm: 0 1px 3px rgba(65,72,77,0.08);
-      --shadow-md: 0 4px 12px rgba(65,72,77,0.1);
-      --shadow-lg: 0 10px 30px rgba(65,72,77,0.12);
-      --shadow-xl: 0 20px 50px rgba(65,72,77,0.15);
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --radius-full: 9999px;
-      --font-heading: 'Plus Jakarta Sans', sans-serif;
-      --font-body: 'Inter', sans-serif;
-      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
 
-    /* ============================================
-       RESET & BASE
-       ============================================ */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--dark-deep);
-      background: var(--ivory);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-    img { max-width: 100%; height: auto; display: block; }
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-    ul { list-style: none; }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); line-height: 1.2; }
-
-    /* Skip to content */
-    .skip-link {
-      position: absolute;
-      top: -100%;
-      left: 16px;
-      z-index: 9999;
-      padding: 8px 16px;
-      background: var(--primary);
-      color: var(--white);
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-    }
-    .skip-link:focus { top: 16px; }
-
-    /* ============================================
-       LAYOUT
-       ============================================ */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .section {
-      padding: 80px 0;
-    }
-    .section__header {
-      text-align: center;
-      max-width: 640px;
-      margin: 0 auto 48px;
-    }
-    .section__subtitle {
-      font-family: var(--font-heading);
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-    .section__title {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 16px;
-    }
-    .section__title span { color: var(--primary); }
-    .section__desc {
-      font-size: 16px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-
-    /* ============================================
-       ANIMATIONS
-       ============================================ */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .fade-in { opacity: 1; transform: none; transition: none; }
-      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-    }
-
-    /* ============================================
-       BUTTONS
-       ============================================ */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 28px;
-      font-family: var(--font-heading);
-      font-size: 15px;
-      font-weight: 600;
-      border-radius: var(--radius-full);
-      transition: var(--transition);
-      white-space: nowrap;
-    }
-    .btn--primary {
-      background: var(--primary);
-      color: var(--white);
-    }
-    .btn--primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
-    .btn--outline {
-      background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-    }
-    .btn--outline:hover { background: var(--primary); color: var(--white); }
-    .btn--gold {
-      background: var(--accent);
-      color: var(--dark);
-    }
-    .btn--gold:hover { background: var(--accent-dark); transform: translateY(-2px); }
-    .btn--white {
-      background: var(--white);
-      color: var(--primary);
-    }
-    .btn--white:hover { background: var(--gray-50); transform: translateY(-2px); }
-    .btn--lg { padding: 16px 36px; font-size: 16px; }
-
-    /* ============================================
-       HEADER
-       ============================================ */
-    .header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(44, 52, 58, 0.92);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      transition: var(--transition);
-    }
-    .header--scrolled {
-      background: rgba(44, 52, 58, 0.98);
-      box-shadow: 0 2px 20px rgba(44,52,58,0.3);
-    }
-    .header__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .header__logo {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--white);
-      display: flex;
-      align-items: center;
-    }
-    .header__logo span { color: var(--accent); }
-    .header__logo-img {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-    }
-    .header__nav { display: flex; align-items: center; gap: 32px; }
-    .header__link {
-      font-size: 14px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.8);
-      transition: var(--transition);
-    }
-    .header__link:hover { color: var(--white); }
-    .header__actions { display: flex; align-items: center; gap: 12px; }
-    .header__cta {
-      background: var(--primary);
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .header__cta:hover { background: var(--primary-dark); }
-    .header__lang {
-      color: rgba(255,255,255,0.7);
-      font-size: 13px;
-      font-weight: 500;
-      padding: 6px 12px;
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: var(--radius-sm);
-      transition: var(--transition);
-    }
-    .header__lang:hover { border-color: rgba(255,255,255,0.5); color: var(--white); }
-    .header__hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      padding: 8px;
-      flex-shrink: 0;
-    }
-    @media (max-width: 768px) {
-      .header__cta { display: none; }
-      .header__lang { display: none; }
-    }
-    .header__hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      transition: var(--transition);
-    }
-
-    /* Mobile Nav */
-    .mobile-nav {
-      display: none;
-      position: fixed;
-      top: 72px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--dark-deep);
-      z-index: 999;
-      padding: 32px 24px;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .mobile-nav.active { display: flex; }
-    .mobile-nav a {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--white);
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* ============================================
-       HERO
-       ============================================ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #2C343A 0%, #41484D 30%, #5A6369 60%, #C22423 100%);
-      overflow: hidden;
-      padding-top: 72px;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: 
-        radial-gradient(circle at 20% 80%, rgba(194,36,35,0.25) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(174,134,89,0.15) 0%, transparent 50%),
-        linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%);
-    }
-    .hero__decoration {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .hero__mountain {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 40%;
-      background: linear-gradient(180deg, transparent 0%, rgba(44,52,58,0.8) 100%);
-    }
-    .hero__pillar {
-      position: absolute;
-      bottom: 15%;
-      width: 60px;
-      background: linear-gradient(180deg, rgba(194,36,35,0.35) 0%, rgba(194,36,35,0.08) 100%);
-      border-radius: 8px 8px 0 0;
-    }
-    .hero__pillar:nth-child(1) { left: 10%; height: 200px; }
-    .hero__pillar:nth-child(2) { left: 18%; height: 280px; width: 50px; }
-    .hero__pillar:nth-child(3) { left: 25%; height: 160px; width: 70px; }
-    .hero__pillar:nth-child(4) { right: 15%; height: 240px; }
-    .hero__pillar:nth-child(5) { right: 22%; height: 180px; width: 55px; }
-    .hero__pillar:nth-child(6) { right: 30%; height: 300px; width: 45px; }
-    .hero__content {
-      position: relative;
-      z-index: 10;
-      text-align: center;
-      max-width: 800px;
-      padding: 0 24px;
-    }
-    .hero__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(174,134,89,0.12);
-      border: 1px solid rgba(174,134,89,0.3);
-      color: var(--accent);
-      padding: 8px 20px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-    .hero__title {
-      font-size: 52px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 20px;
-      line-height: 1.15;
-    }
-    .hero__title span { color: var(--accent); }
-    .hero__subtitle {
-      font-size: 18px;
-      color: rgba(255,255,255,0.75);
-      max-width: 600px;
-      margin: 0 auto 40px;
-      line-height: 1.7;
-    }
-    .hero__cta-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .hero__stats {
-      display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin-top: 64px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(174,134,89,0.2);
-    }
-    .hero__stat-value {
-      font-family: var(--font-heading);
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--accent);
-    }
-    .hero__stat-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.6);
-      margin-top: 4px;
-    }
-
-    /* ============================================
-       ABOUT
-       ============================================ */
-    .about__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .about__image-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .about__image {
-      aspect-ratio: 4/3;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 48px;
-    }
-    .about__image:nth-child(2) { margin-top: 32px; }
-    .about__image:nth-child(3) { margin-top: -32px; }
-    .about__text-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(174,134,89,0.1);
-      color: var(--accent);
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-    .about__title {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-    .about__title span { color: var(--primary); }
-    .about__desc {
-      color: var(--gray-500);
-      margin-bottom: 24px;
-      line-height: 1.8;
-    }
-    .about__features {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-    }
-    .about__feature {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-    .about__feature-icon {
-      width: 24px;
-      height: 24px;
-      background: rgba(16,185,129,0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: 2px;
-      color: var(--success);
-      font-size: 14px;
-    }
-    .about__feature-text { font-size: 15px; color: var(--gray-600); }
-
-    /* ============================================
-       PACKAGES
-       ============================================ */
-    .packages { background: var(--cream); }
-    .packages__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .package-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-    }
-    .package-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .package-card__image {
-      height: 200px;
-      position: relative;
-      overflow: hidden;
-    }
-    .package-card__image-bg {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-    }
-    .package-card__badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: var(--primary);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: var(--radius-full);
-      font-size: 12px;
-      font-weight: 600;
-    }
-    .package-card__rating {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(8px);
-      color: var(--white);
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-    .package-card__body { padding: 20px; }
-    .package-card__city {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--primary);
-      margin-bottom: 8px;
-    }
-    .package-card__name {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 8px;
-    }
-    .package-card__duration {
-      font-size: 13px;
-      color: var(--gray-400);
-      margin-bottom: 16px;
-    }
-    .package-card__footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 16px;
-      border-top: 1px solid var(--gray-100);
-    }
-    .package-card__price {
-      font-family: var(--font-heading);
-      font-size: 11px;
-      color: var(--gray-400);
-    }
-    .package-card__price strong {
-      display: block;
-      font-size: 20px;
-      color: var(--primary);
-      font-weight: 800;
-    }
-    .package-card__cta {
-      background: var(--primary);
-      color: var(--white);
-      padding: 10px 20px;
-      border-radius: var(--radius-full);
-      font-size: 13px;
-      font-weight: 600;
-      transition: var(--transition);
-    }
-    .package-card__cta:hover { background: var(--primary-dark); }
-
-    /* ============================================
-       WHY US
-       ============================================ */
-    .why-us__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-    .why-card {
-      text-align: center;
-      padding: 40px 24px;
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--accent-light);
-      transition: var(--transition);
-    }
-    .why-card:hover { border-color: var(--accent); box-shadow: var(--shadow-md); transform: translateY(-4px); }
-    .why-card__icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 20px;
-      background: rgba(174,134,89,0.1);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-    }
-    .why-card__title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 12px;
-    }
-    .why-card__desc {
-      font-size: 14px;
-      color: var(--gray-500);
-      line-height: 1.6;
-    }
-
-    /* ============================================
-       SERVICES
-       ============================================ */
-    .services { background: var(--dark-deep); }
-    .services .section__title { color: var(--white); }
-    .services .section__title span { color: var(--accent); }
-    .services .section__desc { color: rgba(255,255,255,0.6); }
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .service-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      transition: var(--transition);
-    }
-    .service-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(174,134,89,0.4); transform: translateY(-4px); }
-    .service-card__icon {
-      width: 56px;
-      height: 56px;
-      margin-bottom: 20px;
-      background: rgba(255,215,0,0.1);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-    }
-    .service-card__title {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-    .service-card__desc {
-      font-size: 14px;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
-    }
-
-    /* ============================================
-       DESTINATIONS
-       ============================================ */
-    .destinations__grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-    .dest-card {
-      position: relative;
-      aspect-ratio: 3/4;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .dest-card__bg {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 72px;
-      transition: transform 0.6s ease;
-    }
-    .dest-card:hover .dest-card__bg { transform: scale(1.1); }
-    .dest-card__overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
-    }
-    .dest-card__content {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-    }
-    .dest-card__name {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--white);
-    }
-    .dest-card__country {
-      font-size: 13px;
-      color: rgba(255,255,255,0.7);
-    }
-
-    /* ============================================
-       TESTIMONIALS
-       ============================================ */
-    .testimonials { background: var(--ivory); }
-    .testimonials__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .testimonial-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      box-shadow: var(--shadow-sm);
-    }
-    .testimonial-card__stars {
-      color: var(--accent);
-      font-size: 18px;
-      margin-bottom: 16px;
-    }
-    .testimonial-card__text {
-      font-size: 15px;
-      color: var(--gray-600);
-      line-height: 1.7;
-      margin-bottom: 20px;
-      font-style: italic;
-    }
-    .testimonial-card__author {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .testimonial-card__avatar {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-weight: 700;
-      font-size: 18px;
-    }
-    .testimonial-card__name {
-      font-weight: 600;
-      color: var(--dark);
-      font-size: 15px;
-    }
-    .testimonial-card__location {
-      font-size: 13px;
-      color: var(--gray-400);
-    }
-
-    /* ============================================
-       FAQ
-       ============================================ */
-    .faq__grid {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .faq-item {
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-md);
-      margin-bottom: 12px;
-      overflow: hidden;
-    }
-    .faq-item__question {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 24px;
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--dark);
-      text-align: left;
-      background: var(--white);
-      transition: var(--transition);
-    }
-    .faq-item__question:hover { background: var(--cream); }
-    .faq-item__icon {
-      font-size: 20px;
-      color: var(--accent);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-    }
-    .faq-item.active .faq-item__icon { transform: rotate(45deg); }
-    .faq-item__answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    .faq-item__answer-inner {
-      padding: 0 24px 20px;
-      font-size: 15px;
-      color: var(--gray-500);
-      line-height: 1.7;
-    }
-    .faq-item.active .faq-item__answer { max-height: 300px; }
-
-    /* ============================================
-       BOOKING CTA
-       ============================================ */
-    .booking {
-      background: linear-gradient(135deg, var(--dark-deep) 0%, var(--dark) 100%);
-    }
-    .booking__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .booking__title {
-      font-size: 36px;
-      font-weight: 800;
-      color: var(--white);
-      margin-bottom: 16px;
-    }
-    .booking__title span { color: var(--accent); }
-    .booking__desc {
-      color: rgba(255,255,255,0.6);
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-    .booking__contact-item {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-    .booking__contact-icon {
-      width: 48px;
-      height: 48px;
-      background: rgba(174,134,89,0.12);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-    }
-    .booking__contact-label {
-      font-size: 13px;
-      color: rgba(255,255,255,0.5);
-    }
-    .booking__contact-value {
-      font-size: 16px;
-      font-weight: 600;
-      color: var(--white);
-    }
-    .booking__form {
-      background: var(--white);
-      border-radius: var(--radius-xl);
-      padding: 40px;
-    }
-    .booking__form-title {
-      font-size: 24px;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 24px;
-    }
-    .form-group {
-      margin-bottom: 16px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--gray-600);
-      margin-bottom: 6px;
-    }
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-body);
-      font-size: 14px;
-      color: var(--dark);
-      transition: var(--transition);
-    }
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(174,134,89,0.12);
-    }
-    .form-group textarea { resize: vertical; min-height: 80px; }
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-    .form-submit {
-      width: 100%;
-      padding: 16px;
-      background: var(--primary);
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius-sm);
-      font-family: var(--font-heading);
-      font-size: 16px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .form-submit:hover { background: var(--primary-dark); }
-
-    /* ============================================
-       FOOTER
-       ============================================ */
-    .footer {
-      background: var(--dark-deep);
-      padding: 64px 0 32px;
-      border-top: 1px solid rgba(174,134,89,0.1);
-    }
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer__brand-desc {
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 16px;
-      line-height: 1.7;
-    }
-    .footer__social {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
-    }
-    .footer__social a {
-      width: 40px;
-      height: 40px;
-      background: rgba(255,255,255,0.05);
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      transition: var(--transition);
-      font-size: 18px;
-    }
-    .footer__social a:hover { background: var(--accent); color: var(--white); }
-    .footer__title {
-      font-size: 15px;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 20px;
-    }
-    .footer__link {
-      display: block;
-      font-size: 14px;
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 12px;
-      transition: var(--transition);
-    }
-    .footer__link:hover { color: var(--accent); }
-    .footer__bottom {
-      padding-top: 32px;
-      border-top: 1px solid rgba(174,134,89,0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer__copyright {
-      font-size: 13px;
-      color: rgba(255,255,255,0.4);
-    }
-
-    /* ============================================
-       WHATSAPP BUTTON
-       ============================================ */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      width: 60px;
-      height: 60px;
-      background: #25D366;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-      transition: var(--transition);
-      font-size: 28px;
-    }
-    .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
-    .whatsapp-float::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: #25D366;
-      animation: whatsapp-pulse 2s infinite;
-    }
-    @keyframes whatsapp-pulse {
-      0% { transform: scale(1); opacity: 0.5; }
-      100% { transform: scale(1.5); opacity: 0; }
-    }
-
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
-    @media (max-width: 1024px) {
-      .packages__grid { grid-template-columns: repeat(2, 1fr); }
-      .why-us__grid { grid-template-columns: repeat(2, 1fr); }
-      .destinations__grid { grid-template-columns: repeat(2, 1fr); }
-      .footer__grid { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .section { padding: 60px 0; }
-      .section__title { font-size: 28px; }
-      .header__nav { display: none; }
-      .header__hamburger { display: flex; }
-      .hero__title { font-size: 36px; }
-      .hero__subtitle { font-size: 16px; }
-      .hero__stats { flex-direction: column; gap: 24px; }
-      .about__grid { grid-template-columns: 1fr; gap: 40px; }
-      .about__image-grid { order: -1; }
-      .packages__grid { grid-template-columns: 1fr; }
-      .services__grid { grid-template-columns: 1fr; }
-      .testimonials__grid { grid-template-columns: 1fr; }
-      .destinations__grid { grid-template-columns: repeat(2, 1fr); }
-      .booking__grid { grid-template-columns: 1fr; gap: 40px; }
-      .booking__form { padding: 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer__grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer__bottom { flex-direction: column; gap: 16px; text-align: center; }
-    }
-    @media (max-width: 480px) {
-      .hero__title { font-size: 28px; }
-      .hero__cta-group { flex-direction: column; width: 100%; }
-      .hero__cta-group .btn { width: 100%; }
-      .why-us__grid { grid-template-columns: 1fr; }
-      .destinations__grid { grid-template-columns: 1fr; }
-    }
-
-    /* ============================================
-       NEW BOOKING FORM STYLES
-       ============================================ */
-    .booking__form .sec { margin-top: 22px; }
-    .booking__form .eyebrow {
-      font-size: 11px; letter-spacing: .09em; text-transform: uppercase;
-      color: var(--accent); font-weight: 600;
-      padding-bottom: 8px; margin-bottom: 14px;
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .booking__form .lab { font-size: 13px; color: var(--gray-500); margin-bottom: 5px; display: block; }
-    .booking__form .hint { font-size: 12px; color: var(--gray-500); line-height: 1.6; margin-top: 6px; }
-    .booking__form .row { display: grid; gap: 12px; margin-bottom: 12px; }
-    @media(min-width: 560px) {
-      .booking__form .two { grid-template-columns: 1fr 1fr; }
-      .booking__form .three { grid-template-columns: 1fr 1fr 1fr; }
-    }
-    .booking__form .sub { font-size: 12px; color: var(--gray-400); margin-top: 4px; display: block; }
-    .booking__form input[type=text],
-    .booking__form input[type=tel],
-    .booking__form input[type=email],
-    .booking__form input[type=date],
-    .booking__form input[type=number],
-    .booking__form select,
-    .booking__form textarea {
-      width: 100%; font-family: var(--font-body); font-size: 14px; color: var(--dark-deep);
-      background: var(--ivory); border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
-      padding: 10px 12px; transition: border-color .15s, box-shadow .15s;
-    }
-    .booking__form textarea { resize: vertical; min-height: 72px; }
-    .booking__form select {
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236B6057' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
-      background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px;
-    }
-    .booking__form input:focus,
-    .booking__form select:focus,
-    .booking__form textarea:focus {
-      outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(174,134,89,0.12);
-    }
-    .booking__form .cities { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px 10px; }
-    .booking__form .chk { display: flex; gap: 8px; align-items: center; font-size: 13.5px; cursor: pointer; }
-    .booking__form .chk input { width: 15px; height: 15px; accent-color: var(--accent); cursor: pointer; flex-shrink: 0; }
-    .booking__form .tiers { display: grid; gap: 10px; }
-    @media(min-width: 520px) { .booking__form .tiers { grid-template-columns: 1fr 1fr 1fr; } }
-    .booking__form .tier {
-      background: var(--ivory); border: 1px solid var(--gray-200); border-radius: var(--radius-sm);
-      padding: 13px 14px; cursor: pointer; position: relative;
-      transition: border-color .15s, box-shadow .15s;
-    }
-    .booking__form .tier:hover { border-color: var(--accent); }
-    .booking__form .tier input { position: absolute; opacity: 0; pointer-events: none; }
-    .booking__form .tier:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(174,134,89,0.15); background: rgba(174,134,89,0.04); }
-    .booking__form .tname { font-size: 14px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 7px; color: var(--dark); }
-    .booking__form .dot { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid var(--gray-200); flex-shrink: 0; }
-    .booking__form .tier:has(input:checked) .dot { border-color: var(--accent); background: radial-gradient(var(--accent) 0 43%, #fff 47%); }
-    .booking__form .tdesc { font-size: 12.5px; color: var(--gray-500); line-height: 1.5; }
-    .booking__form .tprice { font-size: 13px; margin-top: 8px; font-weight: 700; color: var(--primary); }
-    .booking__form .tunit { font-size: 11px; color: var(--gray-400); }
-    .booking__form .pop {
-      display: inline-block; background: rgba(174,134,89,0.1); color: var(--accent);
-      font-size: 10.5px; font-weight: 600; padding: 2px 7px; border-radius: 4px; margin-bottom: 7px;
-    }
-    #ref { background: rgba(174,134,89,0.07); border-radius: var(--radius-sm); padding: 12px 14px; margin-top: 10px; display: none; }
-    .booking__form .consent {
-      display: flex; gap: 10px; align-items: flex-start;
-      font-size: 13px; color: var(--gray-500); line-height: 1.6;
-      margin: 18px 0 14px; cursor: pointer;
-    }
-    .booking__form .consent input { width: 15px; height: 15px; accent-color: var(--accent); margin-top: 2px; flex-shrink: 0; cursor: pointer; }
-    .booking__form .hp { position: absolute; left: -9999px; }
-    .booking__form .err { color: var(--primary); font-size: 13px; margin-top: 10px; text-align: center; display: none; }
-    .booking__form .alt { text-align: center; font-size: 13px; color: var(--gray-400); margin-top: 12px; }
-    .booking__form .alt a { color: var(--accent); }
-    #done { display: none; text-align: center; padding: 40px 20px; background: var(--white); border-radius: var(--radius-xl); }
-    #done .done-seal {
-      width: 36px; height: 36px; border-radius: 6px;
-      background: var(--accent); color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 600; font-size: 13px; letter-spacing: .06em;
-      margin: 0 auto 18px;
-    }
-    #done h2 { font-size: 24px; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
-    #done p { color: var(--gray-500); font-size: 14px; max-width: 36ch; margin: 0 auto 22px; line-height: 1.6; }
-    .wa-btn {
-      display: inline-block; background: #25D366; color: #fff; text-decoration: none;
-      font-size: 14px; font-weight: 600; padding: 12px 24px; border-radius: var(--radius-full);
-      transition: opacity .15s;
-    }
-    .wa-btn:hover { opacity: .9; }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Skip to Content -->
@@ -1227,12 +244,13 @@
         <a href="#home" class="header__link">Home</a>
         <a href="#packages" class="header__link">Paket Tour</a>
         <a href="#services" class="header__link">Layanan</a>
+        <a href="/blog.html" class="header__link">Blog</a>
         <a href="#about" class="header__link">Tentang</a>
         <a href="#faq" class="header__link">FAQ</a>
         <a href="#contact" class="header__link">Kontak</a>
       </nav>
       <div class="header__actions">
-        <a href="https://wa.me/6281234567890" class="header__cta" target="_blank" rel="noopener">Chat Kami</a>
+        <a href="https://wa.me/8615811252101" class="header__cta" target="_blank" rel="noopener">Chat Kami</a>
         <button class="header__lang" aria-label="Switch to English">EN</button>
         <button class="header__hamburger" aria-label="Toggle menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -1246,10 +264,11 @@
     <a href="#home">Home</a>
     <a href="#packages">Paket Tour</a>
     <a href="#services">Layanan</a>
+    <a href="/blog.html">Blog</a>
     <a href="#about">Tentang</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Kontak</a>
-    <a href="https://wa.me/6281234567890" class="btn btn--primary" style="margin-top: auto;">Chat WhatsApp</a>
+    <a href="https://wa.me/8615811252101" class="btn btn--primary" style="margin-top: auto;">Chat WhatsApp</a>
   </div>
 
   <main id="main">
@@ -1276,7 +295,7 @@
         </p>
         <div class="hero__cta-group">
           <a href="#contact" class="btn btn--primary btn--lg">Mulai Petualangan →</a>
-          <a href="#packages" class="btn btn--outline btn--lg" style="border-color: rgba(255,255,255,0.3); color: var(--white);">Lihat Paket Tour</a>
+          <a href="#packages" class="btn btn--outline btn--lg" style="border-color: var(--color-gold); color: var(--color-charcoal);">Lihat Paket Tour</a>
         </div>
         <div class="hero__stats">
           <div>
@@ -1306,10 +325,10 @@
       <div class="container">
         <div class="about__grid">
           <div class="about__image-grid fade-in">
-            <div class="about__image" style="background: linear-gradient(135deg, #D4C3B2, #EEE2CB);">🏯</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #EEE2CB, #F3EFE9);">🐼</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #B8A99A, #D4C3B2);">🏔️</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #AE8659, #D4C3B2);">🏯</div>
+            <div class="about__image"><img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang di Beijing" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/chengdu.svg" alt="Panda raksasa di Chengdu Panda Base" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pegunungan Zhangjiajie" loading="lazy" width="400" height="300"></div>
+            <div class="about__image"><img src="images/destinations/xian.svg" alt="Prajurit Terakota di Xi'an" loading="lazy" width="400" height="300"></div>
           </div>
           <div class="fade-in">
             <div class="about__text-tag">✨ Tentang Kami</div>
@@ -1355,16 +374,16 @@
           <!-- Beijing -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #C22423 0%, #E85D5D 100%);">🏯</div>
+              <img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang, ikon paket tour Beijing Heritage" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Populer</div>
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Beijing</div>
-              <h3 class="package-card__name">Beijing Heritage</h3>
+              <h3 class="package-card__name"><a href="beijing.html" style="color:inherit;">Beijing Heritage</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Tembok Besar, Forbidden City</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 8.500.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1372,15 +391,15 @@
           <!-- Shanghai -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">🌃</div>
+              <img src="images/destinations/shanghai.svg" alt="Skyline modern kota Shanghai, ikon paket tour Shanghai Modern" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Shanghai</div>
-              <h3 class="package-card__name">Shanghai Modern</h3>
+              <h3 class="package-card__name"><a href="shanghai.html" style="color:inherit;">Shanghai Modern</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • The Bund, Yu Garden</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 7.200.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1388,15 +407,15 @@
           <!-- Xi'an -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🗿</div>
+              <img src="images/destinations/xian.svg" alt="Prajurit Terakota, ikon paket tour Xi'an Ancient" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Xi'an</div>
-              <h3 class="package-card__name">Xi'an Ancient</h3>
+              <h3 class="package-card__name"><a href="xian.html" style="color:inherit;">Xi'an Ancient</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • Terracotta Warriors</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 6.800.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1404,15 +423,15 @@
           <!-- Chengdu -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">🐼</div>
+              <img src="images/destinations/chengdu.svg" alt="Panda raksasa, ikon paket tour Chengdu Panda" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.8</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Chengdu</div>
-              <h3 class="package-card__name">Chengdu Panda</h3>
+              <h3 class="package-card__name"><a href="chengdu.html" style="color:inherit;">Chengdu Panda</a></h3>
               <div class="package-card__duration">4 Hari 3 Malam • Panda Base, Jinli Street</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 7.500.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1420,15 +439,15 @@
           <!-- Guilin -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">🏞️</div>
+              <img src="images/destinations/guilin.svg" alt="Pegunungan karst dan Sungai Li, ikon paket tour Guilin Nature" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__rating">⭐ 4.9</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Guilin</div>
-              <h3 class="package-card__name">Guilin Nature</h3>
+              <h3 class="package-card__name"><a href="guilin.html" style="color:inherit;">Guilin Nature</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Li River, Yangshuo</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 9.000.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1436,16 +455,16 @@
           <!-- Zhangjiajie -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">⛰️</div>
+              <img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pasir menjulang, ikon paket tour Zhangjiajie Adventure" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Best Seller</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
             <div class="package-card__body">
               <div class="package-card__city">Zhangjiajie</div>
-              <h3 class="package-card__name">Zhangjiajie Adventure</h3>
+              <h3 class="package-card__name"><a href="zhangjiajie.html" style="color:inherit;">Zhangjiajie Adventure</a></h3>
               <div class="package-card__duration">5 Hari 4 Malam • Avatar Mountains</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 10.500.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
@@ -1453,7 +472,7 @@
           <!-- Golden Route -->
           <div class="package-card fade-in">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, #AE8659 0%, #D4B896 100%);">🏆</div>
+              <img src="images/destinations/golden-route.svg" alt="Peta rute multi-kota, ikon paket tour China Golden Route" class="package-card__image-bg" loading="lazy" width="400" height="200">
               <div class="package-card__badge">Recommended</div>
               <div class="package-card__rating">⭐ 5.0</div>
             </div>
@@ -1462,15 +481,15 @@
               <h3 class="package-card__name">China Golden Route</h3>
               <div class="package-card__duration">8 Hari 7 Malam • Beijing-Xi'an-Shanghai</div>
               <div class="package-card__footer">
-                <div class="package-card__price">Mulai dari <strong>IDR 15.000.000</strong></div>
+                <div class="package-card__price"> <strong>Hubungi Kami</strong></div>
                 <a href="#contact" class="package-card__cta">Pesan</a>
               </div>
             </div>
           </div>
           <!-- Custom -->
-          <div class="package-card fade-in" style="border: 2px dashed var(--accent); background: rgba(174,134,89,0.03);">
+          <div class="package-card fade-in" style="border: 2px dashed var(--color-gold); background: rgba(184,135,77,0.03);">
             <div class="package-card__image">
-              <div class="package-card__image-bg" style="background: linear-gradient(135deg, var(--gray-100), var(--gray-200));">✨</div>
+              <img src="images/destinations/custom-trip.svg" alt="Kompas perjalanan, ikon paket Custom Trip" class="package-card__image-bg" loading="lazy" width="400" height="200">
             </div>
             <div class="package-card__body" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 180px;">
               <h3 class="package-card__name">Custom Trip</h3>
@@ -1593,70 +612,70 @@
           <p class="section__desc">Dari tembok kuno hingga pegunungan megah, China punya semuanya.</p>
         </div>
         <div class="destinations__grid">
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #C22423, #E85D5D);">🏯</div>
+          <a href="beijing.html" class="dest-card fade-in">
+            <img src="images/destinations/beijing.svg" alt="Tembok Besar dan Kota Terlarang di Beijing" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Beijing</div>
               <div class="dest-card__country">Ibu Kota China</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #667eea, #764ba2);">🌃</div>
+          </a>
+          <a href="shanghai.html" class="dest-card fade-in">
+            <img src="images/destinations/shanghai.svg" alt="Skyline modern kota Shanghai" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Shanghai</div>
               <div class="dest-card__country">Kota Modern</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #f093fb, #f5576c);">🗿</div>
+          </a>
+          <a href="xian.html" class="dest-card fade-in">
+            <img src="images/destinations/xian.svg" alt="Prajurit Terakota di Xi'an" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Xi'an</div>
               <div class="dest-card__country">Kota Kuno</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">🐼</div>
+          </a>
+          <a href="chengdu.html" class="dest-card fade-in">
+            <img src="images/destinations/chengdu.svg" alt="Panda raksasa di Chengdu Panda Base" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Chengdu</div>
               <div class="dest-card__country">Kota Panda</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">🏞️</div>
+          </a>
+          <a href="guilin.html" class="dest-card fade-in">
+            <img src="images/destinations/guilin.svg" alt="Pegunungan karst dan Sungai Li di Guilin" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guilin</div>
               <div class="dest-card__country">Sungai &amp; Pegunungan</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #a18cd1, #fbc2eb);">⛰️</div>
+          </a>
+          <a href="zhangjiajie.html" class="dest-card fade-in">
+            <img src="images/destinations/zhangjiajie.svg" alt="Pilar batu pegunungan Zhangjiajie" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Zhangjiajie</div>
               <div class="dest-card__country">Avatar Mountains</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #D4C3B2, #EEE2CB);">🌸</div>
+          </a>
+          <a href="#contact" class="dest-card fade-in">
+            <img src="images/destinations/hangzhou.svg" alt="Danau Barat (West Lake) di Hangzhou" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Hangzhou</div>
               <div class="dest-card__country">West Lake</div>
             </div>
-          </div>
-          <div class="dest-card fade-in">
-            <div class="dest-card__bg" style="background: linear-gradient(135deg, #AE8659, #D4C3B2);">🏙️</div>
+          </a>
+          <a href="#contact" class="dest-card fade-in">
+            <img src="images/destinations/guangzhou.svg" alt="Menara Canton dan skyline Guangzhou" class="dest-card__bg" loading="lazy" width="400" height="533">
             <div class="dest-card__overlay"></div>
             <div class="dest-card__content">
               <div class="dest-card__name">Guangzhou</div>
               <div class="dest-card__country">Dim Sum Capital</div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
@@ -1806,31 +825,38 @@
             <h2 class="booking__title">Mulai Rencanakan <span>Trip China</span> Anda</h2>
             <p class="booking__desc">Isi form di samping atau hubungi kami langsung via WhatsApp. Tim kami akan merespons dalam 1 jam pada jam kerja.</p>
             <div class="booking__contact-item">
-              <div class="booking__contact-icon">💬</div>
+              <div class="booking__contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
               <div>
                 <div class="booking__contact-label">WhatsApp</div>
-                <div class="booking__contact-value">+62 812-3456-7890</div>
+                <div class="booking__contact-value">+86 158-1125-2101</div>
               </div>
             </div>
             <div class="booking__contact-item">
-              <div class="booking__contact-icon">📧</div>
+              <div class="booking__contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
               <div>
                 <div class="booking__contact-label">Email</div>
-                <div class="booking__contact-value">hello@tourduachina.id</div>
+                <div class="booking__contact-value">tourduachina@gmail.com</div>
               </div>
             </div>
             <div class="booking__contact-item">
-              <div class="booking__contact-icon">📍</div>
+              <div class="booking__contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
               <div>
                 <div class="booking__contact-label">Lokasi</div>
-                <div class="booking__contact-value">Bali, Indonesia</div>
+                <div class="booking__contact-value">Beijing, Mainland China</div>
               </div>
             </div>
             <div class="booking__contact-item">
-              <div class="booking__contact-icon">🕐</div>
+              <div class="booking__contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+              <div>
+                <div class="booking__contact-label">Instagram</div>
+                <div class="booking__contact-value"><a href="https://instagram.com/tourduachina.id" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">@tourduachina.id</a></div>
+              </div>
+            </div>
+            <div class="booking__contact-item">
+              <div class="booking__contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
               <div>
                 <div class="booking__contact-label">Jam Operasional</div>
-                <div class="booking__contact-value">Senin-Sabtu, 09:00-18:00 WITA</div>
+                <div class="booking__contact-value">Senin-Sabtu, 09:00-18:00 (GMT+8)</div>
               </div>
             </div>
           </div>
@@ -1995,8 +1021,8 @@
           </div>
           <p class="footer__brand-desc">Spesialis private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.</p>
           <div class="footer__social">
-            <a href="https://instagram.com/tourduachina.id" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
-            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+            <a href="https://instagram.com/tourduachina.id" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+            <a href="https://wa.me/8615811252101" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
           </div>
         </div>
         <div>
@@ -2004,24 +1030,26 @@
           <a href="#home" class="footer__link">Home</a>
           <a href="#packages" class="footer__link">Paket Tour</a>
           <a href="#services" class="footer__link">Layanan</a>
+          <a href="/blog.html" class="footer__link">Blog</a>
           <a href="#about" class="footer__link">Tentang</a>
           <a href="#faq" class="footer__link">FAQ</a>
         </div>
         <div>
           <div class="footer__title">Destinasi</div>
-          <a href="#" class="footer__link">Beijing</a>
-          <a href="#" class="footer__link">Shanghai</a>
-          <a href="#" class="footer__link">Xi'an</a>
-          <a href="#" class="footer__link">Chengdu</a>
-          <a href="#" class="footer__link">Guilin</a>
-          <a href="#" class="footer__link">Zhangjiajie</a>
+          <a href="beijing.html" class="footer__link">Beijing</a>
+          <a href="shanghai.html" class="footer__link">Shanghai</a>
+          <a href="xian.html" class="footer__link">Xi'an</a>
+          <a href="chengdu.html" class="footer__link">Chengdu</a>
+          <a href="guilin.html" class="footer__link">Guilin</a>
+          <a href="zhangjiajie.html" class="footer__link">Zhangjiajie</a>
         </div>
         <div>
           <div class="footer__title">Kontak</div>
-          <span class="footer__link">💬 +62 812-3456-7890</span>
-          <span class="footer__link">📧 hello@tourduachina.id</span>
-          <span class="footer__link">📍 Bali, Indonesia</span>
-          <span class="footer__link">🕐 Sen-Sab 09:00-18:00</span>
+          <span class="footer__link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+86 158-1125-2101</span>
+          <span class="footer__link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>tourduachina@gmail.com</span>
+          <a href="https://instagram.com/tourduachina.id" target="_blank" rel="noopener" class="footer__link"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>@tourduachina.id</a>
+          <span class="footer__link">📍 Beijing, Mainland China</span>
+          <span class="footer__link">🕐 Sen-Sab 09:00-18:00 (GMT+8)</span>
         </div>
       </div>
       <div class="footer__bottom">
@@ -2032,7 +1060,7 @@
   </footer>
 
   <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20tour%20China" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <a href="https://wa.me/8615811252101?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20tour%20China" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
@@ -2041,7 +1069,7 @@
   <!-- JavaScript (All-in-One) -->
   <script src="js/tourduachina.js" defer></script>
 
-  <!-- Booking Form Handler -->
+  <!-- Booking Form Handler (Web3Forms) -->
   <script>
   (function() {
     var src = document.getElementById('src');
@@ -2074,7 +1102,8 @@
             f.style.display = 'none';
             var done = document.getElementById('done');
             if (done) { done.style.display = 'block'; }
-            window.scrollTo({ top: f.parentElement.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' });
+            var top = f.parentElement.getBoundingClientRect().top + window.scrollY - 100;
+            window.scrollTo({ top: top, behavior: 'smooth' });
           } else { throw new Error(); }
         })
         .catch(function() {
