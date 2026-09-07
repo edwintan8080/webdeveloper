@@ -943,6 +943,71 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  function initWAFloatWidget() {
+    const btn = document.getElementById('wa-float-btn');
+    const popup = document.getElementById('wa-popup');
+    const closeBtn = document.getElementById('wa-popup-close');
+    const form = document.getElementById('wa-float-form');
+    if (!btn || !popup || !form) return;
+
+    btn.addEventListener('click', function() {
+      const isHidden = popup.hidden;
+      popup.hidden = !isHidden;
+    });
+
+    closeBtn && closeBtn.addEventListener('click', function() {
+      popup.hidden = true;
+    });
+
+    document.addEventListener('click', function(e) {
+      const widget = document.getElementById('wa-widget');
+      if (widget && !widget.contains(e.target)) {
+        popup.hidden = true;
+      }
+    });
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = (document.getElementById('waf-name').value || '').trim();
+      const cc = document.getElementById('waf-cc').value || '+62';
+      const rawPhone = (document.getElementById('waf-phone').value || '').trim();
+      const phone = cc + rawPhone.replace(/^0+/, '');
+      const dest = (document.getElementById('waf-dest').value || '').trim() || '-';
+      const msg = (document.getElementById('waf-msg').value || '').trim() || '-';
+
+      if (!name || !rawPhone) {
+        document.getElementById('waf-name').focus();
+        return;
+      }
+
+      const text =
+        `Halo Tourduachina.id! 👋\n\n` +
+        `Saya ingin booking tour:\n` +
+        `━━━━━━━━━━━━━━━━━━\n` +
+        `👤 Nama: ${name}\n` +
+        `📱 WhatsApp: ${phone}\n` +
+        `📧 Email: \n` +
+        `🌏 Destinasi: ${dest}\n` +
+        `👥 Jumlah Orang: \n` +
+        `📅 Tanggal: \n` +
+        `⏱️ Durasi:\n` +
+        `💬 Special Request: ${msg}\n` +
+        `━━━━━━━━━━━━━━━━━━\n\n` +
+        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
+
+      const a = document.createElement('a');
+      a.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      popup.hidden = true;
+      form.reset();
+    });
+  }
+
   function init() {
     // Main functionality
     addNotificationStyles();
@@ -955,6 +1020,7 @@
     initTourSort();
     initBookingForm();
     initSelectFloatLabels();
+    initWAFloatWidget();
     initBackToTop();
     initLazyLoading();
     initCounterAnimation();

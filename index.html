@@ -1422,6 +1422,50 @@
       100% { transform: scale(1.5); opacity: 0; }
     }
 
+    /* WhatsApp Float Widget */
+    .wa-widget { position: fixed; bottom: 24px; right: 24px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .wa-popup {
+      width: 320px; background: var(--white); border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18); overflow: hidden;
+      animation: wa-popup-in 0.25s cubic-bezier(0.34,1.56,0.64,1);
+      transform-origin: bottom right;
+    }
+    @keyframes wa-popup-in {
+      from { opacity: 0; transform: scale(0.85) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .wa-popup__header { background: #25D366; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+    .wa-popup__avatar { width: 44px; height: 44px; background: rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .wa-popup__info { flex: 1; }
+    .wa-popup__name { font-size: 14px; font-weight: 700; color: #fff; margin: 0; }
+    .wa-popup__status { font-size: 11px; color: rgba(255,255,255,0.85); margin: 2px 0 0; }
+    .wa-popup__close { background: none; border: none; color: rgba(255,255,255,0.8); font-size: 22px; line-height: 1; cursor: pointer; padding: 0 2px; flex-shrink: 0; }
+    .wa-popup__close:hover { color: #fff; }
+    .wa-popup__body { padding: 16px; }
+    .wa-bubble { background: #f0f0f0; border-radius: 12px 12px 12px 0; padding: 10px 14px; font-size: 13px; color: var(--dark); margin-bottom: 14px; line-height: 1.5; }
+    .wa-form { display: flex; flex-direction: column; gap: 8px; }
+    .wa-form__row input,
+    .wa-form__row textarea,
+    .wa-form__row select {
+      width: 100%; padding: 10px 12px; border: 1.5px solid var(--gray-200); border-radius: 8px;
+      font-family: var(--font-body); font-size: 13px; color: var(--dark); background: var(--white);
+      outline: none; transition: border-color 0.2s; box-sizing: border-box;
+    }
+    .wa-form__row input:focus,
+    .wa-form__row textarea:focus,
+    .wa-form__row select:focus { border-color: #25D366; }
+    .wa-form__row textarea { resize: none; }
+    .wa-form__phone-row { display: flex; gap: 6px; }
+    .wa-form__phone-row select { flex-shrink: 0; width: 100px; padding-left: 6px; appearance: none; -webkit-appearance: none; }
+    .wa-form__phone-row input { flex: 1; }
+    .wa-form__submit {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 16px; background: #25D366; color: #fff; border: none; border-radius: 8px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600; cursor: pointer;
+      transition: background 0.2s; margin-top: 4px;
+    }
+    .wa-form__submit:hover { background: #1ebe5c; }
+
     /* ============================================
        RESPONSIVE
        ============================================ */
@@ -2365,12 +2409,63 @@
     </div>
   </footer>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/8615811252101?text=Halo%20Tourduachina.id%21%20%F0%9F%91%8B%0A%0ASaya%20ingin%20booking%20tour%3A%0A%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%0A%F0%9F%91%A4%20Nama%3A%20%0A%F0%9F%93%B1%20WhatsApp%3A%20%0A%F0%9F%93%A7%20Email%3A%20%0A%F0%9F%8C%8F%20Destinasi%3A%20%0A%F0%9F%91%A5%20Jumlah%20Orang%3A%20%0A%F0%9F%93%85%20Tanggal%3A%20%0A%E2%8F%B1%EF%B8%8F%20Durasi%3A%0A%F0%9F%92%AC%20Special%20Request%3A%20%0A%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%E2%94%81%0A%0AMohon%20info%20harga%20dan%20detailnya%20ya%21%20Terima%20kasih%20%F0%9F%99%8F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <!-- WhatsApp Float Widget -->
+  <div class="wa-widget" id="wa-widget">
+    <!-- Popup form -->
+    <div class="wa-popup" id="wa-popup" hidden>
+      <div class="wa-popup__header">
+        <div class="wa-popup__avatar">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div class="wa-popup__info">
+          <p class="wa-popup__name">Tourduachina.id</p>
+          <p class="wa-popup__status">● Online</p>
+        </div>
+        <button class="wa-popup__close" id="wa-popup-close" aria-label="Tutup">&times;</button>
+      </div>
+      <div class="wa-popup__body">
+        <div class="wa-bubble">
+          Halo! 👋 Isi form singkat ini, kami akan langsung balas via WhatsApp.
+        </div>
+        <form class="wa-form" id="wa-float-form" novalidate>
+          <div class="wa-form__row">
+            <input type="text" id="waf-name" placeholder="Nama Anda *" required autocomplete="name">
+          </div>
+          <div class="wa-form__row wa-form__phone-row">
+            <select id="waf-cc" aria-label="Kode negara">
+              <option value="+62">🇮🇩 +62</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+60">🇲🇾 +60</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+63">🇵🇭 +63</option>
+              <option value="+66">🇹🇭 +66</option>
+              <option value="+84">🇻🇳 +84</option>
+              <option value="+61">🇦🇺 +61</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+44">🇬🇧 +44</option>
+            </select>
+            <input type="tel" id="waf-phone" placeholder="Nomor WhatsApp *" required>
+          </div>
+          <div class="wa-form__row">
+            <input type="text" id="waf-dest" placeholder="Destinasi (mis. Beijing, Shanghai)">
+          </div>
+          <div class="wa-form__row">
+            <textarea id="waf-msg" placeholder="Pesan / pertanyaan Anda" rows="2"></textarea>
+          </div>
+          <button type="submit" class="wa-form__submit">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Chat via WhatsApp
+          </button>
+        </form>
+      </div>
+    </div>
+    <!-- Float trigger button -->
+    <button class="whatsapp-float" id="wa-float-btn" aria-label="Chat WhatsApp" type="button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </button>
+  </div>
 
   <!-- JavaScript (All-in-One) -->
   <script src="js/tourduachina.js" defer></script>
