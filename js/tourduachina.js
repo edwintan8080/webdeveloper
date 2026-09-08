@@ -311,19 +311,19 @@
 
       // Build message content
       const messageLines =
-        `Halo Tourduachina.id! 👋\n\n` +
-        `Saya ingin booking tour:\n` +
-        `━━━━━━━━━━━━━━━━━━\n` +
-        `👤 Nama: ${name}\n` +
-        `📱 WhatsApp: ${whatsapp}\n` +
-        `📧 Email: ${email}\n` +
-        `🌏 Destinasi: ${destination}\n` +
-        `👥 Jumlah Orang: ${pax}\n` +
-        `📅 Tanggal: ${date}\n` +
-        `⏱️ Durasi: ${duration}\n` +
-        `💬 Pesan: ${message}\n` +
-        `━━━━━━━━━━━━━━━━━━\n\n` +
-        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
+        'Halo Tourduachina.id!\n\n' +
+        'Saya ingin booking tour:\n' +
+        '------------------\n' +
+        '- Nama: ' + name + '\n' +
+        '- WhatsApp: ' + whatsapp + '\n' +
+        '- Email: ' + email + '\n' +
+        '- Destinasi: ' + destination + '\n' +
+        '- Jumlah Orang: ' + pax + '\n' +
+        '- Tanggal: ' + date + '\n' +
+        '- Durasi: ' + duration + '\n' +
+        '- Pesan: ' + message + '\n' +
+        '------------------\n\n' +
+        'Mohon info harga dan detailnya ya! Terima kasih.';
 
       // Track
       trackEvent('form_submit', { form_name: 'booking', destination, pax });
@@ -987,19 +987,19 @@
       }
 
       const text =
-        'Halo Tourduachina.id! \u{1F44B}\n\n' +
+        'Halo Tourduachina.id!\n\n' +
         'Saya ingin booking tour:\n' +
         '------------------\n' +
-        '\u{1F464} Nama: ' + name + '\n' +
-        '\u{1F4F1} WhatsApp: ' + phone + '\n' +
-        '\u{1F4E7} Email: \n' +
-        '\u{1F30F} Destinasi: ' + dest + '\n' +
-        '\u{1F465} Jumlah Orang: \n' +
-        '\u{1F4C5} Tanggal: \n' +
-        '\u{23F0} Durasi:\n' +
-        '\u{1F4AC} Special Request: ' + msg + '\n' +
+        '- Nama: ' + name + '\n' +
+        '- WhatsApp: ' + phone + '\n' +
+        '- Email: \n' +
+        '- Destinasi: ' + dest + '\n' +
+        '- Jumlah Orang: \n' +
+        '- Tanggal: \n' +
+        '- Durasi:\n' +
+        '- Special Request: ' + msg + '\n' +
         '------------------\n\n' +
-        'Mohon info harga dan detailnya ya! Terima kasih \u{1F64F}';
+        'Mohon info harga dan detailnya ya! Terima kasih.';
 
       const a = document.createElement('a');
       a.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
