@@ -950,19 +950,25 @@
     const form = document.getElementById('wa-float-form');
     if (!btn || !popup || !form) return;
 
-    btn.addEventListener('click', function() {
-      const isHidden = popup.hidden;
-      popup.hidden = !isHidden;
+    function openPopup() { popup.classList.add('open'); }
+    function closePopup() { popup.classList.remove('open'); }
+
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      popup.classList.toggle('open');
     });
 
-    closeBtn && closeBtn.addEventListener('click', function() {
-      popup.hidden = true;
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closePopup();
+      });
+    }
 
     document.addEventListener('click', function(e) {
       const widget = document.getElementById('wa-widget');
       if (widget && !widget.contains(e.target)) {
-        popup.hidden = true;
+        closePopup();
       }
     });
 
@@ -981,29 +987,29 @@
       }
 
       const text =
-        `Halo Tourduachina.id! 👋\n\n` +
-        `Saya ingin booking tour:\n` +
-        `━━━━━━━━━━━━━━━━━━\n` +
-        `👤 Nama: ${name}\n` +
-        `📱 WhatsApp: ${phone}\n` +
-        `📧 Email: \n` +
-        `🌏 Destinasi: ${dest}\n` +
-        `👥 Jumlah Orang: \n` +
-        `📅 Tanggal: \n` +
-        `⏱️ Durasi:\n` +
-        `💬 Special Request: ${msg}\n` +
-        `━━━━━━━━━━━━━━━━━━\n\n` +
-        `Mohon info harga dan detailnya ya! Terima kasih 🙏`;
+        'Halo Tourduachina.id! \u{1F44B}\n\n' +
+        'Saya ingin booking tour:\n' +
+        '------------------\n' +
+        '\u{1F464} Nama: ' + name + '\n' +
+        '\u{1F4F1} WhatsApp: ' + phone + '\n' +
+        '\u{1F4E7} Email: \n' +
+        '\u{1F30F} Destinasi: ' + dest + '\n' +
+        '\u{1F465} Jumlah Orang: \n' +
+        '\u{1F4C5} Tanggal: \n' +
+        '\u{23F0} Durasi:\n' +
+        '\u{1F4AC} Special Request: ' + msg + '\n' +
+        '------------------\n\n' +
+        'Mohon info harga dan detailnya ya! Terima kasih \u{1F64F}';
 
       const a = document.createElement('a');
-      a.href = `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+      a.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
 
-      popup.hidden = true;
+      closePopup();
       form.reset();
     });
   }
