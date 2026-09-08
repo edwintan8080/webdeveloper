@@ -1392,20 +1392,19 @@
        WHATSAPP BUTTON
        ============================================ */
     .whatsapp-float {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
+      position: relative;
       width: 60px;
       height: 60px;
       background: #25D366;
+      border: none;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 20px rgba(37,211,102,0.4);
       transition: var(--transition);
-      font-size: 28px;
+      cursor: pointer;
+      flex-shrink: 0;
     }
     .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.5); }
     .whatsapp-float::before {
@@ -1423,7 +1422,9 @@
     }
 
     /* WhatsApp Float Widget */
-    .wa-widget { position: fixed; bottom: 24px; right: 24px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+    .wa-widget { position: fixed; bottom: 24px; right: 24px; z-index: 1000; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; pointer-events: none; }
+    .wa-widget > * { pointer-events: auto; }
+    .wa-popup[hidden] { display: none !important; }
     .wa-popup {
       width: 320px; background: var(--white); border-radius: 16px;
       box-shadow: 0 8px 40px rgba(0,0,0,0.18); overflow: hidden;
