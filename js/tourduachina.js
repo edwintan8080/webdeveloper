@@ -950,27 +950,7 @@
     const form = document.getElementById('wa-float-form');
     if (!btn || !popup || !form) return;
 
-    function openPopup() { popup.classList.add('open'); }
     function closePopup() { popup.classList.remove('open'); }
-
-    btn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      popup.classList.toggle('open');
-    });
-
-    if (closeBtn) {
-      closeBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        closePopup();
-      });
-    }
-
-    document.addEventListener('click', function(e) {
-      const widget = document.getElementById('wa-widget');
-      if (widget && !widget.contains(e.target)) {
-        closePopup();
-      }
-    });
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
