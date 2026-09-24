@@ -1,0 +1,2 @@
+Deploy test triggered from ChatGPT on 2026-09-24.
+This file is harmless and exists only to verify the GitHub-to-Hostinger deployment pipeline.
