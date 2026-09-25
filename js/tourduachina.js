@@ -13,7 +13,7 @@
       justify-content: flex-start !important;
       background:
         linear-gradient(90deg, rgba(15,24,31,.76) 0%, rgba(15,24,31,.52) 42%, rgba(15,24,31,.16) 70%, rgba(15,24,31,.08) 100%),
-        url('/images/hero-ski-china.jpg') center center / cover no-repeat !important;
+        url('/images/homebackground.jpg') center center / cover no-repeat !important;
     }
     .hero::before {
       background: linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.18)) !important;
