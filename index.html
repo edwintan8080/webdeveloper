@@ -519,6 +519,15 @@
     }
     .about__image:nth-child(2) { margin-top: 32px; }
     .about__image:nth-child(3) { margin-top: -32px; }
+    #about .about__image { position: relative; }
+    #about .about__image > img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
     .about__text-tag {
       display: inline-flex;
       align-items: center;
@@ -1676,10 +1685,10 @@
       <div class="container">
         <div class="about__grid">
           <div class="about__image-grid fade-in">
-            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);">🏯</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #FAF6EF, #EFE2CC);">🐼</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #B8874D);">🏔️</div>
-            <div class="about__image" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);">🏯</div>
+            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #FAF6EF);"><img src="images/about-1.png" alt="Wisatawan berjalan di kawasan perkotaan" width="600" height="400" loading="lazy" decoding="async"></div>
+            <div class="about__image" style="background: linear-gradient(135deg, #FAF6EF, #EFE2CC);"><img src="images/about-2.png" alt="Wisatawan berfoto bersama maskot harimau" width="600" height="400" loading="lazy" decoding="async"></div>
+            <div class="about__image" style="background: linear-gradient(135deg, #EFE2CC, #B8874D);"><img src="images/about-3.png" alt="Wisatawan menikmati hidangan di restoran" width="600" height="400" loading="lazy" decoding="async"></div>
+            <div class="about__image" style="background: linear-gradient(135deg, #B8874D, #EFE2CC);"><img src="images/about-4.png" alt="Wisatawan berfoto di jalan wisata" width="600" height="400" loading="lazy" decoding="async"></div>
           </div>
           <div class="fade-in">
             <div class="about__text-tag">✨ Tentang Kami</div>
