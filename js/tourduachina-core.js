@@ -1,7 +1,7 @@
 /**
  * Tourduachina.id — Complete JavaScript
- * Version: 1.0.0
- * Last Updated: 2025-06-26
+ * Version: 1.1.0
+ * Last Updated: 2026-10-29
  * 
  * Includes:
  * - Main functionality (menu, scroll, accordion, filter, form, animations)
@@ -22,9 +22,14 @@
     WHATSAPP_NUMBER: '8615811252101',
     GA_MEASUREMENT_ID: 'G-XXXXXXXXXX', // TODO: Ganti dengan GA4 Measurement ID Anda
     COMPANY_NAME: 'Tourduachina.id',
-    COMPANY_EMAIL: 'tourduachina@gmail.com',
+    COMPANY_EMAIL: 'hello@tourduachina.id',
     INSTAGRAM: 'https://instagram.com/tourduachina.id',
   };
+
+  // Terjemahan EN/ID disediakan oleh tourduachina-i18n.js (fallback: teks asli bila modul belum dimuat)
+  const tr = (s) => (window.T2C_I18N && typeof window.T2C_I18N.tr === 'function') ? window.T2C_I18N.tr(s) : s;
+  // Baris tambahan pada pesan WhatsApp saat mode EN (format baku pesan TIDAK diubah)
+  const waNote = () => (window.T2C_I18N && typeof window.T2C_I18N.waNote === 'function') ? window.T2C_I18N.waNote() : '';
 
   // ============================================
   // PART 1: MAIN FUNCTIONALITY
@@ -225,7 +230,7 @@
       const name = document.getElementById('name').value.trim();
       const whatsapp = document.getElementById('whatsapp').value.trim();
       if (!name || !whatsapp) {
-        showNotification('Mohon isi nama dan nomor WhatsApp Anda', 'error');
+        showNotification(tr('Mohon isi nama dan nomor WhatsApp Anda'), 'error');
         return;
       }
     }
@@ -300,12 +305,12 @@
 
       // Validate
       if (!name || !whatsappNum) {
-        showNotification('Mohon isi nama dan WhatsApp Anda', 'error');
+        showNotification(tr('Mohon isi nama dan WhatsApp Anda'), 'error');
         window.prevStep(1);
         return;
       }
       if (!destination || !pax) {
-        showNotification('Mohon lengkapi destinasi dan jumlah orang', 'error');
+        showNotification(tr('Mohon lengkapi destinasi dan jumlah orang'), 'error');
         return;
       }
 
@@ -323,7 +328,7 @@
         '- Durasi: ' + duration + '\n' +
         '- Pesan: ' + message + '\n' +
         '------------------\n\n' +
-        'Mohon info harga dan detailnya ya! Terima kasih.';
+        'Mohon info harga dan detailnya ya! Terima kasih.' + waNote();
 
       // Track
       trackEvent('form_submit', { form_name: 'booking', destination, pax });
@@ -338,7 +343,7 @@
       a.click();
       document.body.removeChild(a);
 
-      showNotification('Pesan dikirim ke WhatsApp! Silakan cek tab baru.', 'success');
+      showNotification(tr('Pesan dikirim ke WhatsApp! Silakan cek tab baru.'), 'success');
       this.reset();
 
       // Reset form steps to step 1
@@ -509,147 +514,9 @@
 
   // ============================================
   // PART 2: SCHEMA MARKUP (JSON-LD)
+  // Schema kini statis di <head> index.html (TravelAgency, WebSite, ItemList, FAQPage).
+  // Injeksi lewat JS dihapus karena menghasilkan entitas ganda.
   // ============================================
-
-  function injectSchema(schema) {
-    const script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify(schema);
-    document.head.appendChild(script);
-  }
-
-  function initSchemaMarkup() {
-    const { DOMAIN, COMPANY_NAME, COMPANY_EMAIL, WHATSAPP_NUMBER } = CONFIG;
-
-    // TravelAgency Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "TravelAgency",
-      "name": COMPANY_NAME,
-      "alternateName": "Tourdua China",
-      "description": "Spesialis private tour ke China untuk wisatawan Indonesia. Pemandu berbahasa Indonesia, visa assistance, harga transparan.",
-      "url": DOMAIN,
-      "logo": `${DOMAIN}/images/logo.png`,
-      "image": `${DOMAIN}/images/og-image.jpg`,
-      "telephone": `+${WHATSAPP_NUMBER}`,
-      "email": COMPANY_EMAIL,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Beijing",
-        "addressRegion": "Beijing",
-        "addressCountry": "ID"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-8.6500",
-        "longitude": "115.2167"
-      },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }],
-      "priceRange": "$$",
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "500",
-        "bestRating": "5"
-      },
-      "areaServed": { "@type": "Country", "name": "China" },
-      "serviceType": ["Private Tour", "Custom Itinerary", "Visa Assistance", "Airport Transfer"],
-      "sameAs": ["https://instagram.com/tourduachina.id"]
-    });
-
-    // Organization Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": COMPANY_NAME,
-      "url": DOMAIN,
-      "logo": `${DOMAIN}/images/logo.png`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": `+${WHATSAPP_NUMBER}`,
-        "contactType": "customer service",
-        "availableLanguage": ["Indonesian", "Mandarin"]
-      }
-    });
-
-    // Website Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": COMPANY_NAME,
-      "url": DOMAIN,
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": `${DOMAIN}/search?q={search_term_string}`,
-        "query-input": "required name=search_term_string"
-      }
-    });
-
-    // Tour Packages
-    const tourPackages = [
-      { name: "Beijing Heritage Tour", price: "8500000", duration: "5D4N", type: "Cultural", desc: "Tembok Besar, Forbidden City, Temple of Heaven" },
-      { name: "Shanghai Modern Tour", price: "7200000", duration: "4D3N", type: "Leisure", desc: "The Bund, Yu Garden, Nanjing Road" },
-      { name: "Xi'an Ancient Tour", price: "6800000", duration: "4D3N", type: "Cultural", desc: "Terracotta Warriors, Muslim Quarter" },
-      { name: "Chengdu Panda Tour", price: "7500000", duration: "4D3N", type: "Nature", desc: "Panda Base, Jinli Street" },
-      { name: "Guilin Nature Tour", price: "9000000", duration: "5D4N", type: "Nature", desc: "Li River, Yangshuo" },
-      { name: "Zhangjiajie Adventure", price: "10500000", duration: "5D4N", type: "Adventure", desc: "Avatar Mountains, Glass Bridge" },
-      { name: "China Golden Route", price: "15000000", duration: "8D7N", type: "Multi-City", desc: "Beijing-Xi'an-Shanghai" }
-    ];
-
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Paket Tour China",
-      "description": "Daftar paket private tour ke China dari Tourduachina.id",
-      "numberOfItems": tourPackages.length,
-      "itemListElement": tourPackages.map((tour, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "item": {
-          "@type": "TouristTrip",
-          "name": tour.name,
-          "description": tour.desc,
-          "touristType": tour.type,
-          "provider": { "@type": "TravelAgency", "name": COMPANY_NAME },
-          "offers": {
-            "@type": "Offer",
-
-            "availability": "https://schema.org/InStock"
-          }
-        }
-      }))
-    });
-
-    // FAQ Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Apakah paket tour termasuk tiket pesawat?", "acceptedAnswer": { "@type": "Answer", "text": "Tidak, paket tour kami tidak termasuk tiket pesawat. Kami fokus pada layanan di China: akomodasi, transportasi lokal, pemandu, dan tiket masuk destinasi." }},
-        { "@type": "Question", "name": "Bagaimana proses pembuatan visa China?", "acceptedAnswer": { "@type": "Answer", "text": "Kami menyediakan layanan visa assistance. Anda cukup menyiapkan dokumen, dan tim kami akan membantu proses pengajuan visa China dari awal hingga selesai." }},
-        { "@type": "Question", "name": "Berapa minimal peserta untuk private tour?", "acceptedAnswer": { "@type": "Answer", "text": "Minimal 1 orang. Private tour berarti hanya grup Anda, bukan rombongan besar." }},
-        { "@type": "Question", "name": "Apakah ada pemandu berbahasa Indonesia?", "acceptedAnswer": { "@type": "Answer", "text": "Ya, semua pemandu kami fasih berbahasa Indonesia dan Mandarin. Komunikasi lancar tanpa barrier bahasa." }},
-        { "@type": "Question", "name": "Kapan waktu terbaik mengunjungi China?", "acceptedAnswer": { "@type": "Answer", "text": "China bisa dikunjungi sepanjang tahun. Musim semi (Maret-Mei) dan gugur (September-November) adalah waktu paling nyaman." }},
-        { "@type": "Question", "name": "Apakah aman berwisata ke China?", "acceptedAnswer": { "@type": "Answer", "text": "Sangat aman. China memiliki tingkat kriminalitas sangat rendah, terutama di kota-kota besar." }},
-        { "@type": "Question", "name": "Bagaimana sistem pembayaran di China?", "acceptedAnswer": { "@type": "Answer", "text": "China mayoritas cashless menggunakan Alipay atau WeChat Pay. Tim kami akan membantu Anda setup sebelum berangkat." }},
-        { "@type": "Question", "name": "Apakah bisa custom itinerary?", "acceptedAnswer": { "@type": "Answer", "text": "Tentu! Itinerary bisa disesuaikan 100% dengan keinginan Anda." }}
-      ]
-    });
-
-    // Breadcrumb Schema
-    injectSchema({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [{ "@type": "ListItem", "position": 1, "name": "Home", "url": DOMAIN }]
-    });
-
-    console.log('✅ Schema markup injected');
-  }
 
   // ============================================
   // PART 3: ANALYTICS & TRACKING
@@ -698,15 +565,12 @@
   /**
    * Track tour view
    */
-  function trackTourView(tourName, price) {
+  function trackTourView(tourName) {
+    // Harga tidak ditampilkan di website, jadi event tidak membawa value/price
     trackEvent('view_item', {
-      currency: 'IDR',
-      value: price,
       items: [{
         item_name: tourName,
-        item_category: 'Tour Package',
-        price: price,
-        currency: 'IDR'
+        item_category: 'Tour Package'
       }]
     });
   }
@@ -776,6 +640,8 @@
 
     // Form submissions
     document.querySelectorAll('form').forEach(form => {
+      // #booking-form sudah dilacak langsung di handler submit (setelah validasi): lewati agar tidak terhitung dua kali
+      if (form.id === 'booking-form') return;
       form.addEventListener('submit', () => {
         const formName = form.id || form.name || 'unknown';
         const destination = form.querySelector('[name="destination"]')?.value;
@@ -788,9 +654,7 @@
     document.querySelectorAll('.package-card').forEach(card => {
       card.addEventListener('click', () => {
         const name = card.querySelector('.package-card__name')?.textContent;
-        const priceText = card.querySelector('.package-card__price strong')?.textContent;
-        const price = parseInt(priceText?.replace(/[^0-9]/g, '') || 0);
-        if (name) trackTourView(name, price);
+        if (name) trackTourView(name);
       });
     });
 
@@ -979,7 +843,7 @@
         '- Durasi:\n' +
         '- Special Request: ' + msg + '\n' +
         '------------------\n\n' +
-        'Mohon info harga dan detailnya ya! Terima kasih.';
+        'Mohon info harga dan detailnya ya! Terima kasih.' + waNote();
 
       const a = document.createElement('a');
       a.href = 'https://wa.me/' + CONFIG.WHATSAPP_NUMBER + '?text=' + encodeURIComponent(text);
@@ -991,6 +855,44 @@
 
       closePopup();
       form.reset();
+    });
+  }
+
+  /**
+   * Pintasan destinasi: tombol "Pesan" pada kartu paket, kartu destinasi dan link footer
+   * memilihkan destinasi di form booking lalu menggulir ke form.
+   */
+  function scrollToContact() {
+    const target = document.getElementById('contact');
+    if (!target) return;
+    const header = document.querySelector('.header');
+    const top = target.getBoundingClientRect().top + window.scrollY - (header ? header.offsetHeight : 0);
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  function initDestinationLinks() {
+    document.addEventListener('click', function (e) {
+      const el = e.target.closest ? e.target.closest('[data-destination]') : null;
+      if (!el) return;
+      const value = el.getAttribute('data-destination');
+      const select = document.getElementById('destination');
+      if (select && value && Array.from(select.options).some(o => o.value === value)) {
+        select.value = value;
+        select.dispatchEvent(new Event('change', { bubbles: true }));
+        const opt = select.options[select.selectedIndex];
+        const label = (opt ? opt.textContent : value).replace(/^[^A-Za-z0-9]+/, '').split(' — ')[0].trim();
+        showNotification(tr('Destinasi dipilih') + ': ' + label, 'info');
+      }
+      // Link <a href="#contact"> sudah digulir oleh initSmoothScroll; elemen lain (kartu destinasi) digulir di sini
+      if (el.tagName !== 'A') scrollToContact();
+    });
+
+    // Keyboard: Enter / Spasi pada kartu destinasi
+    document.addEventListener('keydown', function (e) {
+      if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('.dest-card[data-destination]')) {
+        e.preventDefault();
+        e.target.click();
+      }
     });
   }
 
@@ -1011,9 +913,7 @@
     initLazyLoading();
     initCounterAnimation();
     initFooterYear();
-
-    // Schema markup
-    initSchemaMarkup();
+    initDestinationLinks();
 
     // Analytics
     initGA4();
