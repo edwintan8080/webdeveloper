@@ -19,7 +19,7 @@
   'use strict';
 
   var ENDPOINT = '/api/inquiry.php';
-  var RESEND_WINDOW_MS = 60000;
+  var RESEND_WINDOW_MS = 5000; // cukup untuk menyerap double-click / Enter+klik; tetap mengizinkan retry
   var sent = {}; // hash payload -> timestamp
 
   function field(id) {
@@ -49,6 +49,8 @@
         credentials: 'same-origin'
       }).catch(function () {
         // Gagal kirim salinan email tidak mengganggu pelanggan: jalur WhatsApp tetap jalan.
+        // Hapus penanda dedup agar submit ulang identik dalam jendela pendek tetap terkirim.
+        delete sent[key];
       });
     } catch (e) {
       // diam — jangan pernah ganggu UX form

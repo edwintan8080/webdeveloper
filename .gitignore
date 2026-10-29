@@ -29,3 +29,4 @@ package.json
 
 # Konfigurasi backend inquiry berisi kredensial — jangan pernah di-commit
 api/config.local.php
+/t2c_mail_config.php

@@ -24,8 +24,9 @@
  * Berkas konfigurasi opsional (salinan dari api/config.sample.php):
  *  1. env T2C_INQUIRY_CONFIG (path absolut — untuk pengujian/operasional)
  *  2. api/config.local.php (deploy manual, di-gitignore)
- *  3. ../../t2c_mail_config.php (di luar webroot — DISARANKAN)
- *  4. DOCUMENT_ROOT/../t2c_mail_config.php (di luar webroot)
+ *  3. DOCUMENT_ROOT/../t2c_mail_config.php atau ../../../t2c_mail_config.php
+ *     relatif berkas ini — keduanya di LUAR webroot (DISARANKAN; kredensial
+ *     tidak boleh berada di dalam webroot yang bisa diunduh publik).
  */
 
 /** Penerima yang dikunci. Tidak dapat dioverride lewat konfigurasi. */
@@ -64,7 +65,9 @@ function t2c_inquiry_config()
         $candidates[] = $envPath;
     }
     $candidates[] = __DIR__ . '/../config.local.php';
-    $candidates[] = __DIR__ . '/../../t2c_mail_config.php';
+    // Di luar webroot (repo root = webroot pada deploy FTPS; jangan simpan
+    // kredensial di dalamnya). __DIR__ = <webroot>/api/lib → naik 3 tingkat.
+    $candidates[] = __DIR__ . '/../../../t2c_mail_config.php';
     if (!empty($_SERVER['DOCUMENT_ROOT'])) {
         $candidates[] = dirname($_SERVER['DOCUMENT_ROOT']) . '/t2c_mail_config.php';
     }
