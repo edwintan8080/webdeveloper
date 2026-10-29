@@ -84,8 +84,16 @@
 
   const current = document.currentScript;
   const base = current && current.src ? new URL('.', current.src) : new URL('/js/', window.location.href);
+  // ?v= dipakai agar browser/CDN mengambil versi terbaru setiap kali file diubah (naikkan saat deploy)
+  const VERSION = '20261029-fix1';
   const core = document.createElement('script');
-  core.src = new URL('tourduachina-core.js', base).href;
+  core.src = new URL('tourduachina-core.js?v=' + VERSION, base).href;
   core.async = false;
   document.head.appendChild(core);
+
+  // Tombol bahasa EN/ID (dimuat setelah core agar bisa menerjemahkan teks yang dipakai core)
+  const i18n = document.createElement('script');
+  i18n.src = new URL('tourduachina-i18n.js?v=' + VERSION, base).href;
+  i18n.async = false;
+  document.head.appendChild(i18n);
 })();
