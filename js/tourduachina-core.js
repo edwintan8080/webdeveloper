@@ -640,8 +640,9 @@
 
     // Form submissions
     document.querySelectorAll('form').forEach(form => {
-      // #booking-form sudah dilacak langsung di handler submit (setelah validasi): lewati agar tidak terhitung dua kali
-      if (form.id === 'booking-form') return;
+      // #booking-form dan #wa-float-form dilacak langsung di handler submit masing-masing (setelah validasi):
+      // lewati keduanya agar tidak terhitung dua kali
+      if (form.id === 'booking-form' || form.id === 'wa-float-form') return;
       form.addEventListener('submit', () => {
         const formName = form.id || form.name || 'unknown';
         const destination = form.querySelector('[name="destination"]')?.value;
@@ -829,6 +830,9 @@
         document.getElementById('waf-name').focus();
         return;
       }
+
+      // Lacak sekali per submit valid (jalur Enter/submit — jalur tombol dilacak di waSendChat)
+      trackFormSubmit('wa-float-form', { destination: dest });
 
       const text =
         'Halo Tourduachina.id!\n\n' +
